@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (isset($_SESSION['S_IDUSUARIO_PT'])) {
+if (isset($_SESSION['S_USUARIO'])) {
     header('Location: views/index'); /// si mi inicion esta creada me manda a la pagina
 }
 ?>
