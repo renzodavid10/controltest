@@ -1,0 +1,151 @@
+@charset "utf-8";
+/* CSS Document */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(../imagenes/fondo_login.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    
+
+}
+
+input {
+    font-family: "Poppins", sans-serif;
+}
+
+#loginInicio {
+
+    margin: 50px auto;
+    width: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    /*border: 3px solid #003C7B;*/
+    border-style: groove;
+    border-color: rgb(15, 17, 30);
+    border-radius: .25rem;
+    padding: 20px 3px;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+    background-color: white;
+}
+.datos{
+    width: 85%;
+}
+form.sign-up-form {
+    opacity: 0;
+    z-index: 1;
+}
+
+form.forgot-up-form {
+    opacity: 0;
+    z-index: 1;
+}
+
+form.sign-in-form {
+    z-index: 2;
+
+
+}
+
+.title {
+    font-size: 2.0rem;
+    color: #003C7B;
+    margin-bottom: 10px;
+    text-align: center;
+    font-family: 'Lobster', cursive;
+}
+
+.input-field {
+    max-width: 400px;
+    width: 100%;
+    background-color: #f0f0f0;
+    margin: 8px 0;
+    height: 45px;
+    border-radius: 45px;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    padding: 0 0.4rem;
+    position: relative;
+}
+
+.input-field i {
+    text-align: center;
+    line-height: 45px;
+    color: #003C7B;
+    transition: 0.5s;
+    font-size: 1.1rem;
+}
+
+.input-field input {
+    background: none;
+    outline: none;
+    border: none;
+    line-height: 1;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #333;
+}
+.marca{
+    border-top: solid 1px  gray;
+    width: 80%;
+    text-align: center;
+}
+.btn {
+    width: 200px;
+    background-color: #89be21!important;
+    border: none;
+    outline: none;
+    height: 49px;
+    border-radius: 49px;
+    color: #fff !important;
+    text-transform: uppercase;
+    text-decoration: wavy !important;
+    font-weight: 600;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: 0.5s;
+}
+p{
+    text-align: left;
+    font-weight: bold;
+}
+
+@media (max-width: 1400px) {
+    .signin-signup {
+        width: 100%;
+        top: 95%;
+        transform: translate(-50%, -100%);
+        transition: 1s 0.8s ease-in-out;
+    }
+
+}
+
+@media (max-width: 570px) {
+    form {
+        padding: 0 1.5rem;
+    }
+
+    .image {
+        display: none;
+    }
+
+   
+}
+
+/* new styles */
+
+#login {
+    z-index: 2;
+    height: 490px;
+
+}
