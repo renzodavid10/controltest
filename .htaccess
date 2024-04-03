@@ -1,3 +1,4 @@
+Options ALL -Indexes
 RewriteBase /
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-d
