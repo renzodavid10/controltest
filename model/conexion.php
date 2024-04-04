@@ -14,8 +14,8 @@ class conexion_nueva
     //private $password = 'root';
 
     private $host='monorail.proxy.rlwy.net';
-    private $dbname = 'postgres';
-    private $usuario = 'renzo';
+    private $dbname = 'railway';
+    private $usuario = 'postgres';
     private $password = 'hwQdhvxKAwAoopftNPLlJIPLmHsoCogL';
 
     private $pdo;
