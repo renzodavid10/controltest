@@ -38,7 +38,7 @@ class conexion_nueva
             echo "Falló la conexión" . $e;
         }*/
         try {
-            $this->pdo = new PDO("pgsql:host=$this->host;$this->port;dbname=$this->dbname", $this->usuario, $this->password);
+            $this->pdo = new PDO("pgsql:host=$this->host;port=$this->port;dbname=$this->dbname", $this->usuario, $this->password);
             $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $this->pdo->exec("SET NAMES 'UTF8'");
             //return"Conexión Lista";
