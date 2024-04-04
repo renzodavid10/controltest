@@ -1,8 +1,10 @@
 <?php
 session_start();
-if (!isset($_SESSION['S_IDUSUARIO'])) {
-    header('Location:../index.php'); /// si mi inicion esta creada me manda a la pagina
-}
+
+/*if (!isset($_SESSION['S_IDUSUARIO'])) {
+    echo "78787";
+    header('Location: ../index.php'); /// si mi inicion esta creada me manda a la pagina
+}*/
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -103,7 +105,7 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
                                 <div class="text-center">
                                     <p>
                                         <font size=3>
-                                            <?php echo $_SESSION['S_DNI_PT'] 
+                                            <?php echo $_SESSION['S_DNI_PT']
                                             ?>
                                         </font>
                                     </p>

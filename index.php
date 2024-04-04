@@ -1,8 +1,11 @@
 <?php
 session_start();
 
+
 if (isset($_SESSION['S_USUARIO'])) {
-    header('Location: views/index.php'); /// si mi inicion esta creada me manda a la pagina
+    echo $_SESSION['S_USUARIO'];
+    echo $_SESSION['S_IDUSUARIO'];
+    //header('Location: views/index.php'); /// si mi inicion esta creada me manda a la pagina
 }
 ?>
 <!DOCTYPE html>
