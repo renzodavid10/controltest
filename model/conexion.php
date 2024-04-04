@@ -13,7 +13,7 @@ class conexion_nueva
     //private $usuario = 'postgres';
     //private $password = 'root';
 
-    private $host='dpostgres.railway.internal';
+    private $host='monorail.proxy.rlwy.net';
     private $dbname = 'postgres';
     private $usuario = 'renzo';
     private $password = 'hwQdhvxKAwAoopftNPLlJIPLmHsoCogL';
