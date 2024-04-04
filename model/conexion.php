@@ -3,10 +3,20 @@
 class conexion_nueva
 {
 
-    private $host = 'localhost';
-    private $dbname = 'db_control';
-    private $usuario = 'postgres';
-    private $password = 'root';
+    //private $host = 'localhost';
+    /*private $host='dpg-co5of363e1ms73b99bm0-a.frankfurt-postgres.render.com';
+    private $dbname = 'controltest';
+    private $usuario = 'renzo';
+    private $password = 'gtNNzyOAKxKW4D7tobA8s7TdUkYLdN4R';*/
+
+    //private $dbname = 'db_control';
+    //private $usuario = 'postgres';
+    //private $password = 'root';
+
+    private $host='dpostgres.railway.internal';
+    private $dbname = 'postgres';
+    private $usuario = 'renzo';
+    private $password = 'hwQdhvxKAwAoopftNPLlJIPLmHsoCogL';
 
     private $pdo;
 

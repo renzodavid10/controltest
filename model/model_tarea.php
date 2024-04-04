@@ -5,19 +5,24 @@ require_once 'conexion.php';
 class model_tarea extends conexion_nueva
 {
 
-    public function crear_tarea()
+    public function crear_tarea($desc, $crit, $respon, $dep, $orig, $usu_dni, $tiempo)
     {
-        $c=conexion_nueva::conectarBD() ;
+        $c = conexion_nueva::conectarBD();
         $sql = 'SELECT * from fn_ingresar_tarea(?,?,?,?,?,?,?)';
         $query = $c->prepare($sql);
-        $query->bindParam(1, $usu_name);
-        $query->bindParam(2, $usu_apap);
-        $query->bindParam(3, $usu_apam);
-        $query->bindParam(4, $usu_dni);
-        $query->bindParam(5, $usu_celu);
-        $query->bindParam(6, $usu_corr);
-        $query->bindParam(7, $usu_pass);
+        $query->bindParam(1, $desc);
+        $query->bindParam(2, $crit);
+        $query->bindParam(3, $respon);
+        $query->bindParam(4, $dep);
+        $query->bindParam(5, $orig);
+        $query->bindParam(6, $usu_dni);
+        $query->bindParam(7, $tiempo);
         $query->execute();
-        
+
+        if ($row = $query->fetchColumn()) {
+            return $row;
+        }
+
+        conexion_nueva::cerrar_conexion();
     }
 }

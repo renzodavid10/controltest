@@ -12,4 +12,4 @@ $usu_celu =  htmlspecialchars($_POST['cel'], ENT_QUOTES, 'UTF-8');
 $usu_empr =  htmlspecialchars($_POST['empresa'], ENT_QUOTES, 'UTF-8');
 $usu_foto='';
 $consultar = $MU->create_user($usu_name,$usu_apap,$usu_apam,$usu_dni,$usu_celu,$usu_corr,$usu_pass,$usu_foto,$usu_empr);
-return $consultar;
+echo $consultar;

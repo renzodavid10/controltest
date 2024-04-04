@@ -16,5 +16,5 @@ foreach ($datos as $dato) {
     $_SESSION['S_APEMAT_PT'] = $dato[3];
     $_SESSION['S_NOMBRE'] = $dato[1];
     $_SESSION['S_PASS_PT'] = $dato[8];
-    
+    $_SESSION['S_EMPRE'] = $dato['usua_empr'];
 }

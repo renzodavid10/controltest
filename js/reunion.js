@@ -11,11 +11,11 @@ function crear_tarea() {
 
     //return console.log(fecha);
     $.ajax({
-        url: '../controller/usuario/crear_usu.php',
-        async:'true',
-        type: 'get',
+        url: '../controller/tarea/crear_tar.php',
+        //async:'false',
+        type: 'POST',
         data: {
-            dni: desc,
+            desc: desc,
             responsable: responsable,
             departa: departa,
             elemento: elemento,

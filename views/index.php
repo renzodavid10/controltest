@@ -1,4 +1,8 @@
 <?php
+session_start();
+if (!isset($_SESSION['S_IDUSUARIO'])) {
+    header('Location:../index.php'); /// si mi inicion esta creada me manda a la pagina
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,8 +46,8 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
                         <img src="../images/backus.jpg" class="img-size-32  img-circle">
-                        <b> <?php //echo $_SESSION['S_USUARIO_PT']; 
-                            ?> Nombre</b>
+                        <b> <?php echo $_SESSION['S_USUARIO'];
+                            ?></b>
                         <i class="fa fa-chevron-circle-down" aria-hidden="true"></i>
                     </a>
                     <div class="dark-mode dropdown-menu dropdown-menu-sm dropdown-menu-right">
@@ -94,13 +98,13 @@
                         <li class="nav-item ">
                             <a href="#" class="nav-link ">
                                 <div class="text-center">
-                                    <img src="../img/defaultM.png" class="profile-user-img img-fluid img-circle "><br>
+                                    <img src="../images/avatar4.png" class="img-size-54  profile-user-img img-fluid img-circle "><br>
                                 </div>
-                                <div class="txt-center">
+                                <div class="text-center">
                                     <p>
                                         <font size=3>
-                                            <?php //echo $_SESSION['S_USUARIO_PT'] 
-                                            ?>ajia
+                                            <?php echo $_SESSION['S_DNI_PT'] 
+                                            ?>
                                         </font>
                                     </p>
 
