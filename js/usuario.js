@@ -30,7 +30,7 @@ function iniciar_Sesion() {
 
             }).done(function (resp) {
                 console.log(resp);
-                //location.reload();
+                location.reload();
             })
         }
     })
