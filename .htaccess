@@ -1,4 +1,4 @@
-#RewriteBase /
+RewriteBase /controltest-production.up.railway.app
 
 
 RewriteEngine On

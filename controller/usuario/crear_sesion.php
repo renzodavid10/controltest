@@ -1,6 +1,5 @@
 <?php
-    session_start();
-
+session_start();
 // Recibimos el JSON enviado en la solicitud AJAX
 $json = file_get_contents('php://input');
 // Decodificamos el JSON a un arreglo de PHP
