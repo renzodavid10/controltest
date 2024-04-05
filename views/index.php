@@ -2,8 +2,8 @@
 session_start();
 
 if (!isset($_SESSION['S_IDUSUARIO'])) {
-    echo "78787";
-    header('Location: ../index.php'); /// si mi inicion esta creada me manda a la pagina
+    //echo "78787";
+    header('Location: ../'); /// si mi inicion esta creada me manda a la pagina
 }
 ?>
 <!DOCTYPE html>
