@@ -10,3 +10,5 @@ function obtener_subdirectorio_actual()
 
 $subdirectorio_actual = obtener_subdirectorio_actual();
 echo "El subdirectorio actual es: " . $subdirectorio_actual;
+$directorio_actual = __DIR__;
+echo "El directorio actual es: " . $directorio_actual;
