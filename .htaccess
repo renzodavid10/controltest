@@ -1,7 +1,8 @@
-RewriteBase /app
-
-
 RewriteEngine On
+RewriteBase /app/
+
+
+
 RewriteRule prueba.html https://www.pickaweb.es [R=302,L]
 RewriteCond %{HTTP_HOST} ^controltest-production.up.railway.app/
 RewriteRule (.*) https://controltest-production.up.railway.app//$1 [R=301,L]
