@@ -1,16 +1,10 @@
 RewriteEngine On
-RewriteBase //app/
 
+# Redireccionar todas las solicitudes HTTP a HTTPS
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-
-RewriteRule prueba.html https://www.pickaweb.es [R=302,L]
-RewriteCond %{HTTP_HOST} ^controltest-production.up.railway.app/
-RewriteRule (.*) https://controltest-production.up.railway.app//$1 [R=301,L]
-
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^(.*)$ $1.html
-
+# Eliminar la extensión .php de las URL
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.php -f
-RewriteRule ^(.*)$ $1.php
+RewriteRule ^(.*)$ $1.php [L]
