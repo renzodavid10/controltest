@@ -23,6 +23,7 @@ function crear_tarea() {
         }
     }).done(function (e) {
         console.log(e);
+        listar_tarea();
     })
 
 }
@@ -30,8 +31,8 @@ function listar_usu() {
     $.ajax({
         url: '../controller/tarea/listar_usu.php',
         type: 'POST',
-        async:'false'
-        
+        async: 'false'
+
 
     }).done(function (resp) {
         console.log(resp);
@@ -48,7 +49,7 @@ function listar_usu() {
             document.getElementById('select_responsable').innerHTML = llenardata;
             //console.log(data);
         } else
-        llenardata = "<option value='0'>Responsable </option>";
+            llenardata = "<option value='0'>Responsable </option>";
         document.getElementById('select_responsable').innerHTML = llenardata;
         console.log("N o");
     });
@@ -59,79 +60,51 @@ $(".mostrar-info").click(function () {
 })
 var tbl_primer_miembro;
 
-function listar_tmiembro() {
-    tbl_primer_miembro = $("#tabla_miembro").DataTable({
-        "bLengthChange" : false, 
+function listar_tarea() {
+    tbl_primer_miembro = $("#tabla_tarea_si").DataTable({
+        columnDefs: [
+            { width: '50%', targets: [2] }
+        ],
+        "bLengthChange": false,
         "ordering": false,
         //"bLengthChange": true,
         //"searching": { "regex": false },
         "searching": false,
         //"lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
-        "lengthMenu":false,
-        "pageLength": 10,
+        "lengthMenu": false,
+        "pageLength": 8,
         "destroy": true,
         //"async": false,
-        "processing": true,
-        /*"ajax": {
-            "url": "../controller/persona/controlador_listar_miembrosin.php",
+        //"processing": true,
+        "ajax": {
+            "url": "../controller/tarea/listar_tar.php",
             type: 'POST'
-        },*/
+        },
 
-        /*"columns": [
+        "columns": [
             /* Datos que se va a traer en el procedimiento almacenado */
-           /* { "defaultContent": "" },
-            { "data": "zona_deno" },
-            { "data": "tiag_deno" },
+            // { "defaultContent": "" },
+            { "data": "tare_crea" },
+            { "data": "tare_resp" },
 
-            { "data": "deno" },
-
-            { "data": "dni" },
-            { "data": "nombre" },
-            //{ "data": "agrupacion_denominacion" },
-
-            { "data": "carg_deno" },
+            { "data": "tare_desc" },
+            { "data": "tare_tiem" },
             {
-                "data": "estad",
-                render: function (data, type, row) {
-                    if (data == 'ACTIVO') {
-                        return '<span class="badge bg-success">ACTIVO</span>';
-                    } else {
-                        return '<span class="badge bg-danger">INACTIVO</span>';
-                    }
-                }
+                "defaultContent": "<button  class='editar btn btn-sm'><i class='fa-solid fa-flag'></i></button>&nbsp; ",
+
             },
             {
-                "data": "estad",
-                render: function (data, type, row) {
-                    if (data == 'ACTIVO' && rol != 'VISITANTE') {
-                        return "<button  class='editar btn btn-primary btn-sm'><i class='fa fa-edit'></i></button>&nbsp; "
-                            + "<button class='detalle btn btn-warning btn-sm'><i class='fa fa-file-alt'></i></button>&nbsp;"
-                            + "<button class='disabled btn btn-success btn-sm '><i class='fa fa-check-circle'></i></button>&nbsp;" +
-                            "<button class='desactivar btn btn-danger btn-sm'><i class='fa fa-ban'></i></button>&nbsp;" +
-                            "<button class='eliminar btn btn-danger btn-sm'><i class='fa fa-trash'></i></button>"
-                    } if (data == 'INACTIVO' && rol != 'VISITANTE') {
-                        return "<button  class='editar btn btn-primary btn-sm'><i class='fa fa-edit'></i></button>&nbsp; "
-                            + "<button class='detalle btn btn-warning btn-sm'><i class='fa fa-file-alt'></i></button>&nbsp;"
-                            + "<button class='activar btn btn-success btn-sm '><i class='fa fa-check-circle'></i></button>&nbsp;" +
-                            "<button class='disabled btn btn-danger btn-sm'><i class='fa fa-ban'></i></button>&nbsp;" +
-                            "<button class='eliminar btn btn-danger btn-sm'><i class='fa fa-trash'></i></button>"
-                    }
-
-                    else {
-                        return "<button class='detalle btn btn-warning btn-sm'><i class='fa fa-file-alt'></i></button>"
-
-
-                    }
-                }
+                "defaultContent": " <button  class='editar btn  btn-sm'><i class='fa-solid fa-angle-right'></i></button>&nbsp; ",
             },
-        ],*/
+
+        ],
 
         "language": idioma_espanol,
         select: true
     });
 
     tbl_primer_miembro.on('draw.td', function () {
-        var PageInfo = $("#tabla_miembro").DataTable().page.info();
+        var PageInfo = $("#tabla_tarea_si").DataTable().page.info();
         tbl_primer_miembro.column(0, { page: 'current' }).nodes().each(function (cell, i) {
             cell.innerHTML = i + 1 + PageInfo.start;
         });

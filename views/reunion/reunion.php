@@ -115,17 +115,28 @@
                 <div class="card-body collapse">
 
                     <!-- <div class="col-12 table-responsive">-->
-                    <table id="tabla_miembro" class="table table-sm text-center table-striped  table-hover" style="width: 100%">
+                    <table id="tabla_tarea_si" class="table table-sm text-center table-striped  table-hover" style="width: 100%">
                         <style>
-                            #tabla_miembro {
-                                /*text-align: center;*/
-                                width: 100%;
-                                font-size: 14px;
+                            table {
+                                overflow-x: auto;
+                                font-size: small;
+
+                            }
+
+                            table td {
+                                word-wrap: break-word;
+                                max-width: 400px;
+                            }
+
+                            #tabla_tarea_si td {
+                                white-space: inherit;
+                                text-align: justify !important;
+                                vertical-align: middle;
                             }
                         </style>
                         <thead>
                             <tr>
-                                <th style="text-align: center; font-size:14px">CREACIÓN</th>
+                                <th>CREACIÓN</th>
                                 <th>RESPONSABLE</th>
                                 <th>DESCRIPCIÓN </th>
                                 <th>PLAZO</th>
@@ -223,5 +234,6 @@
         $('.js-example-basic-single').select2();
         console.log("hola")
     });
+    listar_tarea();
     //listar_tmiembro();
 </script>

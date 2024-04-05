@@ -58,7 +58,7 @@ if (isset($_SESSION['S_USUARIO'])) {
                             <a href="recuperar.php">Olvidaste Contraseña</a>
                         </p>
                         <p class="col text-center">
-                            <a href="views/register">Registrarse</a>
+                            <a href="views/register.php">Registrarse</a>
                         </p>
                     </div>
                     <!-- </form>-->
