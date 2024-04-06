@@ -310,13 +310,35 @@
                 </div>
                 <!-- /.card-body -->
             </div>
+            <div class="card ">
+                <div class="card-header">
+                    <div class="row ">
+                        <h4 class="col-10 card-title w-100">
+                            Retrasada
+                        </h4>
+                        <p id='contar' class="col-1"> </p>
+                        <div class="card-tools">
+                            <button type="button" class="btn mostrar-info" id="mostrar-info">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="card-body collapse">
+                    <!-- <div class="col-12 table-responsive">-->
+
+                    <!--</div>-->
+                </div>
+                <!-- /.card-body -->
+            </div>
         </div>
         <!-- FIN DE LA PARTE IZQUIERDA-->
         <!-- INICIO DE LA PARTE DERECHA-->
         <div class="col-md-4">
             <div class="row">
                 <div class="col-12" id="accordion">
-                    <div class="card card-primary card-outline">
+                    <div class="card mt-2 card-primary card-outline">
                         <a class="d-block w-100" data-toggle="collapse" href="#collapseTwo">
                             <div class="card-header">
                                 <h4 class="card-title text-center w-100">
@@ -325,33 +347,10 @@
                             </div>
                         </a>
                         <div id="collapseTwo" class="collapse" data-parent="#accordion">
-                            <div class="form-group">
-                                <textarea id="compose-textarea" class="form-control" style="height: 300px">
-                      <h1><u>Heading Of Message</u></h1>
-                      <h4>Subheading</h4>
-                      <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain
-                        was born and I will give you a complete account of the system, and expound the actual teachings
-                        of the great explorer of the truth, the master-builder of human happiness. No one rejects,
-                        dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know
-                        how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again
-                        is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain,
-                        but because occasionally circumstances occur in which toil and pain can procure him some great
-                        pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise,
-                        except to obtain some advantage from it? But who has any right to find fault with a man who
-                        chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that
-                        produces no resultant pleasure? On the other hand, we denounce with righteous indignation and
-                        dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so
-                        blinded by desire, that they cannot foresee</p>
-                      <ul>
-                        <li>List item one</li>
-                        <li>List item two</li>
-                        <li>List item three</li>
-                        <li>List item four</li>
-                      </ul>
-                      <p>Thank you,</p>
-                      <p>John Doe</p>
-                    </textarea>
+                            <div id="summernote">
+
                             </div>
+
                         </div>
                     </div>
                     <div class="card card-primary card-outline">
@@ -368,23 +367,33 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
+    </div>
     </div>
     <!-- FIN DE LA PARTE DERECHA-->
     <!--</div>-->
 </section>
 
+<!-- Summernote -->
+<script src="../plugins/summernote/summernote-bs4.min.js"></script>
 <script>
-   // listar_tarea();
+    // listar_tarea();
     listar_usu();
     $(document).ready(function() {
         $('.js-example-basic-single').select2();
+        listar_tarea();
         console.log("hola")
     });
 
     contar_tarea('No iniciada');
     listar_empresa()
     //listar_tmiembro();
+
+    $('#summernote').summernote({
+
+
+    });
 </script>

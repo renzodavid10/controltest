@@ -26,6 +26,8 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
     <!-- Utilitarios -->
     <link rel="stylesheet" type="text/css" href="../utils/utilitarios/dataTables.bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../utils/utilitarios/dataTables.bootstrap5.min.css">
+    <!-- summernote -->
+    <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.min.css">
 
 
 
