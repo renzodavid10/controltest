@@ -58,7 +58,7 @@ function listar_usu() {
 
 $(".mostrar-info").click(function () {
     $(this).closest(".card").find(".card-body").toggle();
-    //listar_tarea();
+    listar_tarea();
 })
 var tbl_primer_miembro;
 var tbl_tare_progreso;
@@ -68,7 +68,7 @@ function listar_tarea() {
     tbl_primer_miembro = $("#tabla_tarea_si").DataTable({
         "columnDefs": [
             { "width": '50%', "targets": [3] },
-            { "width": '6% ', "targets": [5,6] }
+            { "width": '6% ', "targets": [5, 6] }
         ],
         "bLengthChange": false,
         "ordering": false,

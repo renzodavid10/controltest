@@ -384,7 +384,7 @@
     listar_usu();
     $(document).ready(function() {
         $('.js-example-basic-single').select2();
-        listar_tarea();
+        //listar_tarea();
         console.log("hola")
     });
 
