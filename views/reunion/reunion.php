@@ -353,12 +353,13 @@
 </section>
 
 <script>
+    listar_tarea();
     listar_usu();
     $(document).ready(function() {
         $('.js-example-basic-single').select2();
         console.log("hola")
     });
-    listar_tarea();
+    
     contar_tarea('No iniciada');
     listar_empresa()
     //listar_tmiembro();
