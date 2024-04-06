@@ -67,7 +67,7 @@ function listar_tarea() {
     tbl_primer_miembro = $("#tabla_tarea_si").DataTable({
         columnDefs: [
             { width: '50%', targets: [3] },
-            { width: '5%', targets: [5,6] }
+            { width: '6%', targets: [5,6] }
         ],
         "bLengthChange": false,
         "ordering": false,
@@ -97,7 +97,7 @@ function listar_tarea() {
 
             },
             {
-                "defaultContent": " <button  class='editar btn  btn-sm'><i class='fa-solid fa-angle-right'></i></button>&nbsp; ",
+                "defaultContent": "<button  class='editar btn btn-sm'><i class='fa-solid fa-angle-right'></i></button>&nbsp; ",
             },
 
         ],
