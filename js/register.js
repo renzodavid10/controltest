@@ -26,6 +26,9 @@ function crear_cuenta() {
         }
     }).done(function (e) {
         console.log(e);
+        if(e==1){
+            window.location.href = "/";
+        }
     })
 
 }
