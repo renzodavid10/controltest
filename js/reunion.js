@@ -24,6 +24,7 @@ function crear_tarea() {
     }).done(function (e) {
         console.log(e);
         listar_tarea();
+        contar_tarea('No iniciada');
     })
 
 }
@@ -63,7 +64,7 @@ var tbl_primer_miembro;
 function listar_tarea() {
     tbl_primer_miembro = $("#tabla_tarea_si").DataTable({
         columnDefs: [
-            { width: '50%', targets: [2] }
+            { width: '50%', targets: [3] }
         ],
         "bLengthChange": false,
         "ordering": false,
@@ -83,10 +84,9 @@ function listar_tarea() {
 
         "columns": [
             /* Datos que se va a traer en el procedimiento almacenado */
-            // { "defaultContent": "" },
+            { "defaultContent": "" },
             { "data": "tare_crea" },
             { "data": "tare_resp" },
-
             { "data": "tare_desc" },
             { "data": "tare_tiem" },
             {
@@ -111,4 +111,20 @@ function listar_tarea() {
     });
 
 }
+function contar_tarea(tipo) {
+    $.ajax({
+        url: '../controller/tarea/contar_tarea.php',
+        type: 'POST',
+        async: 'false'
 
+    }).done(function (resp) {
+        console.log(resp);
+
+        //let data = JSON.parse(resp);
+        //console.log(data.length);
+        if (resp > 0) {
+            
+            document.getElementById("contar").innerHTML=resp;
+        }
+    });
+}

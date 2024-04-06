@@ -46,10 +46,9 @@ class model_tarea extends conexion_nueva
     public function contador($accion)
     {
         $c = conexion_nueva::conectarBD();
-        $sql = 'SELECT * from fn_ingresar_tarea(?)';
+        $sql = 'SELECT * from fn_contar_tarea(?)';
         $query = $c->prepare($sql);
         $query->bindParam(1, $accion);
-        
         $query->execute();
 
         if ($row = $query->fetchColumn()) {

@@ -5,4 +5,4 @@ $MT= new model_tarea();
 $accion='No iniciada';
 $resultado=$MT->contador($accion);
 
-return $resultado;
+echo $resultado;

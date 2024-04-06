@@ -103,7 +103,7 @@
                         <h4 class="col-10 card-title w-100">
                             No Iniciada
                         </h4>
-                        <p class="col-1"> 3</p>
+                        <p id='contar' class="col-1"> </p>
                         <div class="card-tools">
                             <button type="button" class="btn mostrar-info" id="mostrar-info">
                                 <i class="fas fa-minus"></i>
@@ -136,6 +136,8 @@
                         </style>
                         <thead>
                             <tr>
+
+                                <th>#</th>
                                 <th>CREACIÓN</th>
                                 <th>RESPONSABLE</th>
                                 <th>DESCRIPCIÓN </th>
@@ -235,5 +237,6 @@
         console.log("hola")
     });
     listar_tarea();
+    contar_tarea('No iniciada');
     //listar_tmiembro();
 </script>
