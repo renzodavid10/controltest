@@ -39,7 +39,7 @@
                             Mis Tareas
                         </h4>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body collapse">
                         <div class="form-group">
                             <label for="inputEstimatedBudget">Estimated budget</label>
                             <input type="number" id="inputEstimatedBudget" class="form-control">
@@ -69,7 +69,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body collapse">
                         <div class="form-group">
                             <label for="inputEstimatedBudget">Estimated budget</label>
                             <input type="number" id="inputEstimatedBudget" class="form-control">
@@ -92,14 +92,14 @@
                                 Rutina Diaria
                             </h4>
                             <p class="col-1"> 3</p>
-                            <div class="card-tools">
+                            <div class="card-tools ">
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                                     <i class="fas fa-minus"></i>
                                 </button>
                             </div>
                         </div>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body collapse">
                         <div class="form-group">
                             <label for="inputEstimatedBudget">Estimated budget</label>
                             <input type="number" id="inputEstimatedBudget" class="form-control">
@@ -161,65 +161,64 @@
 <!-- FLOT PIE PLUGIN - also used to draw donut charts -->
 <script src="../template/plugins/flot/plugins/jquery.flot.pie.js"></script>
 <script>
-    
-    $(function() {
+    /*$(function() {
         /*
          * Flot Interactive Chart
          * -----------------------
          */
-        // We use an inline data source in the example, usually data would
-        // be fetched from a server
-        /*
-         * DONUT CHART
-         * -----------
-         */
+    // We use an inline data source in the example, usually data would
+    // be fetched from a server
+    /*
+     * DONUT CHART
+     * -----------
+     */
 
-        var donutData = [{
-                label: 'Series2',
-                data: 30,
-                color: '#3c8dbc'
-            },
-            {
-                label: 'Series3',
-                data: 20,
-                color: '#0073b7'
-            },
-            {
-                label: 'Series4',
-                data: 50,
-                color: '#00c0ef'
-            }
-        ]
-        $.plot('#donut-chart', donutData, {
-            series: {
-                pie: {
+    /*var donutData = [{
+            label: 'Series2',
+            data: 30,
+            color: '#3c8dbc'
+        },
+        {
+            label: 'Series3',
+            data: 20,
+            color: '#0073b7'
+        },
+        {
+            label: 'Series4',
+            data: 50,
+            color: '#00c0ef'
+        }
+    ]
+    $.plot('#donut-chart', donutData, {
+        series: {
+            pie: {
+                show: true,
+                radius: 1,
+                innerRadius: 0.5,
+                label: {
                     show: true,
-                    radius: 1,
-                    innerRadius: 0.5,
-                    label: {
-                        show: true,
-                        radius: 2 / 3,
-                        formatter: labelFormatter,
-                        threshold: 0.1
-                    }
-
+                    radius: 2 / 3,
+                    formatter: labelFormatter,
+                    threshold: 0.1
                 }
-            },
-            legend: {
-                show: false
+
             }
-        })
-        /*
-         * END DONUT CHART
-         */
-
+        },
+        legend: {
+            show: false
+        }
     })
+    /*
+     * END DONUT CHART
+     */
 
-    function labelFormatter(label, series) {
+    //})
+
+    /*function labelFormatter(label, series) {
         console.log()
         return '<div style="font-size:8px; text-align:center; padding:2px; color: #fff; font-weight: 600;">' +
             label +
             '<br>' +
             Math.round(series.percent) + '%</div>'
-    }
+    */
 </script>

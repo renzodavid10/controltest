@@ -141,6 +141,14 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
                                 </p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" onclick="cargar_contenido('contenido_principal','reunion/reunion.php')">
+                                <i class="nav-icon fa-regular fa-message "></i>
+                                <p>
+                                    Mis Reuniones
+                                </p>
+                            </a>
+                        </li>
                         <?php //if ($_SESSION['S_ROL_PT'] == "ADMIN") {
 
                         ?>
@@ -164,14 +172,7 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link" onclick="cargar_contenido('contenido_principal','reunion/reunion.php')">
-                                <i class="nav-icon fa-regular fa-message "></i>
-                                <p>
-                                    Mis Reuniones
-                                </p>
-                            </a>
-                        </li>
+
                         <?php   // } 
                         ?>
 
@@ -206,7 +207,7 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
                 <div class="row">
                     <!-- Default to the left -->
                     <div class="">
-                        <strong>&copy; Copyright MPCH GTIE - Todos los derechos reservados.</strong> All rights reserved.
+                        <strong>&copy; <!--Copyright MPCH GTIE - Todos los derechos reservados-->.</strong> All rights reserved.
                     </div>
                 </div>
             </div>
@@ -253,9 +254,9 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
         var idioma_espanol = {
 
             "lengthMenu": "Mostrar _MENU_ registros por página",
-            "zeroRecords": "Ningún usuario encontrado",
+            "zeroRecords": "Ningún dato encontrado",
             "info": "Mostrando de _START_ a _END_ de un total de _TOTAL_ registros",
-            "infoEmpty": "Ningún usuario encontrado",
+            "infoEmpty": "Ningún dato encontrado",
             "infoFiltered": "(filtrados desde _MAX_ registros totales)",
             "search": "Buscar:",
             "loadingRecords": "Cargando...",

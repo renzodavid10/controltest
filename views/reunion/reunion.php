@@ -43,6 +43,7 @@
 <section class="content">
     <!-- <div class="container-fluid">-->
     <div class="row">
+        <!-- INICIO DE LA PARTE IZQUIERDA-->
         <div class="col-md-8">
             <div class="card mt-2">
                 <div class="card-header">
@@ -83,9 +84,7 @@
                         </div>
                         <div class="col-6 mb-2 font-weight-normal ">
                             <select class="js-example-basic-single" id="select_elemento" style="width: 100%">
-                                <option value="0">Elemento</option>
-                                <option>JYMDA</option>
-                                <option>DEPROTEC</option>
+
                             </select>
                         </div>
 
@@ -97,6 +96,7 @@
                     </div>
                 </div>
             </div>
+            <!-- INICIO DE NO INICIADA-->
             <div class="card ">
                 <div class="card-header">
                     <div class="row ">
@@ -113,7 +113,6 @@
 
                 </div>
                 <div class="card-body collapse">
-
                     <!-- <div class="col-12 table-responsive">-->
                     <table id="tabla_tarea_si" class="table table-sm text-center table-striped  table-hover" style="width: 100%">
                         <style>
@@ -152,6 +151,7 @@
                 </div>
                 <!-- /.card-body -->
             </div>
+            <!-- INICIO DE EN PROGRESO-->
             <div class="card ">
                 <div class="card-header">
                     <div class="row ">
@@ -167,10 +167,43 @@
                     </div>
                 </div>
                 <div class="card-body collapse">
+                    <table id="tabla_tarea_pr" class="table table-sm text-center table-striped  table-hover" style="width: 100%">
+                        <style>
+                            table {
+                                overflow-x: auto;
+                                font-size: small;
 
+                            }
+
+                            table td {
+                                word-wrap: break-word;
+                                max-width: 400px;
+                            }
+
+                            #tabla_tarea_pr td {
+                                white-space: inherit;
+                                text-align: justify !important;
+                                vertical-align: middle;
+                            }
+                        </style>
+                        <thead>
+                            <tr>
+
+                                <th>#</th>
+                                <th>CREACIÓN</th>
+                                <th>RESPONSABLE</th>
+                                <th>DESCRIPCIÓN </th>
+                                <th>PLAZO</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+
+                    </table>
                 </div>
                 <!-- /.card-body -->
             </div>
+            <!-- INICIO DE LISTA PARA CIERRE-->
             <div class="card ">
                 <div class="card-header ">
                     <div class="row ">
@@ -186,20 +219,108 @@
                     </div>
                 </div>
                 <div class="card-body collapse">
+                    <table id="tabla_tarea_lc" class="table table-sm text-center table-striped  table-hover" style="width: 100%">
+                        <style>
+                            table {
+                                overflow-x: auto;
+                                font-size: small;
 
+                            }
+
+                            table td {
+                                word-wrap: break-word;
+                                max-width: 400px;
+                            }
+
+                            #tabla_tarea_lc td {
+                                white-space: inherit;
+                                text-align: justify !important;
+                                vertical-align: middle;
+                            }
+                        </style>
+                        <thead>
+                            <tr>
+
+                                <th>#</th>
+                                <th>CREACIÓN</th>
+                                <th>RESPONSABLE</th>
+                                <th>DESCRIPCIÓN </th>
+                                <th>PLAZO</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+
+                    </table>
                 </div>
                 <!-- /.card-body -->
             </div>
+            <!-- INICIO DE RETRASADA-->
+            <div class="card ">
+                <div class="card-header">
+                    <div class="row ">
+                        <h4 class="col-10 card-title w-100">
+                            Retrasada
+                        </h4>
+                        <p id='contar' class="col-1"> </p>
+                        <div class="card-tools">
+                            <button type="button" class="btn mostrar-info" id="mostrar-info">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
 
+                </div>
+                <div class="card-body collapse">
+                    <!-- <div class="col-12 table-responsive">-->
+                    <table id="tabla_tarea_rt" class="table table-sm text-center table-striped  table-hover" style="width: 100%">
+                        <style>
+                            table {
+                                overflow-x: auto;
+                                font-size: small;
+
+                            }
+
+                            table td {
+                                word-wrap: break-word;
+                                max-width: 400px;
+                            }
+
+                            #tabla_tarea_rt td {
+                                white-space: inherit;
+                                text-align: justify !important;
+                                vertical-align: middle;
+                            }
+                        </style>
+                        <thead>
+                            <tr>
+
+                                <th>#</th>
+                                <th>CREACIÓN</th>
+                                <th>RESPONSABLE</th>
+                                <th>DESCRIPCIÓN </th>
+                                <th>PLAZO</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+
+                    </table>
+                    <!--</div>-->
+                </div>
+                <!-- /.card-body -->
+            </div>
         </div>
+        <!-- FIN DE LA PARTE IZQUIERDA-->
+        <!-- INICIO DE LA PARTE DERECHA-->
         <div class="col-md-4">
             <div class="row">
                 <div class="col-12" id="accordion">
                     <div class="card card-primary card-outline">
                         <a class="d-block w-100" data-toggle="collapse" href="#collapseTwo">
                             <div class="card-header">
-                                <h4 class="card-title w-100">
-                                    2. Aenean massa
+                                <h4 class="card-title text-center w-100">
+                                    COMENTARIOS DE LA REUNION
                                 </h4>
                             </div>
                         </a>
@@ -227,6 +348,7 @@
             </div>
         </div>
     </div>
+    <!-- FIN DE LA PARTE DERECHA-->
     <!--</div>-->
 </section>
 
@@ -238,5 +360,6 @@
     });
     listar_tarea();
     contar_tarea('No iniciada');
+    listar_empresa()
     //listar_tmiembro();
 </script>

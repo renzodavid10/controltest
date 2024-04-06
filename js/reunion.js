@@ -60,11 +60,14 @@ $(".mostrar-info").click(function () {
     $(this).closest(".card").find(".card-body").toggle();
 })
 var tbl_primer_miembro;
-
+var tbl_tare_progreso;
+var tbl_tare_lc;
+var tbl_tare_rt;
 function listar_tarea() {
     tbl_primer_miembro = $("#tabla_tarea_si").DataTable({
         columnDefs: [
-            { width: '50%', targets: [3] }
+            { width: '50%', targets: [3] },
+            { width: '5%', targets: [5,6] }
         ],
         "bLengthChange": false,
         "ordering": false,
@@ -102,13 +105,153 @@ function listar_tarea() {
         "language": idioma_espanol,
         select: true
     });
-
     tbl_primer_miembro.on('draw.td', function () {
         var PageInfo = $("#tabla_tarea_si").DataTable().page.info();
         tbl_primer_miembro.column(0, { page: 'current' }).nodes().each(function (cell, i) {
             cell.innerHTML = i + 1 + PageInfo.start;
         });
     });
+    tbl_tare_progreso = $("#tabla_tarea_pr").DataTable({
+        columnDefs: [
+            { width: '50%', targets: [3] }
+        ],
+        "bLengthChange": false,
+        "ordering": false,
+        //"bLengthChange": true,
+        //"searching": { "regex": false },
+        "searching": false,
+        //"lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
+        "lengthMenu": false,
+        "pageLength": 8,
+        "destroy": true,
+        //"async": false,
+        //"processing": true,
+        /*"ajax": {
+            "url": "../controller/tarea/listar_tar.php",
+            type: 'POST'
+        },
+        
+        "columns": [
+            /* Datos que se va a traer en el procedimiento almacenado */
+        /*{ "defaultContent": "" },
+        { "data": "tare_crea" },
+        { "data": "tare_resp" },
+        { "data": "tare_desc" },
+        { "data": "tare_tiem" },
+        {
+            "defaultContent": "<button  class='editar btn btn-sm'><i class='fa-solid fa-flag'></i></button>&nbsp; ",
+
+        },
+        {
+            "defaultContent": " <button  class='editar btn  btn-sm'><i class='fa-solid fa-angle-right'></i></button>&nbsp; ",
+        },
+
+    ],*/
+
+        "language": idioma_espanol,
+        select: true
+    });
+    tbl_tare_progreso.on('draw.td', function () {
+        var PageInfo = $("#tabla_tarea_pr").DataTable().page.info();
+        tbl_tare_progreso.column(0, { page: 'current' }).nodes().each(function (cell, i) {
+            cell.innerHTML = i + 1 + PageInfo.start;
+        });
+    });
+    tbl_tare_lc = $("#tabla_tarea_lc").DataTable({
+        columnDefs: [
+            { width: '50%', targets: [3] }
+        ],
+        "bLengthChange": false,
+        "ordering": false,
+        //"bLengthChange": true,
+        //"searching": { "regex": false },
+        "searching": false,
+        //"lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
+        "lengthMenu": false,
+        "pageLength": 8,
+        "destroy": true,
+        //"async": false,
+        //"processing": true,
+        /*"ajax": {
+            "url": "../controller/tarea/listar_tar.php",
+            type: 'POST'
+        },
+        
+        "columns": [
+            /* Datos que se va a traer en el procedimiento almacenado */
+        /*{ "defaultContent": "" },
+        { "data": "tare_crea" },
+        { "data": "tare_resp" },
+        { "data": "tare_desc" },
+        { "data": "tare_tiem" },
+        {
+            "defaultContent": "<button  class='editar btn btn-sm'><i class='fa-solid fa-flag'></i></button>&nbsp; ",
+
+        },
+        {
+            "defaultContent": " <button  class='editar btn  btn-sm'><i class='fa-solid fa-angle-right'></i></button>&nbsp; ",
+        },
+
+    ],*/
+
+        "language": idioma_espanol,
+        select: true
+    });
+    tbl_tare_lc.on('draw.td', function () {
+        var PageInfo = $("#tabla_tarea_lc").DataTable().page.info();
+        tbl_tare_lc.column(0, { page: 'current' }).nodes().each(function (cell, i) {
+            cell.innerHTML = i + 1 + PageInfo.start;
+        });
+    });
+    tbl_tare_rt = $("#tabla_tarea_rt").DataTable({
+        columnDefs: [
+            { width: '50%', targets: [3] }
+        ],
+        "bLengthChange": false,
+        "ordering": false,
+        //"bLengthChange": true,
+        //"searching": { "regex": false },
+        "searching": false,
+        //"lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
+        "lengthMenu": false,
+        "pageLength": 8,
+        "destroy": true,
+        //"async": false,
+        //"processing": true,
+        /*"ajax": {
+            "url": "../controller/tarea/listar_tar.php",
+            type: 'POST'
+        },
+        
+        "columns": [
+            /* Datos que se va a traer en el procedimiento almacenado */
+        /*{ "defaultContent": "" },
+        { "data": "tare_crea" },
+        { "data": "tare_resp" },
+        { "data": "tare_desc" },
+        { "data": "tare_tiem" },
+        {
+            "defaultContent": "<button  class='editar btn btn-sm'><i class='fa-solid fa-flag'></i></button>&nbsp; ",
+
+        },
+        {
+            "defaultContent": " <button  class='editar btn  btn-sm'><i class='fa-solid fa-angle-right'></i></button>&nbsp; ",
+        },
+
+    ],*/
+
+        "language": idioma_espanol,
+        select: true
+    });
+    tbl_tare_rt.on('draw.td', function () {
+        var PageInfo = $("#tabla_tarea_rt").DataTable().page.info();
+        tbl_tare_rt.column(0, { page: 'current' }).nodes().each(function (cell, i) {
+            cell.innerHTML = i + 1 + PageInfo.start;
+        });
+    });
+
+
+
 
 }
 function contar_tarea(tipo) {
@@ -118,13 +261,40 @@ function contar_tarea(tipo) {
         async: 'false'
 
     }).done(function (resp) {
-        console.log(resp);
+        console.log(resp + ' numero de:');
 
         //let data = JSON.parse(resp);
         //console.log(data.length);
-        if (resp > 0) {
-            
-            document.getElementById("contar").innerHTML=resp;
-        }
+        /* if (resp > 0) {
+             
+             document.getElementById("contar").innerHTML=resp;
+         }*/
+        resp > 0 ? document.getElementById("contar").innerHTML = resp : document.getElementById("contar").innerHTML = 0;
+    });
+}
+
+function listar_empresa() {
+    $.ajax({
+        url: '../controller/empresa/listar_empr.php',
+        type: 'POST',
+        async: 'false'
+    }).done(function (resp) {
+        console.log(resp);
+
+        let data = JSON.parse(resp);
+        console.log(data);
+        if (data.length > 0) {
+            llenardata = "<option value='0'>Elemento </option>";
+            for (let i = 0; i < data.length; i++) {
+                llenardata += "<option value='" + data[i]['empr_name'] + "'>" + data[i]['empr_name'] + " </option>";
+                // console.log(data[i]['usua_dni']);
+                //break;
+            }
+            document.getElementById('select_elemento').innerHTML = llenardata;
+            //console.log(data);
+        } else
+            llenardata = "<option value='0'>Elemento </option>";
+        document.getElementById('select_elemento').innerHTML = llenardata;
+        console.log("N o");
     });
 }
