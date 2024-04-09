@@ -30,7 +30,9 @@
     </div>
 </div>-->
 <script src="../js/reunion.js?rev=<?php echo time() ///para recgar el js 
-                                    ?>"></script>
+                                    ?>">
+
+</script>
 <style>
     .select2-container .select2-selection--single {
         height: 38px !important;
@@ -131,6 +133,31 @@
                                 white-space: inherit;
                                 text-align: justify !important;
                                 vertical-align: middle;
+                            }
+
+                            #tabla_tarea_si tr td:nth-child(3) {
+                                text-align: center !important;
+
+
+                            }
+
+                            #tabla_tarea_si tr:first-child td:nth-child(4) {
+                                width: 50%;
+
+                            }
+
+                            #tabla_tarea_si tr td:nth-child(5) {
+                                width: 10%;
+                                /*align-items: center;*/
+                                text-align: center !important;
+                            }
+
+                            #tabla_tarea_si tr:first-child td:nth-child(6) {
+                                width: 5.5%;
+                            }
+
+                            #tabla_tarea_si tr:first-child td:nth-child(7) {
+                                width: 5.5%;
                             }
                         </style>
                         <thead>
