@@ -428,7 +428,7 @@
 <!-- Summernote -->
 <script src="../plugins/summernote/summernote-bs4.min.js"></script>
 <script>
-    // listar_tarea();
+    listar_tarea();
     listar_usu();
     $(document).ready(function() {
         $('.js-example-basic-single').select2();
