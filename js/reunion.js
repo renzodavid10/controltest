@@ -59,7 +59,7 @@ function listar_usu() {
 
 $(".mostrar-info").click(function () {
     $(this).closest(".card").find(".card-body").toggle();
-    listar_tarea();
+   // listar_tarea();
 
 })
 var tbl_primer_miembro;
