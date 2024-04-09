@@ -331,7 +331,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card col-12 " id="mostrar_detalle">
+                <div class="card col-12 collapse" id="mostrar_detalle">
                     <div class="card-header">
                         <h3 class="card-title">
                             Información
@@ -350,16 +350,16 @@
                             <button type="button" class="btn btn-primary btn-sm mt-1 mr-1" style="font-size: small;">Cancelada</button>
                             <button type="button" class="btn btn-primary btn-sm mt-1 mr-1" style="font-size: small;">Cerrada</button>
                         </div>
-                        <div class="row">
+                        <div class="row font-weight-normal ">
                             <div class="mt-3 col-12">
                                 <label for="descri" class="form-label">DESCRIPCIÓN DE LA ACCIÓN</label>
-                                <textarea id="descri" class="form-control" rows="3"></textarea>
+                                <textarea id="descri" class="form-control" rows="4" style="font-size: small;"></textarea>
                             </div>
                             <div class="mt-2 col-12">
                                 <label for="nreu" class="form-label">NOMBRE DE LA REUNIÓN</label>
-                                <input type="text" placeholder="" class="form-control" id="nreu">
+                                <input type="text" placeholder="Nombre de la reunión" class="form-control" id="nreu">
                             </div>
-                            <div class="mt-2 col-12" style="box-shadow: 0px 3px 8px rgb(20 ,8 ,8 ,0.1); color:#5773EF;">
+                            <div class="mt-2 col-12" style="font-weight: 900;box-shadow: 0px 3px 8px rgb(20 ,8 ,8 ,0.1); color:#5773EF;">
                                 <font>
                                     PLAN VPO MOTUPE
                                 </font>
@@ -387,9 +387,13 @@
                             <div class="mt-1 col-12">
                                 <label for="select_departamentos" class="form-label">DEPARTAMENTOS</label>
                                 <select class="js-example-basic-single" id="select_departamentos" style="width: 100%">
-                                    <!-- <option value="0">Responsable</option>
-                                    <option>JYMDA</option>
-                                    <option>DEPROTEC</option>-->
+                                    <option value="0">Departamento</option>
+                                    <option>SEGURIDAD</option>
+                                    <option>MEDIO AMBIENTE</option>
+                                    <option>INGENIERIA</option>
+                                    <option>ENVASADO</option>
+                                    <option>ELABORACION</option>
+                                    <option>NABS</option>
                                 </select>
                             </div>
                             <div class="mt-1 col-12">
@@ -450,5 +454,4 @@
         ]
 
     });
- 
 </script>

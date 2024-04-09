@@ -48,6 +48,7 @@ function listar_usu() {
                 //break;
             }
             document.getElementById('select_responsable').innerHTML = llenardata;
+            document.getElementById('select_responsable2').innerHTML = llenardata;
             //console.log(data);
         } else
             llenardata = "<option value='0'>Responsable </option>";
@@ -308,7 +309,11 @@ function listar_empresa() {
 
 $("#tabla_tarea_si").on('click', 'tr', function () {
     //Muestro la parte derecha
-    $("#mostrar_detalle").toggle();
+    //$("#mostrar_detalle").toggle();
+    console.log(document.getElementById("mostrar_detalle").style.display);
+    document.getElementById("mostrar_detalle").style.display = "block"
+
+    //document.getElementById("mostrar_detalle").style.display == 'none' ? document.getElementById("mostrar_detalle").style.display = "block" : document.getElementById("mostrar_detalle").style.display = "none";
     // Remover la clase de selección de todas las filas
     tbl_primer_miembro.$('tr.selected').removeClass('selected');
     // Agregar la clase de selección a la fila clickeada
@@ -316,6 +321,12 @@ $("#tabla_tarea_si").on('click', 'tr', function () {
     // Obtener los datos de la fila seleccionada
     var rowData = tbl_primer_miembro.row(this).data();
 
-    document.getElementById('descri').value=rowData['tare_desc'];
+    document.getElementById('descri').value = rowData['tare_desc'];
+    document.getElementById('fvenci').value = rowData['tare_tiem'];
+    document.getElementById('select_responsable2').value = rowData['tare_desc'];
+    $('#select_responsable2').select2().val(rowData["tare_resp"]).trigger('change.select2');
+    $('#select_departamentos').select2().val(rowData["tare_depa"]).trigger('change.select2');
+    document.getElementById('select_departamentos').value = rowData['tare_depa'];
+    document.getElementById('select_departamentos').value = rowData['tare_desc'];
     console.log(rowData);
 })
