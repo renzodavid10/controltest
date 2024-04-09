@@ -59,6 +59,7 @@ function listar_usu() {
 $(".mostrar-info").click(function () {
     $(this).closest(".card").find(".card-body").toggle();
     listar_tarea();
+
 })
 var tbl_primer_miembro;
 var tbl_tare_progreso;
@@ -259,7 +260,10 @@ function contar_tarea(tipo) {
     $.ajax({
         url: '../controller/tarea/contar_tarea.php',
         type: 'POST',
-        async: 'false'
+        async: 'false',
+        data: {
+            tipo: tipo,
+        }
 
     }).done(function (resp) {
         console.log(resp + ' numero de:');
@@ -270,7 +274,9 @@ function contar_tarea(tipo) {
              
              document.getElementById("contar").innerHTML=resp;
          }*/
-        resp > 0 ? document.getElementById("contar").innerHTML = resp : document.getElementById("contar").innerHTML = 0;
+        if (tipo == 'No iniciada') {
+            resp > 0 ? document.getElementById("contar").innerHTML = resp : document.getElementById("contar").innerHTML = 0;
+        }
     });
 }
 
@@ -299,3 +305,17 @@ function listar_empresa() {
         console.log("N o");
     });
 }
+
+$("#tabla_tarea_si").on('click', 'tr', function () {
+    //Muestro la parte derecha
+    $("#mostrar_detalle").toggle();
+    // Remover la clase de selección de todas las filas
+    tbl_primer_miembro.$('tr.selected').removeClass('selected');
+    // Agregar la clase de selección a la fila clickeada
+    $(this).addClass('selected');
+    // Obtener los datos de la fila seleccionada
+    var rowData = tbl_primer_miembro.row(this).data();
+
+    document.getElementById('descri').value=rowData['tare_desc'];
+    console.log(rowData);
+})

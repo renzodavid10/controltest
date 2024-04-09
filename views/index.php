@@ -191,6 +191,7 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
         </aside>
 
 
+
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper" id="contenido_principal">
             <!-- Content Header (Page header) -->

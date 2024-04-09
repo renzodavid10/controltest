@@ -158,7 +158,7 @@
                         <h4 class="col-10 card-title w-100">
                             En Progreso
                         </h4>
-                        <p class="col-1"> 3</p>
+                        <p id='contar_pr' class="col-1"> 3</p>
                         <div class="card-tools">
                             <button type="button" class="btn mostrar-info" id="mostrar-info">
                                 <i class="fas fa-minus"></i>
@@ -210,7 +210,7 @@
                         <h4 class="col-10 card-title w-100">
                             Lista para cierre
                         </h4>
-                        <p class="col-1"> 3</p>
+                        <p id='contar_lc' class="col-1"> 3</p>
                         <div class="card-tools">
                             <button type="button" class="btn mostrar-info" id="mostrar-info">
                                 <i class="fas fa-minus"></i>
@@ -262,7 +262,7 @@
                         <h4 class="col-10 card-title w-100">
                             Retrasada
                         </h4>
-                        <p id='contar' class="col-1"> </p>
+                        <p id='contar_rt' class="col-1"> </p>
                         <div class="card-tools">
                             <button type="button" class="btn mostrar-info" id="mostrar-info">
                                 <i class="fas fa-minus"></i>
@@ -286,6 +286,7 @@
                                 max-width: 400px;
                             }
 
+
                             #tabla_tarea_rt td {
                                 white-space: inherit;
                                 text-align: justify !important;
@@ -294,7 +295,6 @@
                         </style>
                         <thead>
                             <tr>
-
                                 <th>#</th>
                                 <th>CREACIÓN</th>
                                 <th>RESPONSABLE</th>
@@ -306,28 +306,6 @@
                         </thead>
 
                     </table>
-                    <!--</div>-->
-                </div>
-                <!-- /.card-body -->
-            </div>
-            <div class="card ">
-                <div class="card-header">
-                    <div class="row ">
-                        <h4 class="col-10 card-title w-100">
-                            Retrasada
-                        </h4>
-                        <p id='contar' class="col-1"> </p>
-                        <div class="card-tools">
-                            <button type="button" class="btn mostrar-info" id="mostrar-info">
-                                <i class="fas fa-minus"></i>
-                            </button>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="card-body collapse">
-                    <!-- <div class="col-12 table-responsive">-->
-
                     <!--</div>-->
                 </div>
                 <!-- /.card-body -->
@@ -347,33 +325,99 @@
                             </div>
                         </a>
                         <div id="collapseTwo" class="collapse" data-parent="#accordion">
-                            <div id="summernote">
-
-                            </div>
+                            <!--<div id="summernote">
+                            </div>-->
 
                         </div>
                     </div>
-                    <div class="card card-primary card-outline">
-                        <a class="d-block w-100" data-toggle="collapse" href="#collapseThree">
-                            <div class="card-header">
-                                <h4 class="card-title w-100">
-                                    3. Donec quam felis
-                                </h4>
-                            </div>
-                        </a>
-                        <div id="collapseThree" class="collapse" data-parent="#accordion">
-                            <div class="card-body">
-                                Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
-                            </div>
+                </div>
+                <div class="card col-12 " id="mostrar_detalle">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            Información
+                        </h3>
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool " data-card-widget="remove">
+                                <i class="fas fa-times"></i>
+                            </button>
                         </div>
                     </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <button type="button" class="btn btn-primary btn-sm mt-1 mr-1" style="font-size: small;">No iniciada</button>
+                            <button type="button" class="btn btn-primary btn-sm mt-1 mr-1" style="font-size: small;">En Progreso</button>
+                            <button type="button" class="btn btn-primary btn-sm mt-1 mr-1" style="font-size: small;">Lista para Cierre</button>
+                            <button type="button" class="btn btn-primary btn-sm mt-1 mr-1" style="font-size: small;">Cancelada</button>
+                            <button type="button" class="btn btn-primary btn-sm mt-1 mr-1" style="font-size: small;">Cerrada</button>
+                        </div>
+                        <div class="row">
+                            <div class="mt-3 col-12">
+                                <label for="descri" class="form-label">DESCRIPCIÓN DE LA ACCIÓN</label>
+                                <textarea id="descri" class="form-control" rows="3"></textarea>
+                            </div>
+                            <div class="mt-2 col-12">
+                                <label for="nreu" class="form-label">NOMBRE DE LA REUNIÓN</label>
+                                <input type="text" placeholder="" class="form-control" id="nreu">
+                            </div>
+                            <div class="mt-2 col-12" style="box-shadow: 0px 3px 8px rgb(20 ,8 ,8 ,0.1); color:#5773EF;">
+                                <font>
+                                    PLAN VPO MOTUPE
+                                </font>
+                            </div>
+                            <div class="mt-1 col-12">
+                                <label for="fvenci" class="form-label">FECHA DE VENCIMIENTO</label>
+                                <input type="date" class="form-control" id="fvenci">
+                            </div>
+                            <div class="mt-1 col-12">
+                                <label for="select_responsable2" class="form-label">RESPONSABLE</label>
+                                <select class="js-example-basic-single" id="select_responsable2" style="width: 100%">
+                                    <!-- <option value="0">Responsable</option>
+                                    <option>JYMDA</option>
+                                    <option>DEPROTEC</option>-->
+                                </select>
+                            </div>
+                            <div class="mt-1 col-12">
+                                <label for="select_indicadores" class="form-label">INDICADORES</label>
+                                <select class="js-example-basic-single" id="select_indicadores" style="width: 100%">
+                                    <!-- <option value="0">Responsable</option>
+                                    <option>JYMDA</option>
+                                    <option>DEPROTEC</option>-->
+                                </select>
+                            </div>
+                            <div class="mt-1 col-12">
+                                <label for="select_departamentos" class="form-label">DEPARTAMENTOS</label>
+                                <select class="js-example-basic-single" id="select_departamentos" style="width: 100%">
+                                    <!-- <option value="0">Responsable</option>
+                                    <option>JYMDA</option>
+                                    <option>DEPROTEC</option>-->
+                                </select>
+                            </div>
+                            <div class="mt-1 col-12">
+                                <label for="oracion" class="form-label">ORIGEN DE LA ACCION</label>
+                                <input type="text" id="oracion" class="form-control">
+                            </div>
+                            <div class="mt-1 col-12">
+                                <label for="craiz" class="form-label">ORIGEN DE LA ACCION</label>
+                                <input type="text" id="craiz" class="form-control">
+                            </div>
+                            <div class="mt-1 col-12">
+                                <label class="form-label">COLUMNA</label>
+                                <div class="container pb-2 pt-1" style="background-color:#f5f5f5;  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);">
+                                    <label for="coment" class="form-label">COMENTARIO</label>
+                                    <textarea id="coment" class="form-control" rows="6"></textarea>
+                                    <div id="summernote">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
+                    </div>
                 </div>
             </div>
         </div>
+        <!-- FIN DE LA PARTE DERECHA-->
     </div>
-    </div>
-    <!-- FIN DE LA PARTE DERECHA-->
+
     <!--</div>-->
 </section>
 
@@ -393,7 +437,18 @@
     //listar_tmiembro();
 
     $('#summernote').summernote({
-
+        placeholder: 'Añadir comentario',
+        //tabsize: 2,
+        toolbar: [
+            ['style', ['style']],
+            ['font', ['bold', 'underline', 'clear']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            //['table', ['table']],
+            ['insert', ['link', 'picture', 'video']],
+            ['view', ['fullscreen', /*'codeview', /*'help'*/ ]]
+        ]
 
     });
+ 
 </script>
