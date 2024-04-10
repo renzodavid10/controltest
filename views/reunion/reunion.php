@@ -370,7 +370,7 @@
                                 text-align: justify !important;
                                 vertical-align: middle;
                             }
-                            
+
                             #tabla_tarea_rt tr td:nth-child(3) {
                                 text-align: center !important;
 
@@ -447,7 +447,7 @@
                                 text-align: justify !important;
                                 vertical-align: middle;
                             }
-                            
+
                             #tabla_tarea_cer tr td:nth-child(3) {
                                 text-align: center !important;
 
@@ -589,9 +589,16 @@
                                 <label class="form-label">COLUMNA</label>
                                 <div class="container pb-2 pt-1" style="background-color:#f5f5f5;  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);">
                                     <label for="coment" class="form-label">COMENTARIO</label>
-                                    <textarea id="coment" class="form-control" rows="6"></textarea>
+                                    <div class="col-12 chat-box" style=" min-height: 400px;padding: 10px 15px 15px 20px;background-color: #ffffff;">
+                                        
+
+                                    </div>
                                     <div id="summernote">
                                     </div>
+                                    <div class="col-12 text-right">
+                                        <button type="button" class="btn btn-outline-secondary btn-sm" style="font-size: small;" onclick="">Enviar<i class="fa-solid fa-location-arrow ml-1"></i></button>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
