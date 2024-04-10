@@ -2,7 +2,8 @@
 require_once('../../model/model_tarea.php');
 
 $MT = new model_tarea();
-$consulta=$MT->listar_tarea();
+$accion= htmlspecialchars($_POST['accion'], ENT_QUOTES, 'UTF-8');
+$consulta=$MT->listar_tarea($accion);
 
 if (count($consulta) > 0) {
     //echo 1;

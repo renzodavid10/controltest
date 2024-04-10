@@ -84,11 +84,9 @@
                                 <input type="email" id="email" placeholder="" class="form-control">
                             </div>
                             <div class="col-6 ">
-                                <label for="select_agrupacion_editar" class="form-label">Empresa:</label>
+                                <label for="select_empresa" class="form-label">Empresa:</label>
                                 <select class="js-example-basic-single" id="select_empresa" style="width: 100%">
-                                    <option value="0">Seleccionar Empresa</option>
-                                    <option value='JYMDA'>JYMDA</option>
-                                    <option value='DEPROTEC'>DEPROTEC</option>
+
                                 </select>
                             </div>
                             <div class="mb-3 col-6">
@@ -104,7 +102,7 @@
                     </div>
                     <div class="card-footer">
                         <div class=" col-12 text-end">
-                            <button type="button" class="btn btn-secondary " onclick="iniciar_Sesion()">Regresar</button>
+                            <button type="button" class="btn btn-secondary " onclick="regresar()">Regresar</button>
                             <button type="button" class="btn btn-primary btn-lg" onclick="crear_cuenta()">Guardar</button>
                         </div>
                     </div>
@@ -118,6 +116,8 @@
 <script type="text/javascript" src="../utils/jquery/jquery.js"></script>
 <script type="text/javascript" src="../utils/jquery/jquery.min.js"></script>
 <script type="text/javascript" src="../plugins/select2/js/select2.full.min.js"></script>
+<!--ALerts-->
+<script src="../utils/utilitarios/sweetalert.js"></script>
 <script src="../js/register.js"></script>
 <script>
     $(document).ready(function() {
@@ -135,4 +135,5 @@
         tecla_final = String.fromCharCode(tecla);
         return patron.test(tecla_final);
     }
+    listar_empresa();
 </script>

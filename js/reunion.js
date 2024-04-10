@@ -25,6 +25,7 @@ function crear_tarea() {
         console.log(e);
         listar_tarea();
         contar_tarea('No iniciada');
+        contar_tarea('En Progreso');
     })
 
 }
@@ -59,7 +60,7 @@ function listar_usu() {
 
 $(".mostrar-info").click(function () {
     $(this).closest(".card").find(".card-body").toggle();
-   // listar_tarea();
+    // listar_tarea();
 
 })
 var tbl_primer_miembro;
@@ -85,7 +86,8 @@ function listar_tarea() {
         "processing": true,
         "ajax": {
             "url": "../controller/tarea/listar_tar.php",
-            type: 'POST'
+            type: 'POST',
+            data: { accion: 'No iniciada', }
         },
 
         "columns": [
@@ -128,28 +130,31 @@ function listar_tarea() {
         "pageLength": 8,
         "destroy": true,
         //"async": false,
-        //"processing": true,
-        /*"ajax": {
+        "processing": true,
+        "ajax": {
             "url": "../controller/tarea/listar_tar.php",
-            type: 'POST'
+            type: 'POST',
+            data: {
+                accion: 'En Progreso',
+            }
         },
-        
+
         "columns": [
             /* Datos que se va a traer en el procedimiento almacenado */
-        /*{ "defaultContent": "" },
-        { "data": "tare_crea" },
-        { "data": "tare_resp" },
-        { "data": "tare_desc" },
-        { "data": "tare_tiem" },
-        {
-            "defaultContent": "<button  class='editar btn btn-sm'><i class='fa-solid fa-flag'></i></button>&nbsp; ",
+            { "defaultContent": "" },
+            { "data": "tare_crea" },
+            { "data": "tare_resp" },
+            { "data": "tare_desc" },
+            { "data": "tare_tiem" },
+            {
+                "defaultContent": "<button  class='editar btn btn-sm'><i class='fa-solid fa-flag'></i></button>&nbsp; ",
 
-        },
-        {
-            "defaultContent": " <button  class='editar btn  btn-sm'><i class='fa-solid fa-angle-right'></i></button>&nbsp; ",
-        },
+            },
+            {
+                "defaultContent": " <button  class='editar btn  btn-sm'><i class='fa-solid fa-angle-right'></i></button>&nbsp; ",
+            },
 
-    ],*/
+        ],
 
         "language": idioma_espanol,
         select: true
@@ -175,27 +180,28 @@ function listar_tarea() {
         "destroy": true,
         //"async": false,
         //"processing": true,
-        /*"ajax": {
+        "ajax": {
             "url": "../controller/tarea/listar_tar.php",
-            type: 'POST'
+            type: 'POST',
+            data: { accion: 'Lista para Cierre', }
         },
-        
+
         "columns": [
             /* Datos que se va a traer en el procedimiento almacenado */
-        /*{ "defaultContent": "" },
-        { "data": "tare_crea" },
-        { "data": "tare_resp" },
-        { "data": "tare_desc" },
-        { "data": "tare_tiem" },
-        {
-            "defaultContent": "<button  class='editar btn btn-sm'><i class='fa-solid fa-flag'></i></button>&nbsp; ",
+            { "defaultContent": "" },
+            { "data": "tare_crea" },
+            { "data": "tare_resp" },
+            { "data": "tare_desc" },
+            { "data": "tare_tiem" },
+            {
+                "defaultContent": "<button  class='editar btn btn-sm'><i class='fa-solid fa-flag'></i></button>&nbsp; ",
 
-        },
-        {
-            "defaultContent": " <button  class='editar btn  btn-sm'><i class='fa-solid fa-angle-right'></i></button>&nbsp; ",
-        },
+            },
+            {
+                "defaultContent": " <button  class='editar btn  btn-sm'><i class='fa-solid fa-angle-right'></i></button>&nbsp; ",
+            },
 
-    ],*/
+        ],
 
         "language": idioma_espanol,
         select: true
@@ -220,28 +226,31 @@ function listar_tarea() {
         "pageLength": 8,
         "destroy": true,
         //"async": false,
-        //"processing": true,
-        /*"ajax": {
+        "processing": true,
+        "ajax": {
             "url": "../controller/tarea/listar_tar.php",
-            type: 'POST'
+            type: 'POST',
+            data: {
+                accion: 'Retrasada',
+            }
         },
-        
+
         "columns": [
             /* Datos que se va a traer en el procedimiento almacenado */
-        /*{ "defaultContent": "" },
-        { "data": "tare_crea" },
-        { "data": "tare_resp" },
-        { "data": "tare_desc" },
-        { "data": "tare_tiem" },
-        {
-            "defaultContent": "<button  class='editar btn btn-sm'><i class='fa-solid fa-flag'></i></button>&nbsp; ",
+            { "defaultContent": "" },
+            { "data": "tare_crea" },
+            { "data": "tare_resp" },
+            { "data": "tare_desc" },
+            { "data": "tare_tiem" },
+            {
+                "defaultContent": "<button  class='editar btn btn-sm'><i class='fa-solid fa-flag'></i></button>&nbsp; ",
 
-        },
-        {
-            "defaultContent": " <button  class='editar btn  btn-sm'><i class='fa-solid fa-angle-right'></i></button>&nbsp; ",
-        },
+            },
+            {
+                "defaultContent": " <button  class='editar btn  btn-sm'><i class='fa-solid fa-angle-right'></i></button>&nbsp; ",
+            },
 
-    ],*/
+        ],
 
         "language": idioma_espanol,
         select: true
@@ -277,6 +286,18 @@ function contar_tarea(tipo) {
          }*/
         if (tipo == 'No iniciada') {
             resp > 0 ? document.getElementById("contar").innerHTML = resp : document.getElementById("contar").innerHTML = 0;
+        }
+        if (tipo == 'En Progreso') {
+            resp > 0 ? document.getElementById("contar_pr").innerHTML = resp : document.getElementById("contar_pr").innerHTML = 0;
+        }
+        if (tipo == 'Lista para Cierre') {
+            resp > 0 ? document.getElementById("contar_lc").innerHTML = resp : document.getElementById("contar_lc").innerHTML = 0;
+        }
+        if (tipo == 'Retrasada') {
+            resp > 0 ? document.getElementById("contar_rt").innerHTML = resp : document.getElementById("contar_rt").innerHTML = 0;
+        }
+        if (tipo == 'Cerrada') {
+            resp > 0 ? document.getElementById("contar_cer").innerHTML = resp : document.getElementById("contar_cer").innerHTML = 0;
         }
     });
 }
@@ -329,4 +350,28 @@ $("#tabla_tarea_si").on('click', 'tr', function () {
     document.getElementById('select_departamentos').value = rowData['tare_depa'];
     document.getElementById('select_departamentos').value = rowData['tare_desc'];
     console.log(rowData);
+    //CAMBIAR ESTADO
+    $('.btn').click(function () {
+        //var valor = $(this).text();
+        // console.log(valor);
+        $.ajax({
+            url: '../controller/tarea/cambiar_estado.php',
+            type: 'POST',
+            data: {
+                id: rowData['tare_id'],
+                estado: $(this).text(),
+            }
+        }).done(function (e) {
+            console.log(e);
+        });
+    });
+    //listar_empresa();
 })
+/*function listar_siempre() {
+
+    contar_tarea('No iniciada');
+    contar_tarea('En Progreso');
+    contar_tarea('Lista para Cierre');
+    contar_tarea('Retrasada');
+    contar_tarea('Cerrada');
+}*

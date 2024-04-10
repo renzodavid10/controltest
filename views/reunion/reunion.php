@@ -185,7 +185,7 @@
                         <h4 class="col-10 card-title w-100">
                             En Progreso
                         </h4>
-                        <p id='contar_pr' class="col-1"> 3</p>
+                        <p id='contar_pr' class="col-1"></p>
                         <div class="card-tools">
                             <button type="button" class="btn mostrar-info" id="mostrar-info">
                                 <i class="fas fa-minus"></i>
@@ -237,7 +237,7 @@
                         <h4 class="col-10 card-title w-100">
                             Lista para cierre
                         </h4>
-                        <p id='contar_lc' class="col-1"> 3</p>
+                        <p id='contar_lc' class="col-1"></p>
                         <div class="card-tools">
                             <button type="button" class="btn mostrar-info" id="mostrar-info">
                                 <i class="fas fa-minus"></i>
@@ -337,7 +337,60 @@
                 </div>
                 <!-- /.card-body -->
             </div>
+            <!-- INICIO DE CERRADA-->
+            <div class="card ">
+                <div class="card-header ">
+                    <div class="row ">
+                        <h4 class="col-10 card-title w-100">
+                            Cerrada
+                        </h4>
+                        <p id='contar_cer' class="col-1"></p>
+                        <div class="card-tools">
+                            <button type="button" class="btn mostrar-info" id="mostrar-info">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body collapse">
+                    <table id="tabla_tarea_cer" class="table table-sm text-center table-striped  table-hover" style="width: 100%">
+                        <style>
+                            table {
+                                overflow-x: auto;
+                                font-size: small;
+
+                            }
+
+                            table td {
+                                word-wrap: break-word;
+                                max-width: 400px;
+                            }
+
+                            #tabla_tarea_lc td {
+                                white-space: inherit;
+                                text-align: justify !important;
+                                vertical-align: middle;
+                            }
+                        </style>
+                        <thead>
+                            <tr>
+
+                                <th>#</th>
+                                <th>CREACIÓN</th>
+                                <th>RESPONSABLE</th>
+                                <th>DESCRIPCIÓN </th>
+                                <th>PLAZO</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>
         </div>
+
         <!-- FIN DE LA PARTE IZQUIERDA-->
         <!-- INICIO DE LA PARTE DERECHA-->
         <div class="col-md-4">
@@ -371,9 +424,9 @@
                     </div>
                     <div class="card-body">
                         <div class="row">
-                            <button type="button" class="btn btn-primary btn-sm mt-1 mr-1" style="font-size: small;">No iniciada</button>
+                            <button type="button" class="btn btn-primary btn-sm mt-1 mr-1" style="font-size: small;" onclick="">No iniciada</button>
                             <button type="button" class="btn btn-primary btn-sm mt-1 mr-1" style="font-size: small;">En Progreso</button>
-                            <button type="button" class="btn btn-primary btn-sm mt-1 mr-1" style="font-size: small;">Lista para Cierre</button>
+                            <button type="button" class="btn btn-primary btn-sm mt-1 mr-1" style="font-size: small;" onclick="">Lista para Cierre</button>
                             <button type="button" class="btn btn-primary btn-sm mt-1 mr-1" style="font-size: small;">Cancelada</button>
                             <button type="button" class="btn btn-primary btn-sm mt-1 mr-1" style="font-size: small;">Cerrada</button>
                         </div>
@@ -463,8 +516,13 @@
         console.log("hola")
     });
 
-    contar_tarea('No iniciada');
+    
     listar_empresa()
+    contar_tarea('No iniciada');
+    contar_tarea('En Progreso');
+    contar_tarea('Lista para Cierre');
+    contar_tarea('Retrasada');
+    contar_tarea('Cerrada');
     //listar_tmiembro();
 
     $('#summernote').summernote({

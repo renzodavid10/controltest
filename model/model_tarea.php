@@ -25,14 +25,15 @@ class model_tarea extends conexion_nueva
 
         conexion_nueva::cerrar_conexion();
     }
-    function listar_tarea()
+    function listar_tarea($accion)
     {
         $c = conexion_nueva::conectarBD();
 
-        $sql = "SELECT * FROM  fn_listar_tareas()";
+        $sql = "SELECT * FROM  fn_listar_tareas(?)";
 
         $arreglo = array();
         $query = $c->prepare($sql);
+        $query->bindParam(1, $accion);
         $query->execute();
 
         $resultado = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -56,5 +57,19 @@ class model_tarea extends conexion_nueva
         }
 
         conexion_nueva::cerrar_conexion();
+    }
+    public function cambiar_estado($id, $estado)
+    {
+        $c = conexion_nueva::conectarBD();
+        $sql = 'SELECT * FROM fn_update_statu(?,?)';
+        $query = $c->prepare($sql);
+        $query->bindParam(1, $id);
+        $query->bindParam(2, $estado);
+        $query->execute();
+        if ($row = $query->fetchColumn()) {
+            return $row;
+        }
+        conexion_nueva::cerrar_conexion();
+
     }
 }

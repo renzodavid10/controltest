@@ -19,7 +19,9 @@ class conexion_nueva
     private $dbname = 'railway';
     private $usuario = 'postgres';
     private $port='41401';
+    //private $port='5432';
     private $password = 'hwQdhvxKAwAoopftNPLlJIPLmHsoCogL';
+   
 
     private $pdo;
 
@@ -53,3 +55,5 @@ class conexion_nueva
         $this->pdo = null;
     }
 }
+//$intento= new conexion_nueva;
+//$intento->conectarBD();
