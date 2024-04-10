@@ -23,12 +23,26 @@ function crear_tarea() {
         }
     }).done(function (e) {
         console.log(e);
-        listar_tarea();
-        contar_tarea('No iniciada');
-        contar_tarea('En Progreso');
+        if (e == 1) {
+            return Swal.fire("Mensaje de Confirmacion", "Registro Exitoso", "success").then((value) => {
+                limpiar_registro();
+                listar_tarea();
+                contar_tarea('No iniciada');
+            });
+        }
+
     })
 
 }
+
+function limpiar_registro() {
+    document.getElementById("txt_desc").value = "";
+    document.getElementById("txt_fechaculmina").value = "";
+    $('#select_departamento').select2().val("0").trigger('change.select2');
+    $('#select_responsable').select2().val("0").trigger('change.select2');
+    $('#select_elemento').select2().val("0").trigger('change.select2');
+}
+
 function listar_usu() {
     $.ajax({
         url: '../controller/tarea/listar_usu.php',
@@ -67,6 +81,7 @@ var tbl_primer_miembro;
 var tbl_tare_progreso;
 var tbl_tare_lc;
 var tbl_tare_rt;
+var tbl_tare_cer;
 function listar_tarea() {
     tbl_primer_miembro = $("#tabla_tarea_si").DataTable({
         /*"columnDefs": [
@@ -83,7 +98,7 @@ function listar_tarea() {
         "pageLength": 8,
         "destroy": true,
         //"async": false,
-        "processing": true,
+        //"processing": true,
         "ajax": {
             "url": "../controller/tarea/listar_tar.php",
             type: 'POST',
@@ -117,9 +132,6 @@ function listar_tarea() {
         });
     });
     tbl_tare_progreso = $("#tabla_tarea_pr").DataTable({
-        columnDefs: [
-            { width: '50%', targets: [3] }
-        ],
         "bLengthChange": false,
         "ordering": false,
         //"bLengthChange": true,
@@ -130,7 +142,7 @@ function listar_tarea() {
         "pageLength": 8,
         "destroy": true,
         //"async": false,
-        "processing": true,
+        //"processing": true,
         "ajax": {
             "url": "../controller/tarea/listar_tar.php",
             type: 'POST',
@@ -262,7 +274,55 @@ function listar_tarea() {
         });
     });
 
+    tbl_tare_cer = $("#tabla_tarea_cer").DataTable({
+        columnDefs: [
+            { width: '50%', targets: [3] }
+        ],
+        "bLengthChange": false,
+        "ordering": false,
+        //"bLengthChange": true,
+        //"searching": { "regex": false },
+        "searching": false,
+        //"lengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]],
+        "lengthMenu": false,
+        "pageLength": 8,
+        "destroy": true,
+        //"async": false,
+        //"processing": true,
+        "ajax": {
+            "url": "../controller/tarea/listar_tar.php",
+            type: 'POST',
+            data: {
+                accion: 'Cerrada',
+            }
+        },
 
+        "columns": [
+            /* Datos que se va a traer en el procedimiento almacenado */
+            { "defaultContent": "" },
+            { "data": "tare_crea" },
+            { "data": "tare_resp" },
+            { "data": "tare_desc" },
+            { "data": "tare_tiem" },
+            {
+                "defaultContent": "<button  class='editar btn btn-sm'><i class='fa-solid fa-flag'></i></button>&nbsp; ",
+
+            },
+            {
+                "defaultContent": " <button  class='editar btn  btn-sm'><i class='fa-solid fa-angle-right'></i></button>&nbsp; ",
+            },
+
+        ],
+
+        "language": idioma_espanol,
+        select: true
+    });
+    tbl_tare_cer.on('draw.td', function () {
+        var PageInfo = $("#tabla_tarea_cer").DataTable().page.info();
+        tbl_tare_cer.column(0, { page: 'current' }).nodes().each(function (cell, i) {
+            cell.innerHTML = i + 1 + PageInfo.start;
+        });
+    });
 
 
 }
@@ -332,8 +392,10 @@ $("#tabla_tarea_si").on('click', 'tr', function () {
     //Muestro la parte derecha
     //$("#mostrar_detalle").toggle();
     console.log(document.getElementById("mostrar_detalle").style.display);
-    document.getElementById("mostrar_detalle").style.display = "block"
+    document.getElementById("mostrar_detalle").style.display = "block";
 
+    $('.ed').removeClass('btn-primary').addClass('btn-secondary');
+    $('.ed:nth-child(1)').removeClass('btn-secondary').addClass('btn-primary');
     //document.getElementById("mostrar_detalle").style.display == 'none' ? document.getElementById("mostrar_detalle").style.display = "block" : document.getElementById("mostrar_detalle").style.display = "none";
     // Remover la clase de selección de todas las filas
     tbl_primer_miembro.$('tr.selected').removeClass('selected');
@@ -351,7 +413,7 @@ $("#tabla_tarea_si").on('click', 'tr', function () {
     document.getElementById('select_departamentos').value = rowData['tare_desc'];
     console.log(rowData);
     //CAMBIAR ESTADO
-    $('.btn').click(function () {
+    $('.ed').click(function () {
         //var valor = $(this).text();
         // console.log(valor);
         $.ajax({
@@ -362,16 +424,214 @@ $("#tabla_tarea_si").on('click', 'tr', function () {
                 estado: $(this).text(),
             }
         }).done(function (e) {
+            console.log("HIZO PRIMERO");
+            listar_tarea();
+            listar_siempre();
+            document.getElementById("mostrar_detalle").style.display = "none";
+            //contar_tarea('No iniciada');
             console.log(e);
         });
     });
-    //listar_empresa();
+
 })
-/*function listar_siempre() {
+
+$("#tabla_tarea_pr").on('click', 'tr', function () {
+    //Muestro la parte derecha
+    //$("#mostrar_detalle").toggle();
+    console.log(document.getElementById("mostrar_detalle").style.display);
+    document.getElementById("mostrar_detalle").style.display = "block";
+    //$('.btn-primary').removeClass('btn-primary').addClass('btn-secondary');
+    // $('.ed:nth-child(2)').removeClass('btn-secondary').addClass('btn-primary');
+    $('.ed').removeClass('btn-primary').addClass('btn-secondary');
+    $('.ed:nth-child(2)').removeClass('btn-secondary').addClass('btn-primary');
+    //document.getElementById("mostrar_detalle").style.display == 'none' ? document.getElementById("mostrar_detalle").style.display = "block" : document.getElementById("mostrar_detalle").style.display = "none";
+    // Remover la clase de selección de todas las filas
+    tbl_tare_progreso.$('tr.selected').removeClass('selected');
+    // Agregar la clase de selección a la fila clickeada
+    $(this).addClass('selected');
+    // Obtener los datos de la fila seleccionada
+    var rowData = tbl_tare_progreso.row(this).data();
+
+    document.getElementById('descri').value = rowData['tare_desc'];
+    document.getElementById('fvenci').value = rowData['tare_tiem'];
+    document.getElementById('select_responsable2').value = rowData['tare_desc'];
+    $('#select_responsable2').select2().val(rowData["tare_resp"]).trigger('change.select2');
+    $('#select_departamentos').select2().val(rowData["tare_depa"]).trigger('change.select2');
+    document.getElementById('select_departamentos').value = rowData['tare_depa'];
+    document.getElementById('select_departamentos').value = rowData['tare_desc'];
+    console.log(rowData);
+    //CAMBIAR ESTADO
+    $('.ed').click(function () {
+        //var valor = $(this).text();
+        // console.log(valor);
+        $.ajax({
+            url: '../controller/tarea/cambiar_estado.php',
+            type: 'POST',
+            data: {
+                id: rowData['tare_id'],
+                estado: $(this).text(),
+            }
+        }).done(function (e) {
+            console.log("HIZO SEGUNDO1");
+            listar_tarea();
+            listar_siempre();
+            document.getElementById("mostrar_detalle").style.display = "none";
+            //contar_tarea('No iniciada');
+            console.log(e);
+        });
+    });
+
+})
+
+$("#tabla_tarea_lc").on('click', 'tr', function () {
+    //Muestro la parte derecha
+    //$("#mostrar_detalle").toggle();
+    console.log(document.getElementById("mostrar_detalle").style.display);
+    document.getElementById("mostrar_detalle").style.display = "block";
+    //$('.btn-primary').removeClass('btn-primary').addClass('btn-secondary');
+    // $('.ed:nth-child(2)').removeClass('btn-secondary').addClass('btn-primary');
+    $('.ed').removeClass('btn-primary').addClass('btn-secondary');
+    $('.ed:nth-child(3)').removeClass('btn-secondary').addClass('btn-primary');
+    //document.getElementById("mostrar_detalle").style.display == 'none' ? document.getElementById("mostrar_detalle").style.display = "block" : document.getElementById("mostrar_detalle").style.display = "none";
+    // Remover la clase de selección de todas las filas
+    tbl_tare_lc.$('tr.selected').removeClass('selected');
+    // Agregar la clase de selección a la fila clickeada
+    $(this).addClass('selected');
+    // Obtener los datos de la fila seleccionada
+    var rowData = tbl_tare_lc.row(this).data();
+
+    document.getElementById('descri').value = rowData['tare_desc'];
+    document.getElementById('fvenci').value = rowData['tare_tiem'];
+    document.getElementById('select_responsable2').value = rowData['tare_desc'];
+    $('#select_responsable2').select2().val(rowData["tare_resp"]).trigger('change.select2');
+    $('#select_departamentos').select2().val(rowData["tare_depa"]).trigger('change.select2');
+    document.getElementById('select_departamentos').value = rowData['tare_depa'];
+    document.getElementById('select_departamentos').value = rowData['tare_desc'];
+    console.log(rowData);
+    //CAMBIAR ESTADO
+    $('.ed').click(function () {
+        //var valor = $(this).text();
+        // console.log(valor);
+        $.ajax({
+            url: '../controller/tarea/cambiar_estado.php',
+            type: 'POST',
+            data: {
+                id: rowData['tare_id'],
+                estado: $(this).text(),
+            }
+        }).done(function (e) {
+            console.log("HIZO TERCERO");
+            listar_tarea();
+            listar_siempre();
+            document.getElementById("mostrar_detalle").style.display = "none";
+            //contar_tarea('No iniciada');
+            console.log(e);
+        });
+    });
+
+})
+$("#tabla_tarea_rt").on('click', 'tr', function () {
+    //Muestro la parte derecha
+    //$("#mostrar_detalle").toggle();
+    console.log(document.getElementById("mostrar_detalle").style.display);
+    document.getElementById("mostrar_detalle").style.display = "block";
+    //$('.btn-primary').removeClass('btn-primary').addClass('btn-secondary');
+    // $('.ed:nth-child(2)').removeClass('btn-secondary').addClass('btn-primary');
+    $('.ed').removeClass('btn-primary').addClass('btn-secondary');
+    $('.ed:nth-child(1)').removeClass('btn-secondary').addClass('btn-primary');
+    //document.getElementById("mostrar_detalle").style.display == 'none' ? document.getElementById("mostrar_detalle").style.display = "block" : document.getElementById("mostrar_detalle").style.display = "none";
+    // Remover la clase de selección de todas las filas
+    tbl_tare_rt.$('tr.selected').removeClass('selected');
+    // Agregar la clase de selección a la fila clickeada
+    $(this).addClass('selected');
+    // Obtener los datos de la fila seleccionada
+    var rowData = tbl_tare_rt.row(this).data();
+
+    document.getElementById('descri').value = rowData['tare_desc'];
+    document.getElementById('fvenci').value = rowData['tare_tiem'];
+    document.getElementById('select_responsable2').value = rowData['tare_desc'];
+    $('#select_responsable2').select2().val(rowData["tare_resp"]).trigger('change.select2');
+    $('#select_departamentos').select2().val(rowData["tare_depa"]).trigger('change.select2');
+    document.getElementById('select_departamentos').value = rowData['tare_depa'];
+    document.getElementById('select_departamentos').value = rowData['tare_desc'];
+    console.log(rowData);
+    //CAMBIAR ESTADO
+    $('.ed').click(function () {
+        //var valor = $(this).text();
+        // console.log(valor);
+        $.ajax({
+            url: '../controller/tarea/cambiar_estado.php',
+            type: 'POST',
+            data: {
+                id: rowData['tare_id'],
+                estado: $(this).text(),
+            }
+        }).done(function (e) {
+            console.log("HIZO TERCERO");
+            listar_tarea();
+            listar_siempre();
+            document.getElementById("mostrar_detalle").style.display = "none";
+            //contar_tarea('No iniciada');
+            console.log(e);
+        });
+    });
+
+})
+$("#tabla_tarea_cer").on('click', 'tr', function () {
+    //Muestro la parte derecha
+    //$("#mostrar_detalle").toggle();
+    console.log(document.getElementById("mostrar_detalle").style.display);
+    document.getElementById("mostrar_detalle").style.display = "block";
+    //$('.btn-primary').removeClass('btn-primary').addClass('btn-secondary');
+    // $('.ed:nth-child(2)').removeClass('btn-secondary').addClass('btn-primary');
+    $('.ed').removeClass('btn-primary').addClass('btn-secondary');
+    $('.ed:nth-child(5)').removeClass('btn-secondary').addClass('btn-primary');
+    //document.getElementById("mostrar_detalle").style.display == 'none' ? document.getElementById("mostrar_detalle").style.display = "block" : document.getElementById("mostrar_detalle").style.display = "none";
+    // Remover la clase de selección de todas las filas
+    tbl_tare_cer.$('tr.selected').removeClass('selected');
+    // Agregar la clase de selección a la fila clickeada
+    $(this).addClass('selected');
+    // Obtener los datos de la fila seleccionada
+    var rowData = tbl_tare_cer.row(this).data();
+
+    document.getElementById('descri').value = rowData['tare_desc'];
+    document.getElementById('fvenci').value = rowData['tare_tiem'];
+    document.getElementById('select_responsable2').value = rowData['tare_desc'];
+    $('#select_responsable2').select2().val(rowData["tare_resp"]).trigger('change.select2');
+    $('#select_departamentos').select2().val(rowData["tare_depa"]).trigger('change.select2');
+    document.getElementById('select_departamentos').value = rowData['tare_depa'];
+    document.getElementById('select_departamentos').value = rowData['tare_desc'];
+    console.log(rowData);
+    //CAMBIAR ESTADO
+    $('.ed').click(function () {
+        //var valor = $(this).text();
+        // console.log(valor);
+        $.ajax({
+            url: '../controller/tarea/cambiar_estado.php',
+            type: 'POST',
+            data: {
+                id: rowData['tare_id'],
+                estado: $(this).text(),
+            }
+        }).done(function (e) {
+            console.log("HIZO TERCERO");
+            listar_tarea();
+            listar_siempre();
+            document.getElementById("mostrar_detalle").style.display = "none";
+            //contar_tarea('No iniciada');
+            console.log(e);
+        });
+    });
+
+})
+
+
+
+function listar_siempre() {
 
     contar_tarea('No iniciada');
     contar_tarea('En Progreso');
     contar_tarea('Lista para Cierre');
     contar_tarea('Retrasada');
     contar_tarea('Cerrada');
-}*
+}

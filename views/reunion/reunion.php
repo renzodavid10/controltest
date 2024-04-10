@@ -71,6 +71,7 @@
                             </select>
                         </div>
                         <div class="col-6 mb-2">
+
                             <input type="date" id="txt_fechaculmina" class="form-control">
                         </div>
                         <div class="col-6 mb-2 font-weight-normal ">
@@ -212,6 +213,31 @@
                                 text-align: justify !important;
                                 vertical-align: middle;
                             }
+
+                            #tabla_tarea_pr tr td:nth-child(3) {
+                                text-align: center !important;
+
+
+                            }
+
+                            #tabla_tarea_pr tr:first-child td:nth-child(4) {
+                                width: 50%;
+
+                            }
+
+                            #tabla_tarea_pr tr td:nth-child(5) {
+                                width: 10%;
+                                /*align-items: center;*/
+                                text-align: center !important;
+                            }
+
+                            #tabla_tarea_pr tr:first-child td:nth-child(6) {
+                                width: 5.5%;
+                            }
+
+                            #tabla_tarea_pr tr:first-child td:nth-child(7) {
+                                width: 5.5%;
+                            }
                         </style>
                         <thead>
                             <tr>
@@ -263,6 +289,31 @@
                                 white-space: inherit;
                                 text-align: justify !important;
                                 vertical-align: middle;
+                            }
+
+                            #tabla_tarea_lc tr td:nth-child(3) {
+                                text-align: center !important;
+
+
+                            }
+
+                            #tabla_tarea_lc tr:first-child td:nth-child(4) {
+                                width: 50%;
+
+                            }
+
+                            #tabla_tarea_lc tr td:nth-child(5) {
+                                width: 10%;
+                                /*align-items: center;*/
+                                text-align: center !important;
+                            }
+
+                            #tabla_tarea_lc tr:first-child td:nth-child(6) {
+                                width: 5.5%;
+                            }
+
+                            #tabla_tarea_si tr:first-child td:nth-child(7) {
+                                width: 5.5%;
                             }
                         </style>
                         <thead>
@@ -319,6 +370,31 @@
                                 text-align: justify !important;
                                 vertical-align: middle;
                             }
+                            
+                            #tabla_tarea_rt tr td:nth-child(3) {
+                                text-align: center !important;
+
+
+                            }
+
+                            #tabla_tarea_rt tr:first-child td:nth-child(4) {
+                                width: 50%;
+
+                            }
+
+                            #tabla_tarea_rt tr td:nth-child(5) {
+                                width: 10%;
+                                /*align-items: center;*/
+                                text-align: center !important;
+                            }
+
+                            #tabla_tarea_rt tr:first-child td:nth-child(6) {
+                                width: 5.5%;
+                            }
+
+                            #tabla_tarea_si tr:first-child td:nth-child(7) {
+                                width: 5.5%;
+                            }
                         </style>
                         <thead>
                             <tr>
@@ -366,10 +442,35 @@
                                 max-width: 400px;
                             }
 
-                            #tabla_tarea_lc td {
+                            #tabla_tarea_cer td {
                                 white-space: inherit;
                                 text-align: justify !important;
                                 vertical-align: middle;
+                            }
+                            
+                            #tabla_tarea_cer tr td:nth-child(3) {
+                                text-align: center !important;
+
+
+                            }
+
+                            #tabla_tarea_cer tr:first-child td:nth-child(4) {
+                                width: 50%;
+
+                            }
+
+                            #tabla_tarea_cer tr td:nth-child(5) {
+                                width: 10%;
+                                /*align-items: center;*/
+                                text-align: center !important;
+                            }
+
+                            #tabla_tarea_cer tr:first-child td:nth-child(6) {
+                                width: 5.5%;
+                            }
+
+                            #tabla_tarea_cer tr:first-child td:nth-child(7) {
+                                width: 5.5%;
                             }
                         </style>
                         <thead>
@@ -424,11 +525,11 @@
                     </div>
                     <div class="card-body">
                         <div class="row">
-                            <button type="button" class="btn btn-primary btn-sm mt-1 mr-1" style="font-size: small;" onclick="">No iniciada</button>
-                            <button type="button" class="btn btn-primary btn-sm mt-1 mr-1" style="font-size: small;">En Progreso</button>
-                            <button type="button" class="btn btn-primary btn-sm mt-1 mr-1" style="font-size: small;" onclick="">Lista para Cierre</button>
-                            <button type="button" class="btn btn-primary btn-sm mt-1 mr-1" style="font-size: small;">Cancelada</button>
-                            <button type="button" class="btn btn-primary btn-sm mt-1 mr-1" style="font-size: small;">Cerrada</button>
+                            <button type="button" class="ed btn btn-primary   btn-sm mt-1 mr-1" style="font-size: small;" onclick="">No iniciada</button>
+                            <button type="button" class="ed btn btn-secondary btn-sm mt-1 mr-1" style="font-size: small;">En Progreso</button>
+                            <button type="button" class="ed btn btn-secondary btn-sm mt-1 mr-1" style="font-size: small;" onclick="">Lista para Cierre</button>
+                            <button type="button" class="ed btn btn-secondary btn-sm mt-1 mr-1" style="font-size: small;">Cancelada</button>
+                            <button type="button" class="ed btn btn-secondary btn-sm mt-1 mr-1" style="font-size: small;">Cerrada</button>
                         </div>
                         <div class="row font-weight-normal ">
                             <div class="mt-3 col-12">
@@ -516,7 +617,7 @@
         console.log("hola")
     });
 
-    
+
     listar_empresa()
     contar_tarea('No iniciada');
     contar_tarea('En Progreso');
