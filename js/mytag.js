@@ -255,151 +255,168 @@ function listar_mi_tarea() {
 $("#tabla_tarea_mi").on('click', 'tr', function () {
     //Muestro la parte derecha
     //$("#mostrar_detalle").toggle();
-    console.log(document.getElementById("mostrar_detalle").style.display);
-    document.getElementById("mostrar_detalle").style.display = "block";
+    if (tbl_mi_tarea.rows().count() > 0) {
+        alert(tbl_mi_tarea.rows().count())
+        console.log(document.getElementById("mostrar_detalle").style.display);
+        document.getElementById("mostrar_detalle").style.display = "block";
 
-    $('.ed').removeClass('btn-primary').addClass('btn-secondary');
-    $('.ed:nth-child(1)').removeClass('btn-secondary').addClass('btn-primary');
-    //document.getElementById("mostrar_detalle").style.display == 'none' ? document.getElementById("mostrar_detalle").style.display = "block" : document.getElementById("mostrar_detalle").style.display = "none";
-    // Remover la clase de selección de todas las filas
-    tbl_mi_tarea.$('tr.selected').removeClass('selected');
-    // Agregar la clase de selección a la fila clickeada
-    $(this).addClass('selected');
-    // Obtener los datos de la fila seleccionada
-    var rowData = tbl_mi_tarea.row(this).data();
+        $('.ed').removeClass('btn-primary').addClass('btn-secondary');
+        $('.ed:nth-child(1)').removeClass('btn-secondary').addClass('btn-primary');
+        //document.getElementById("mostrar_detalle").style.display == 'none' ? document.getElementById("mostrar_detalle").style.display = "block" : document.getElementById("mostrar_detalle").style.display = "none";
+        // Remover la clase de selección de todas las filas
+        tbl_mi_tarea.$('tr.selected').removeClass('selected');
+        // Agregar la clase de selección a la fila clickeada
+        $(this).addClass('selected');
+        // Obtener los datos de la fila seleccionada
+        var rowData = tbl_mi_tarea.row(this).data();
 
-    document.getElementById('descri').value = rowData['tare_desc'];
-    document.getElementById('fvenci').value = rowData['tare_tiem'];
-    document.getElementById('select_responsable2').value = rowData['tare_desc'];
-    $('#select_responsable2').select2().val(rowData["tare_resp"]).trigger('change.select2');
-    $('#select_departamentos').select2().val(rowData["tare_depa"]).trigger('change.select2');
-    document.getElementById('select_departamentos').value = rowData['tare_depa'];
-    document.getElementById('select_departamentos').value = rowData['tare_desc'];
-    console.log(rowData);
-    //CAMBIAR ESTADO
-    evento_cambio(rowData['tare_id']);
+        document.getElementById('descri').value = rowData['tare_desc'];
+        document.getElementById('fvenci').value = rowData['tare_tiem'];
+        document.getElementById('select_responsable2').value = rowData['tare_desc'];
+        $('#select_responsable2').select2().val(rowData["tare_resp"]).trigger('change.select2');
+        $('#select_departamentos').select2().val(rowData["tare_depa"]).trigger('change.select2');
+        document.getElementById('select_departamentos').value = rowData['tare_depa'];
+        document.getElementById('select_departamentos').value = rowData['tare_desc'];
+        console.log(rowData);
+        //CAMBIAR ESTADO
+        evento_cambio(rowData['tare_id']);
+    }
 })
+
+
 
 $("#tabla_tarea_pr").on('click', 'tr', function () {
     //Muestro la parte derecha
     //$("#mostrar_detalle").toggle();
-    console.log(document.getElementById("mostrar_detalle").style.display);
-    document.getElementById("mostrar_detalle").style.display = "block";
-    //$('.btn-primary').removeClass('btn-primary').addClass('btn-secondary');
-    // $('.ed:nth-child(2)').removeClass('btn-secondary').addClass('btn-primary');
-    $('.ed').removeClass('btn-primary').addClass('btn-secondary');
-    $('.ed:nth-child(2)').removeClass('btn-secondary').addClass('btn-primary');
-    //document.getElementById("mostrar_detalle").style.display == 'none' ? document.getElementById("mostrar_detalle").style.display = "block" : document.getElementById("mostrar_detalle").style.display = "none";
-    // Remover la clase de selección de todas las filas
-    tbl_mi_progreso.$('tr.selected').removeClass('selected');
-    // Agregar la clase de selección a la fila clickeada
-    $(this).addClass('selected');
-    // Obtener los datos de la fila seleccionada
-    var rowData = tbl_mi_progreso.row(this).data();
+    // alert(tbl_mi_progreso.rows().count())
+    if (tbl_mi_progreso.rows().count() > 0) {
+        console.log(document.getElementById("mostrar_detalle").style.display);
+        document.getElementById("mostrar_detalle").style.display = "block";
+        //$('.btn-primary').removeClass('btn-primary').addClass('btn-secondary');
+        // $('.ed:nth-child(2)').removeClass('btn-secondary').addClass('btn-primary');
+        $('.ed').removeClass('btn-primary').addClass('btn-secondary');
+        $('.ed:nth-child(2)').removeClass('btn-secondary').addClass('btn-primary');
+        //document.getElementById("mostrar_detalle").style.display == 'none' ? document.getElementById("mostrar_detalle").style.display = "block" : document.getElementById("mostrar_detalle").style.display = "none";
+        // Remover la clase de selección de todas las filas
+        tbl_mi_progreso.$('tr.selected').removeClass('selected');
+        // Agregar la clase de selección a la fila clickeada
+        $(this).addClass('selected');
+        // Obtener los datos de la fila seleccionada
+        var rowData = tbl_mi_progreso.row(this).data();
 
-    document.getElementById('descri').value = rowData['tare_desc'];
-    document.getElementById('fvenci').value = rowData['tare_tiem'];
-    document.getElementById('select_responsable2').value = rowData['tare_desc'];
-    $('#select_responsable2').select2().val(rowData["tare_resp"]).trigger('change.select2');
-    $('#select_departamentos').select2().val(rowData["tare_depa"]).trigger('change.select2');
-    document.getElementById('select_departamentos').value = rowData['tare_depa'];
-    document.getElementById('select_departamentos').value = rowData['tare_desc'];
-    console.log(rowData);
-    //CAMBIAR ESTADO
-    evento_cambio(rowData['tare_id'])
-
-
+        document.getElementById('descri').value = rowData['tare_desc'];
+        document.getElementById('fvenci').value = rowData['tare_tiem'];
+        document.getElementById('select_responsable2').value = rowData['tare_desc'];
+        $('#select_responsable2').select2().val(rowData["tare_resp"]).trigger('change.select2');
+        $('#select_departamentos').select2().val(rowData["tare_depa"]).trigger('change.select2');
+        document.getElementById('select_departamentos').value = rowData['tare_depa'];
+        document.getElementById('select_departamentos').value = rowData['tare_desc'];
+        console.log(rowData);
+        //CAMBIAR ESTADO
+        evento_cambio(rowData['tare_id'])
+    }
 })
+
 
 $("#tabla_tarea_lc").on('click', 'tr', function () {
     //Muestro la parte derecha
     //$("#mostrar_detalle").toggle();
-    console.log(document.getElementById("mostrar_detalle").style.display);
-    document.getElementById("mostrar_detalle").style.display = "block";
-    //$('.btn-primary').removeClass('btn-primary').addClass('btn-secondary');
-    // $('.ed:nth-child(2)').removeClass('btn-secondary').addClass('btn-primary');
-    $('.ed').removeClass('btn-primary').addClass('btn-secondary');
-    $('.ed:nth-child(3)').removeClass('btn-secondary').addClass('btn-primary');
-    //document.getElementById("mostrar_detalle").style.display == 'none' ? document.getElementById("mostrar_detalle").style.display = "block" : document.getElementById("mostrar_detalle").style.display = "none";
-    // Remover la clase de selección de todas las filas
-    tbl_mi_lc.$('tr.selected').removeClass('selected');
-    // Agregar la clase de selección a la fila clickeada
-    $(this).addClass('selected');
-    // Obtener los datos de la fila seleccionada
-    var rowData = tbl_mi_lc.row(this).data();
+    if (tbl_mi_lc.rows().count() > 0) {
+        console.log(document.getElementById("mostrar_detalle").style.display);
+        document.getElementById("mostrar_detalle").style.display = "block";
+        //$('.btn-primary').removeClass('btn-primary').addClass('btn-secondary');
+        // $('.ed:nth-child(2)').removeClass('btn-secondary').addClass('btn-primary');
+        $('.ed').removeClass('btn-primary').addClass('btn-secondary');
+        $('.ed:nth-child(3)').removeClass('btn-secondary').addClass('btn-primary');
+        //document.getElementById("mostrar_detalle").style.display == 'none' ? document.getElementById("mostrar_detalle").style.display = "block" : document.getElementById("mostrar_detalle").style.display = "none";
+        // Remover la clase de selección de todas las filas
+        tbl_mi_lc.$('tr.selected').removeClass('selected');
+        // Agregar la clase de selección a la fila clickeada
+        $(this).addClass('selected');
+        // Obtener los datos de la fila seleccionada
+        var rowData = tbl_mi_lc.row(this).data();
 
-    document.getElementById('descri').value = rowData['tare_desc'];
-    document.getElementById('fvenci').value = rowData['tare_tiem'];
-    document.getElementById('select_responsable2').value = rowData['tare_desc'];
-    $('#select_responsable2').select2().val(rowData["tare_resp"]).trigger('change.select2');
-    $('#select_departamentos').select2().val(rowData["tare_depa"]).trigger('change.select2');
-    document.getElementById('select_departamentos').value = rowData['tare_depa'];
-    document.getElementById('select_departamentos').value = rowData['tare_desc'];
-    console.log(rowData);
-    //CAMBIAR ESTADO
-    evento_cambio(rowData['tare_id'])
+        document.getElementById('descri').value = rowData['tare_desc'];
+        document.getElementById('fvenci').value = rowData['tare_tiem'];
+        document.getElementById('select_responsable2').value = rowData['tare_desc'];
+        $('#select_responsable2').select2().val(rowData["tare_resp"]).trigger('change.select2');
+        $('#select_departamentos').select2().val(rowData["tare_depa"]).trigger('change.select2');
+        document.getElementById('select_departamentos').value = rowData['tare_depa'];
+        document.getElementById('select_departamentos').value = rowData['tare_desc'];
+        console.log(rowData);
+        //CAMBIAR ESTADO
+        evento_cambio(rowData['tare_id'])
 
-
+    }
 })
+
+
 $("#tabla_tarea_rt").on('click', 'tr', function () {
     //Muestro la parte derecha
     //$("#mostrar_detalle").toggle();
-    console.log(document.getElementById("mostrar_detalle").style.display);
-    document.getElementById("mostrar_detalle").style.display = "block";
-    //$('.btn-primary').removeClass('btn-primary').addClass('btn-secondary');
-    // $('.ed:nth-child(2)').removeClass('btn-secondary').addClass('btn-primary');
-    $('.ed').removeClass('btn-primary').addClass('btn-secondary');
-    $('.ed:nth-child(1)').removeClass('btn-secondary').addClass('btn-primary');
-    //document.getElementById("mostrar_detalle").style.display == 'none' ? document.getElementById("mostrar_detalle").style.display = "block" : document.getElementById("mostrar_detalle").style.display = "none";
-    // Remover la clase de selección de todas las filas
-    tbl_mi_rt.$('tr.selected').removeClass('selected');
-    // Agregar la clase de selección a la fila clickeada
-    $(this).addClass('selected');
-    // Obtener los datos de la fila seleccionada
-    var rowData = tbl_mi_rt.row(this).data();
+    if (tbl_mi_rt.rows().count() > 0) {
+        console.log(document.getElementById("mostrar_detalle").style.display);
+        document.getElementById("mostrar_detalle").style.display = "block";
+        //$('.btn-primary').removeClass('btn-primary').addClass('btn-secondary');
+        // $('.ed:nth-child(2)').removeClass('btn-secondary').addClass('btn-primary');
+        $('.ed').removeClass('btn-primary').addClass('btn-secondary');
+        $('.ed:nth-child(1)').removeClass('btn-secondary').addClass('btn-primary');
+        //document.getElementById("mostrar_detalle").style.display == 'none' ? document.getElementById("mostrar_detalle").style.display = "block" : document.getElementById("mostrar_detalle").style.display = "none";
+        // Remover la clase de selección de todas las filas
+        tbl_mi_rt.$('tr.selected').removeClass('selected');
+        // Agregar la clase de selección a la fila clickeada
+        $(this).addClass('selected');
+        // Obtener los datos de la fila seleccionada
+        var rowData = tbl_mi_rt.row(this).data();
 
-    document.getElementById('descri').value = rowData['tare_desc'];
-    document.getElementById('fvenci').value = rowData['tare_tiem'];
-    document.getElementById('select_responsable2').value = rowData['tare_desc'];
-    $('#select_responsable2').select2().val(rowData["tare_resp"]).trigger('change.select2');
-    $('#select_departamentos').select2().val(rowData["tare_depa"]).trigger('change.select2');
-    document.getElementById('select_departamentos').value = rowData['tare_depa'];
-    document.getElementById('select_departamentos').value = rowData['tare_desc'];
-    console.log(rowData);
-    //CAMBIAR ESTADO
-    evento_cambio(rowData['tare_id'])
+        document.getElementById('descri').value = rowData['tare_desc'];
+        document.getElementById('fvenci').value = rowData['tare_tiem'];
+        document.getElementById('select_responsable2').value = rowData['tare_desc'];
+        $('#select_responsable2').select2().val(rowData["tare_resp"]).trigger('change.select2');
+        $('#select_departamentos').select2().val(rowData["tare_depa"]).trigger('change.select2');
+        document.getElementById('select_departamentos').value = rowData['tare_depa'];
+        document.getElementById('select_departamentos').value = rowData['tare_desc'];
+        console.log(rowData);
+        //CAMBIAR ESTADO
+        evento_cambio(rowData['tare_id'])
 
-
+    }
 })
+
+
 $("#tabla_tarea_cer").on('click', 'tr', function () {
     //Muestro la parte derecha
     //$("#mostrar_detalle").toggle();
-    console.log(document.getElementById("mostrar_detalle").style.display);
-    document.getElementById("mostrar_detalle").style.display = "block";
-    //$('.btn-primary').removeClass('btn-primary').addClass('btn-secondary');
-    // $('.ed:nth-child(2)').removeClass('btn-secondary').addClass('btn-primary');
-    $('.ed').removeClass('btn-primary').addClass('btn-secondary');
-    $('.ed:nth-child(5)').removeClass('btn-secondary').addClass('btn-primary');
-    //document.getElementById("mostrar_detalle").style.display == 'none' ? document.getElementById("mostrar_detalle").style.display = "block" : document.getElementById("mostrar_detalle").style.display = "none";
-    // Remover la clase de selección de todas las filas
-    tbl_mi_cer.$('tr.selected').removeClass('selected');
-    // Agregar la clase de selección a la fila clickeada
-    $(this).addClass('selected');
-    // Obtener los datos de la fila seleccionada
-    var rowData = tbl_mi_cer.row(this).data();
+    if (tbl_mi_cer.rows().count() > 0) {
+        console.log(document.getElementById("mostrar_detalle").style.display);
+        document.getElementById("mostrar_detalle").style.display = "block";
+        //$('.btn-primary').removeClass('btn-primary').addClass('btn-secondary');
+        // $('.ed:nth-child(2)').removeClass('btn-secondary').addClass('btn-primary');
+        $('.ed').removeClass('btn-primary').addClass('btn-secondary');
+        $('.ed:nth-child(5)').removeClass('btn-secondary').addClass('btn-primary');
+        //document.getElementById("mostrar_detalle").style.display == 'none' ? document.getElementById("mostrar_detalle").style.display = "block" : document.getElementById("mostrar_detalle").style.display = "none";
+        // Remover la clase de selección de todas las filas
+        tbl_mi_cer.$('tr.selected').removeClass('selected');
+        // Agregar la clase de selección a la fila clickeada
+        $(this).addClass('selected');
+        // Obtener los datos de la fila seleccionada
+        var rowData = tbl_mi_cer.row(this).data();
 
-    document.getElementById('descri').value = rowData['tare_desc'];
-    document.getElementById('fvenci').value = rowData['tare_tiem'];
-    document.getElementById('select_responsable2').value = rowData['tare_desc'];
-    $('#select_responsable2').select2().val(rowData["tare_resp"]).trigger('change.select2');
-    $('#select_departamentos').select2().val(rowData["tare_depa"]).trigger('change.select2');
-    document.getElementById('select_departamentos').value = rowData['tare_depa'];
-    document.getElementById('select_departamentos').value = rowData['tare_desc'];
-    console.log(rowData);
-    //CAMBIAR ESTADO
-    evento_cambio(rowData['tare_id'])
-
+        document.getElementById('descri').value = rowData['tare_desc'];
+        document.getElementById('fvenci').value = rowData['tare_tiem'];
+        document.getElementById('select_responsable2').value = rowData['tare_desc'];
+        $('#select_responsable2').select2().val(rowData["tare_resp"]).trigger('change.select2');
+        $('#select_departamentos').select2().val(rowData["tare_depa"]).trigger('change.select2');
+        document.getElementById('select_departamentos').value = rowData['tare_depa'];
+        document.getElementById('select_departamentos').value = rowData['tare_desc'];
+        console.log(rowData);
+        //CAMBIAR ESTADO
+        evento_cambio(rowData['tare_id'])
+    }
 })
+
+
+
 function evento_cambio(id) {
     $('.ed').off('click').on('click', function () {
         // var valor = $(this).text();
