@@ -50,7 +50,7 @@
                 <div class="card mt-2">
                     <div class="card-header">
                         <h4 class="col-10 card-title w-100">
-                            Mis Tareas
+                            Mis Acciones
                         </h4>
                     </div>
                     <div class="card-body collapse">
@@ -74,7 +74,7 @@
                     <div class="card-header">
                         <div class="row ">
                             <h4 class="col-10 card-title w-100">
-                                Mis Acciones Sin Iniciar
+                                No iniciada
                             </h4>
                             <p class="col-1" id="contar"></p>
                             <div class="card-tools">
@@ -151,7 +151,7 @@
                     <div class="card-header">
                         <div class="row ">
                             <h4 class="col-10 card-title w-100">
-                                Mis Acciones En Progreso
+                                En Progreso
                             </h4>
                             <p id='contar_pr' class="col-1"></p>
                             <div class="card-tools">
@@ -228,7 +228,7 @@
                     <div class="card-header ">
                         <div class="row ">
                             <h4 class="col-10 card-title w-100">
-                                Mis Acciones Lista para cierre
+                            Lista para Cierre
                             </h4>
                             <p id='contar_lc' class="col-1"></p>
                             <div class="card-tools">
@@ -305,7 +305,7 @@
                     <div class="card-header">
                         <div class="row ">
                             <h4 class="col-10 card-title w-100">
-                                Mis acciones Retrasadas
+                                Retrasadas
                             </h4>
                             <p id='contar_rt' class="col-1"> </p>
                             <div class="card-tools">
@@ -385,7 +385,7 @@
                     <div class="card-header ">
                         <div class="row ">
                             <h4 class="col-10 card-title w-100">
-                                Mis Acciones Cerradas
+                                Cerradas
                             </h4>
                             <p id='contar_cer' class="col-1"></p>
                             <div class="card-tools">
@@ -708,6 +708,11 @@
 <script>
     listar_mi_tarea();
     listar_mi_siempre();
+    $(document).ready(function() {
+        $('.js-example-basic-single').select2();
+        //listar_tarea();
+        console.log("hola")
+    });
     /*$(function() {
         /*
          * Flot Interactive Chart
