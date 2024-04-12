@@ -35,8 +35,8 @@ class model_tarea extends conexion_nueva
         $query = $c->prepare($sql);
         $query->bindParam(1, $accion);
         $query->execute();
-
         $resultado = $query->fetchAll(PDO::FETCH_ASSOC);
+        //var_dump(json_encode($resultado));
         foreach ($resultado as $resu) {
             $arreglo["data"][] = $resu;
         }
@@ -70,6 +70,9 @@ class model_tarea extends conexion_nueva
             return $row;
         }
         conexion_nueva::cerrar_conexion();
-
     }
 }
+/*$Probando = new model_tarea;
+echo '<br>';
+var_dump(json_encode($Probando->listar_tarea('No iniciada')));
+*/
