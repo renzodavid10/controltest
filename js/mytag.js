@@ -256,7 +256,7 @@ $("#tabla_tarea_mi").on('click', 'tr', function () {
     //Muestro la parte derecha
     //$("#mostrar_detalle").toggle();
     if (tbl_mi_tarea.rows().count() > 0) {
-        alert(tbl_mi_tarea.rows().count())
+        //alert(tbl_mi_tarea.rows().count())
         console.log(document.getElementById("mostrar_detalle").style.display);
         document.getElementById("mostrar_detalle").style.display = "block";
 

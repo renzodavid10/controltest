@@ -653,7 +653,7 @@ function evento_cambio(id) {
             listar_siempre();
             document.getElementById("mostrar_detalle").style.display = "none";
             //contar_tarea('No iniciada');
-            console.log(e);
+            console.log(e+'Quee s');
         });
     });
 }
