@@ -653,7 +653,7 @@ function evento_cambio(id) {
             listar_siempre();
             document.getElementById("mostrar_detalle").style.display = "none";
             //contar_tarea('No iniciada');
-            console.log(e+'Quee s');
+            console.log(e + 'Quee s');
         });
     });
 }
@@ -666,3 +666,24 @@ function listar_siempre() {
     contar_tarea('Retrasada');
     contar_tarea('Cerrada');
 }
+function GenerarExcel() {
+    fetch('../controller/export/exportar_datos.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => response.blob())
+    .then(blob => {
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'myfile.xlsx';
+        document.body.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(url);
+        document.body.removeChild(a);
+    });
+};
+   // window.location.href = '../controller/export/exportar_datos.php';
+

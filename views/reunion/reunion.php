@@ -51,6 +51,11 @@
                 <div class="card-header">
                     <h5 class="card-title">PLAN VPO MOTUPE</h5>
                 </div>
+                <div class="col-12">
+
+                    <button class="btn btn-success btn-sm float-right" onclick="GenerarExcel()" style="margin:5px;"><i class="fa-regular fa-file-excel mr-2"></i>Generar Excel</button>
+
+                </div>
             </div>
             <div class="card mt-2">
                 <div class="card-header">
