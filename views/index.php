@@ -140,7 +140,7 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
                             <a id="#" class="nav-link" onclick="cargar_contenido('contenido_principal','tarea/tareas.php')">
                                 <i class="fa-solid fa-list-check mr-2"></i>
                                 <p>
-                                    Tareas
+                                    Mis Tareas
 
                                 </p>
                             </a>

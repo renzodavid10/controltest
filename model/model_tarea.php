@@ -25,15 +25,16 @@ class model_tarea extends conexion_nueva
 
         conexion_nueva::cerrar_conexion();
     }
-    function listar_tarea($accion)
+    function listar_tarea($accion ,$propio='')
     {
         $c = conexion_nueva::conectarBD();
 
-        $sql = "SELECT * FROM  fn_listar_tareas(?)";
+        $sql = "SELECT * FROM  fn_listar_tareas(?,?)";
 
         $arreglo = array();
         $query = $c->prepare($sql);
         $query->bindParam(1, $accion);
+        $query->bindParam(2, $propio);
         $query->execute();
         $resultado = $query->fetchAll(PDO::FETCH_ASSOC);
         //var_dump(json_encode($resultado));
@@ -44,12 +45,13 @@ class model_tarea extends conexion_nueva
 
         conexion_nueva::cerrar_conexion();
     }
-    public function contador($accion)
+    public function contador($accion,$dni='')
     {
         $c = conexion_nueva::conectarBD();
-        $sql = 'SELECT * from fn_contar_tarea(?)';
+        $sql = 'SELECT * from fn_contar_tarea(?,?)';
         $query = $c->prepare($sql);
         $query->bindParam(1, $accion);
+        $query->bindParam(2, $dni);
         $query->execute();
 
         if ($row = $query->fetchColumn()) {

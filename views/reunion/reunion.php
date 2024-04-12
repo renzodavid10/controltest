@@ -588,7 +588,7 @@
                             <div class="mt-1 col-12">
                                 <label class="form-label">COLUMNA</label>
                                 <div class="container pb-2 pt-1" style="background-color:#f5f5f5;  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);">
-                                    <label for="coment" class="form-label">COMENTARIO</label>
+                                    <label class="form-label">COMENTARIO</label>
                                     <div class="col-12 chat-box" style=" min-height: 400px;padding: 10px 15px 15px 20px;background-color: #ffffff;">
 
 

@@ -238,7 +238,7 @@ function listar_tarea() {
         "pageLength": 8,
         "destroy": true,
         //"async": false,
-        "processing": true,
+        //"processing": true,
         "ajax": {
             "url": "../controller/tarea/listar_tar.php",
             type: 'POST',
@@ -336,7 +336,7 @@ function contar_tarea(tipo) {
         }
 
     }).done(function (resp) {
-        console.log(resp + ' numero de:');
+        console.log(resp + ' numero de:'+tipo);
 
         //let data = JSON.parse(resp);
         //console.log(data.length);
@@ -413,7 +413,8 @@ $("#tabla_tarea_si").on('click', 'tr', function () {
     document.getElementById('select_departamentos').value = rowData['tare_desc'];
     console.log(rowData);
     //CAMBIAR ESTADO
-    $('.ed').click(function () {
+    evento_cambio(rowData['tare_id'])
+   /* $('.ed').on('click',function () {
         //var valor = $(this).text();
         // console.log(valor);
         $.ajax({
@@ -431,7 +432,7 @@ $("#tabla_tarea_si").on('click', 'tr', function () {
             //contar_tarea('No iniciada');
             console.log(e);
         });
-    });
+    });*/
 
 })
 
@@ -461,7 +462,9 @@ $("#tabla_tarea_pr").on('click', 'tr', function () {
     document.getElementById('select_departamentos').value = rowData['tare_desc'];
     console.log(rowData);
     //CAMBIAR ESTADO
-    $('.ed').click(function () {
+    evento_cambio(rowData['tare_id'])
+    /*
+    $('.ed').on('click',function () {
         //var valor = $(this).text();
         // console.log(valor);
         $.ajax({
@@ -479,7 +482,7 @@ $("#tabla_tarea_pr").on('click', 'tr', function () {
             //contar_tarea('No iniciada');
             console.log(e);
         });
-    });
+    });*/
 
 })
 
@@ -509,7 +512,8 @@ $("#tabla_tarea_lc").on('click', 'tr', function () {
     document.getElementById('select_departamentos').value = rowData['tare_desc'];
     console.log(rowData);
     //CAMBIAR ESTADO
-    $('.ed').click(function () {
+    evento_cambio(rowData['tare_id'])
+    /*$('.ed').on('click',function () {
         //var valor = $(this).text();
         // console.log(valor);
         $.ajax({
@@ -527,7 +531,7 @@ $("#tabla_tarea_lc").on('click', 'tr', function () {
             //contar_tarea('No iniciada');
             console.log(e);
         });
-    });
+    });*/
 
 })
 $("#tabla_tarea_rt").on('click', 'tr', function () {
@@ -556,7 +560,8 @@ $("#tabla_tarea_rt").on('click', 'tr', function () {
     document.getElementById('select_departamentos').value = rowData['tare_desc'];
     console.log(rowData);
     //CAMBIAR ESTADO
-    $('.ed').click(function () {
+    evento_cambio(rowData['tare_id'])
+   /* $('.ed').on('click',function () {
         //var valor = $(this).text();
         // console.log(valor);
         $.ajax({
@@ -572,9 +577,9 @@ $("#tabla_tarea_rt").on('click', 'tr', function () {
             listar_siempre();
             document.getElementById("mostrar_detalle").style.display = "none";
             //contar_tarea('No iniciada');
-            console.log(e);
+            console.log(e+'Esto devolvio la base de datos');
         });
-    });
+    });*/
 
 })
 $("#tabla_tarea_cer").on('click', 'tr', function () {
@@ -603,7 +608,8 @@ $("#tabla_tarea_cer").on('click', 'tr', function () {
     document.getElementById('select_departamentos').value = rowData['tare_desc'];
     console.log(rowData);
     //CAMBIAR ESTADO
-    $('.ed').click(function () {
+    evento_cambio(rowData['tare_id'])
+    /*$('.ed').on('click',function () {
         //var valor = $(this).text();
         // console.log(valor);
         $.ajax({
@@ -614,7 +620,30 @@ $("#tabla_tarea_cer").on('click', 'tr', function () {
                 estado: $(this).text(),
             }
         }).done(function (e) {
-            console.log("HIZO TERCERO");
+            console.log("HIZO CUARTO");
+            listar_tarea();
+            listar_siempre();
+            document.getElementById("mostrar_detalle").style.display = "none";
+            //contar_tarea('No iniciada');
+            console.log(e);
+        });
+    });*/
+
+})
+
+function evento_cambio(id){
+    $('.ed').off('click').on('click', function () {
+      // var valor = $(this).text();
+        // console.log(valor);
+        $.ajax({
+            url: '../controller/tarea/cambiar_estado.php',
+            type: 'POST',
+            data: {
+                id: id,
+                estado: $(this).text(),
+            }
+        }).done(function (e) {
+            console.log("HIZO PRIMERO");
             listar_tarea();
             listar_siempre();
             document.getElementById("mostrar_detalle").style.display = "none";
@@ -622,10 +651,7 @@ $("#tabla_tarea_cer").on('click', 'tr', function () {
             console.log(e);
         });
     });
-
-})
-
-
+}
 
 function listar_siempre() {
 
