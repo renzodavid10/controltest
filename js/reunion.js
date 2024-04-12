@@ -667,7 +667,7 @@ function listar_siempre() {
     contar_tarea('Cerrada');
 }
 function GenerarExcel() {
-    fetch('../controller/export/exportar_datos.php', {
+    fetch('../controller/export/llamar_export.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
