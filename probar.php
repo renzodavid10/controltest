@@ -12,3 +12,6 @@ $subdirectorio_actual = obtener_subdirectorio_actual();
 echo "El subdirectorio actual es: " . $subdirectorio_actual;
 $directorio_actual = __DIR__;
 echo "El directorio actual es: " . $directorio_actual;
+
+ date_default_timezone_set("America/Lima");
+ echo $fechahoy = date('d-m-Y');

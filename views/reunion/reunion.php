@@ -684,12 +684,13 @@
 
     $('#summernote').summernote({
 
-        callbacks: {
+        //TODO: bUSCAR CLOUD PARA SUBIR IMAGENES
+        /*callbacks: {
             onImageUpload: function(files) {
                 // Cargar imagen al servidor y agregarla al editor
                 uploadImage(files[0]);
             }
-        },
+        },*/
         placeholder: 'Añadir comentario',
         //tabsize: 2,
         toolbar: [
@@ -704,7 +705,8 @@
 
     });
 
-    function uploadImage(file) {
+    //TODO: BUSCAR cloud para subir images
+    /*function uploadImage(file) {
         let formData = new FormData();
         formData.append('file', file);
         console.log(file);
@@ -721,4 +723,5 @@
             }
         });
     }
+    */
 </script>
