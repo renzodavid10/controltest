@@ -1,7 +1,7 @@
 <?php
 //$uploads_dir = 'foto/';
 $ruta = '../images/conversa/';
-
+chmod($ruta,0777);
 if ($_FILES["file"]["error"] == UPLOAD_ERR_OK) {
     $tmp_name = $_FILES["file"]["tmp_name"];
     $name = basename($_FILES["file"]["name"]);
