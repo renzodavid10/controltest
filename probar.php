@@ -14,5 +14,5 @@ $directorio_actual = __DIR__;
 echo "El directorio actual es: " . $directorio_actual;
 
 date_default_timezone_set("America/Lima");
-echo $fechahoy = date('d-m-Y') . '<br>';
-echo $fechahoy = date('h:i:s') . '<br>';
+echo $fechahoy = date('Y-m-d') . '<br>';
+echo $fechahoy = date('H:i:s') . '<br>';
