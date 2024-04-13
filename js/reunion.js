@@ -673,17 +673,27 @@ function GenerarExcel() {
             'Content-Type': 'application/json'
         }
     })
-    .then(response => response.blob())
-    .then(blob => {
-        const url = window.URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'myfile.xlsx';
-        document.body.appendChild(a);
-        a.click();
-        window.URL.revokeObjectURL(url);
-        document.body.removeChild(a);
-    });
+        .then(response => response.blob())
+        .then(blob => {
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'myfile.xlsx';
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+            document.body.removeChild(a);
+        });
 };
-   // window.location.href = '../controller/export/exportar_datos.php';
+// window.location.href = '../controller/export/exportar_datos.php';
 
+//EL OFF SIRVE PARA NO SE REPIRTA EL EVENTO
+$('.envio').off('click').on('click', function () {
+    coment = $('#summernote').summernote('code');
+    console.log(coment);
+    //console.log(document.getElementById('derecha').innerHTML );
+    document.getElementById('derecha').innerHTML += `<div class="direct-chat-text">${coment}</div>`
+    // Extraer la imagen base64 del contenido
+    let contenido = $('#summernote').summernote('code');
+    console.log('Contenido con la imagen:', contenido);
+})

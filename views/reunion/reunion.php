@@ -517,7 +517,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card col-12 collapse" id="mostrar_detalle">
+                <div class="card col-12 " id="mostrar_detalle">
                     <div class="card-header">
                         <h3 class="card-title">
                             Información
@@ -594,135 +594,58 @@
                                 <label class="form-label">COLUMNA</label>
                                 <div class="container pb-2 pt-1" style="background-color:#f5f5f5;  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);">
                                     <label class="form-label">COMENTARIO</label>
-                                    <div class="col-12 chat-box" style=" min-height: 400px;padding: 10px 15px 15px 20px;background-color: #ffffff;">
+                                    <!-- Construct the card with style you want. Here we are using card-danger -->
+                                    <!-- Then add the class direct-chat and choose the direct-chat-* contexual class -->
+                                    <!-- The contextual class should match the card, so we are using direct-chat-danger -->
+                                    <div class="card card-danger direct-chat direct-chat-danger">
+                                        <!-- /.card-header -->
+                                        <div class="card-body">
+                                            <!-- Conversations are loaded here -->
+                                            <div class="direct-chat-messages" style="height:500px">
+                                                <!-- Message. Default to the left -->
+                                                <div class="direct-chat-msg">
+                                                    <div class="direct-chat-infos clearfix">
+                                                        <span class="direct-chat-name float-left">Alexander Pierce</span>
+                                                        <span class="direct-chat-timestamp float-right">23 Jan 2:00 pm</span>
+                                                    </div>
+                                                    <!-- /.direct-chat-infos -->
+                                                    <img class="direct-chat-img" src="../../images/avatar4.png" alt="message user image">
+                                                    <!-- /.direct-chat-img -->
+                                                    <div class="direct-chat-text">
+                                                        Is this template really for free? That's unbelievable!
+                                                    </div>
+                                                    <!-- /.direct-chat-text -->
+                                                </div>
+                                                <!-- /.direct-chat-msg -->
+                                                <!-- Message to the right -->
+                                                <div class="direct-chat-msg right" id='derecha'>
+                                                    <div class="direct-chat-infos clearfix">
+                                                        <span class="direct-chat-name float-right">Sarah Bullock</span>
+                                                        <span class="direct-chat-timestamp float-left">23 Jan 2:05 pm</span>
+                                                    </div>
+                                                    <!-- /.direct-chat-infos -->
+                                                    <img class="direct-chat-img" src="../../images/avatar4.png" alt="message user image">
+                                                    <!-- /.direct-chat-img -->
+                                                    <div class="direct-chat-text">
+                                                        You better believe it!
+                                                    </div>
+                                                    <!-- /.direct-chat-text -->
+                                                </div>
+                                                <!-- /.direct-chat-msg -->
+                                                <!-- /.direct-chat-msg -->
+                                            </div>
+                                            <!--/.direct-chat-messages-->
+                                            <!-- Contacts are loaded here -->
 
-
+                                            <!-- /.direct-chat-pane -->
+                                        </div>
+                                        <!-- /.card-body -->
                                     </div>
-                                    <!--<div class="card-body">
-                                        <div class="direct-chat-messages">
-                                            <div class="direct-chat-msg">
-                                                <div class="direct-chat-infos clearfix">
-                                                    <span class="direct-chat-name float-left">Alexander Pierce</span>
-                                                    <span class="direct-chat-timestamp float-right">23 Jan 2:00 pm</span>
-                                                </div>
-                                                <img class="direct-chat-img" src="/docs/3.0/assets/img/user1-128x128.jpg" alt="message user image">
-                                                <div class="direct-chat-text">
-                                                    Is this template really for free? That's unbelievable!
-                                                </div>
-                                            </div>
-                                            <div class="direct-chat-msg right">
-                                                <div class="direct-chat-infos clearfix">
-                                                    <span class="direct-chat-name float-right">Sarah Bullock</span>
-                                                    <span class="direct-chat-timestamp float-left">23 Jan 2:05 pm</span>
-                                                </div>
-                                                <img class="direct-chat-img" src="/docs/3.0/assets/img/user3-128x128.jpg" alt="message user image">
-                                                <div class="direct-chat-text">
-                                                    You better believe it!
-                                                </div>
-                                            </div>
-                                            <div class="direct-chat-msg">
-                                                <div class="direct-chat-infos clearfix">
-                                                    <span class="direct-chat-name float-left">Alexander Pierce</span>
-                                                    <span class="direct-chat-timestamp float-right">23 Jan 5:37 pm</span>
-                                                </div>
-                                                <img class="direct-chat-img" src="/docs/3.0/assets/img/user1-128x128.jpg" alt="message user image">
-                                                <div class="direct-chat-text">
-                                                    Working with AdminLTE on a great new app! Wanna join?
-                                                </div>
-                                            </div>
-                                            <div class="direct-chat-msg right">
-                                                <div class="direct-chat-infos clearfix">
-                                                    <span class="direct-chat-name float-right">Sarah Bullock</span>
-                                                    <span class="direct-chat-timestamp float-left">23 Jan 6:10 pm</span>
-                                                </div>
-                                                <img class="direct-chat-img" src="/docs/3.0/assets/img/user3-128x128.jpg" alt="message user image">
-                                                <div class="direct-chat-text">
-                                                    I would love to.
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="direct-chat-contacts">
-                                            <ul class="contacts-list">
-                                                <li>
-                                                    <a href="#">
-                                                        <img class="contacts-list-img" src="/docs/3.0/assets/img/user1-128x128.jpg">
-                                                        <div class="contacts-list-info">
-                                                            <span class="contacts-list-name">
-                                                                Count Dracula
-                                                                <small class="contacts-list-date float-right">2/28/2015</small>
-                                                            </span>
-                                                            <span class="contacts-list-msg">How have you been? I was...</span>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <img class="contacts-list-img" src="/docs/3.0/assets/img/user7-128x128.jpg">
-                                                        <div class="contacts-list-info">
-                                                            <span class="contacts-list-name">
-                                                                Sarah Doe
-                                                                <small class="contacts-list-date float-right">2/23/2015</small>
-                                                            </span>
-                                                            <span class="contacts-list-msg">I will be waiting for...</span>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <img class="contacts-list-img" src="/docs/3.0/assets/img/user3-128x128.jpg">
-                                                        <div class="contacts-list-info">
-                                                            <span class="contacts-list-name">
-                                                                Nadia Jolie
-                                                                <small class="contacts-list-date float-right">2/20/2015</small>
-                                                            </span>
-                                                            <span class="contacts-list-msg">I'll call you back at...</span>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <img class="contacts-list-img" src="/docs/3.0/assets/img/user5-128x128.jpg">
-                                                        <div class="contacts-list-info">
-                                                            <span class="contacts-list-name">
-                                                                Nora S. Vans
-                                                                <small class="contacts-list-date float-right">2/10/2015</small>
-                                                            </span>
-                                                            <span class="contacts-list-msg">Where is your new...</span>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <img class="contacts-list-img" src="/docs/3.0/assets/img/user6-128x128.jpg">
-                                                        <div class="contacts-list-info">
-                                                            <span class="contacts-list-name">
-                                                                John K.
-                                                                <small class="contacts-list-date float-right">1/27/2015</small>
-                                                            </span>
-                                                            <span class="contacts-list-msg">Can I take a look at...</span>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <img class="contacts-list-img" src="/docs/3.0/assets/img/user8-128x128.jpg">
-                                                        <div class="contacts-list-info">
-                                                            <span class="contacts-list-name">
-                                                                Kenneth M.
-                                                                <small class="contacts-list-date float-right">1/4/2015</small>
-                                                            </span>
-                                                            <span class="contacts-list-msg">Never mind I found...</span>
-                                                        </div>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>-->
+                                    <!--/.direct-chat -->
                                     <div id="summernote">
                                     </div>
                                     <div class="col-12 text-right">
-                                        <button type="button" class="btn btn-outline-secondary btn-sm" style="font-size: small;" onclick="">Enviar<i class="fa-solid fa-location-arrow ml-1"></i></button>
+                                        <button type="button" class="envio btn btn-outline-secondary btn-sm" style="font-size: small;">Enviar<i class="fa-solid fa-location-arrow ml-1"></i></button>
                                     </div>
 
                                 </div>
@@ -760,6 +683,13 @@
     //listar_tmiembro();
 
     $('#summernote').summernote({
+
+        callbacks: {
+            onImageUpload: function(files) {
+                // Cargar imagen al servidor y agregarla al editor
+                uploadImage(files[0]);
+            }
+        },
         placeholder: 'Añadir comentario',
         //tabsize: 2,
         toolbar: [
@@ -773,4 +703,22 @@
         ]
 
     });
+
+    function uploadImage(file) {
+        let formData = new FormData();
+        formData.append('file', file);
+        console.log(file);
+        $.ajax({
+            url: '../controller/cimages/images.php',
+            type: 'POST',
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function(resp) {
+                resp = JSON.parse(resp);
+                console.log(resp['url'])
+                $('#summernote').summernote('editor.insertImage', resp['url']);
+            }
+        });
+    }
 </script>
