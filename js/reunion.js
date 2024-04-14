@@ -414,7 +414,9 @@ $("#tabla_tarea_si").on('click', 'tr', function () {
         document.getElementById('select_departamentos').value = rowData['tare_desc'];
         console.log(rowData);
         //CAMBIAR ESTADO
-        evento_cambio(rowData['tare_id'])
+        evento_cambio(rowData['tare_id']);
+        comentario(rowData['tare_id']);
+        listar_comentario(rowData['tare_id']);
         /* $('.ed').on('click',function () {
              //var valor = $(this).text();
              // console.log(valor);
@@ -464,27 +466,9 @@ $("#tabla_tarea_pr").on('click', 'tr', function () {
         document.getElementById('select_departamentos').value = rowData['tare_desc'];
         console.log(rowData);
         //CAMBIAR ESTADO
-        evento_cambio(rowData['tare_id'])
-        /*
-        $('.ed').on('click',function () {
-            //var valor = $(this).text();
-            // console.log(valor);
-            $.ajax({
-                url: '../controller/tarea/cambiar_estado.php',
-                type: 'POST',
-                data: {
-                    id: rowData['tare_id'],
-                    estado: $(this).text(),
-                }
-            }).done(function (e) {
-                console.log("HIZO SEGUNDO1");
-                listar_tarea();
-                listar_siempre();
-                document.getElementById("mostrar_detalle").style.display = "none";
-                //contar_tarea('No iniciada');
-                console.log(e);
-            });
-        });*/
+        evento_cambio(rowData['tare_id']);
+        comentario(rowData['tare_id']);
+        listar_comentario(rowData['tare_id']);
     }
 })
 
@@ -516,25 +500,8 @@ $("#tabla_tarea_lc").on('click', 'tr', function () {
         console.log(rowData);
         //CAMBIAR ESTADO
         evento_cambio(rowData['tare_id'])
-        /*$('.ed').on('click',function () {
-            //var valor = $(this).text();
-            // console.log(valor);
-            $.ajax({
-                url: '../controller/tarea/cambiar_estado.php',
-                type: 'POST',
-                data: {
-                    id: rowData['tare_id'],
-                    estado: $(this).text(),
-                }
-            }).done(function (e) {
-                console.log("HIZO TERCERO");
-                listar_tarea();
-                listar_siempre();
-                document.getElementById("mostrar_detalle").style.display = "none";
-                //contar_tarea('No iniciada');
-                console.log(e);
-            });
-        });*/
+        comentario(rowData['tare_id']);
+        listar_comentario(rowData['tare_id']);
     }
 })
 $("#tabla_tarea_rt").on('click', 'tr', function () {
@@ -564,7 +531,9 @@ $("#tabla_tarea_rt").on('click', 'tr', function () {
         document.getElementById('select_departamentos').value = rowData['tare_desc'];
         console.log(rowData);
         //CAMBIAR ESTADO
-        evento_cambio(rowData['tare_id'])
+        evento_cambio(rowData['tare_id']);
+        comentario(rowData['tare_id']);
+        listar_comentario(rowData['tare_id']);
         /* $('.ed').on('click',function () {
              //var valor = $(this).text();
              // console.log(valor);
@@ -589,7 +558,7 @@ $("#tabla_tarea_rt").on('click', 'tr', function () {
 $("#tabla_tarea_cer").on('click', 'tr', function () {
     //Muestro la parte derecha
     //$("#mostrar_detalle").toggle();
-    if (tbl_tare_cer_cer.rows().count() > 0) {
+    if (tbl_tare_cer.rows().count() > 0) {
         console.log(document.getElementById("mostrar_detalle").style.display);
         document.getElementById("mostrar_detalle").style.display = "block";
         //$('.btn-primary').removeClass('btn-primary').addClass('btn-secondary');
@@ -613,7 +582,10 @@ $("#tabla_tarea_cer").on('click', 'tr', function () {
         document.getElementById('select_departamentos').value = rowData['tare_desc'];
         console.log(rowData);
         //CAMBIAR ESTADO
-        evento_cambio(rowData['tare_id'])
+
+        evento_cambio(rowData['tare_id']);
+        comentario(rowData['tare_id']);
+        listar_comentario(rowData['tare_id']);
         /*$('.ed').on('click',function () {
             //var valor = $(this).text();
             // console.log(valor);
@@ -688,12 +660,39 @@ function GenerarExcel() {
 // window.location.href = '../controller/export/exportar_datos.php';
 
 //EL OFF SIRVE PARA NO SE REPIRTA EL EVENTO
-$('.envio').off('click').on('click', function () {
-    coment = $('#summernote').summernote('code');
-    console.log(coment);
-    //console.log(document.getElementById('derecha').innerHTML );
-    document.getElementById('derecha').innerHTML += `<div class="direct-chat-text">${coment}</div>`
-    // Extraer la imagen base64 del contenido
-    let contenido = $('#summernote').summernote('code');
-    console.log('Contenido con la imagen:', contenido);
-})
+function comentario(id_tare) {
+    $('.envio').off('click').on('click', function () {
+        coment = $('#summernote').summernote('code');
+        console.log(coment);
+        editor.summernote('reset');
+        //console.log(document.getElementById('derecha').innerHTML );
+        //document.getElementById('derecha').innerHTML += `<div class="direct-chat-text">${coment}</div>`;
+        $.ajax({
+            url: '../controller/comentario/coment.php',
+            type: 'POST',
+            async: 'false',
+            data: {
+                coment: coment,
+                id_tare: id_tare,
+            }
+        }).done(function (resp) {
+            console.log(resp);
+            listar_comentario(id_tare)
+
+        });
+    })
+}
+function listar_comentario(id_tare) {
+    $.ajax({
+        url: '../controller/comentario/listar_coment.php',
+        type: 'POST',
+        async: 'false',
+        data: {
+            //coment: coment,
+            id_tare: id_tare,
+        }
+    }).done(function (resp) {
+        console.log(resp);
+        document.getElementById('contenido').innerHTML = resp;
+    });
+}
