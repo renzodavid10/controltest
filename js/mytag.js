@@ -280,6 +280,8 @@ $("#tabla_tarea_mi").on('click', 'tr', function () {
         console.log(rowData);
         //CAMBIAR ESTADO
         evento_cambio(rowData['tare_id']);
+        comentario(rowData['tare_id']);
+        listar_comentario(rowData['tare_id'])
     }
 })
 
@@ -313,7 +315,9 @@ $("#tabla_tarea_pr").on('click', 'tr', function () {
         document.getElementById('select_departamentos').value = rowData['tare_desc'];
         console.log(rowData);
         //CAMBIAR ESTADO
-        evento_cambio(rowData['tare_id'])
+        evento_cambio(rowData['tare_id']);
+        comentario(rowData['tare_id']);
+        listar_comentario(rowData['tare_id'])
     }
 })
 
@@ -482,4 +486,41 @@ function listar_mi_siempre() {
     contar_mi_tarea('Lista para Cierre');
     contar_mi_tarea('Retrasada');
     contar_mi_tarea('Cerrada');
+}
+//EL OFF SIRVE PARA NO SE REPIRTA EL EVENTO
+function comentario(id_tare) {
+    $('.envio').off('click').on('click', function () {
+        coment = $('#summernote').summernote('code');
+        console.log(coment);
+        $('#summernote').summernote('reset');
+        //console.log(document.getElementById('derecha').innerHTML );
+        //document.getElementById('derecha').innerHTML += `<div class="direct-chat-text">${coment}</div>`;
+        $.ajax({
+            url: '../controller/comentario/coment.php',
+            type: 'POST',
+            async: 'false',
+            data: {
+                coment: coment,
+                id_tare: id_tare,
+            }
+        }).done(function (resp) {
+            console.log(resp);
+            listar_comentario(id_tare)
+
+        });
+    })
+}
+function listar_comentario(id_tare) {
+    $.ajax({
+        url: '../controller/comentario/listar_coment.php',
+        type: 'POST',
+        async: 'false',
+        data: {
+            //coment: coment,
+            id_tare: id_tare,
+        }
+    }).done(function (resp) {
+        console.log(resp);
+        document.getElementById('contenido').innerHTML = resp;
+    });
 }
