@@ -517,7 +517,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card col-12 " id="mostrar_detalle">
+                <div class="card col-12 collapse " id="mostrar_detalle">
                     <div class="card-header">
                         <h3 class="card-title">
                             Información

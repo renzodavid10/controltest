@@ -664,7 +664,7 @@ function comentario(id_tare) {
     $('.envio').off('click').on('click', function () {
         coment = $('#summernote').summernote('code');
         console.log(coment);
-        editor.summernote('reset');
+        $('#summernote').summernote('reset');
         //console.log(document.getElementById('derecha').innerHTML );
         //document.getElementById('derecha').innerHTML += `<div class="direct-chat-text">${coment}</div>`;
         $.ajax({
