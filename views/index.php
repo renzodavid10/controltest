@@ -46,9 +46,23 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
             </ul>
-
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
+                <!-- Notifications Dropdown Menu -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" href="#">
+                        <i class="far fa-bell pt-1" style="font-size: 20px;"></i>
+                        <span class="badge badge-warning navbar-badge">15</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
+                        <span class="dropdown-item dropdown-header">15 Notifications</span>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item">
+                            <i class="fas fa-envelope mr-2"></i> 4 new messages
+                            <!--<span class="float-right text-muted text-sm">3 mins</span>-->
+                        </a>
+                    </div>
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
                         <img src="../images/backus.jpg" class="img-size-32  img-circle">
@@ -77,6 +91,7 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
 
                     </div>
                 </li>
+
 
             </ul>
         </nav>
@@ -138,7 +153,7 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
                         <li class="nav-header">PRINCIPAL</li>
                         <li class="nav-item">
                             <a id="#" class="nav-link" onclick="cargar_contenido('contenido_principal','tarea/tareas.php')">
-                                <i class="fa-solid fa-list-check mr-2"></i>
+                                <i class="nav-icon fa-solid fa-list-check "></i>
                                 <p>
                                     Mis Tareas
 
@@ -150,6 +165,14 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
                                 <i class="nav-icon fa-regular fa-message "></i>
                                 <p>
                                     Mis Reuniones
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" onclick="cargar_contenido('contenido_principal','formulario/formulario.php')">
+                                <i class="nav-icon fa-regular fa-newspaper"></i>
+                                <p>
+                                    Formularios
                                 </p>
                             </a>
                         </li>

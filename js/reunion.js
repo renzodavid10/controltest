@@ -372,6 +372,7 @@ function listar_empresa() {
 
         let data = JSON.parse(resp);
         console.log(data);
+        console.log(data.length+'cadena')
         if (data.length > 0) {
             llenardata = "<option value='0'>Elemento </option>";
             for (let i = 0; i < data.length; i++) {

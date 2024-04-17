@@ -591,6 +591,9 @@
         <!--</div>-->
     </div>
 </section>
+
+<!-- Summernote -->
+<script src="../plugins/summernote/summernote-bs4.min.js"></script>
 <!-- FLOT CHARTS -->
 <script src="../template/plugins/flot/jquery.flot.js"></script>
 <!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->

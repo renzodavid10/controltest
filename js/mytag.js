@@ -28,8 +28,9 @@ function listar_mi_tarea() {
         "ajax": {
             "url": "../controller/tarea/listar_tar.php",
             type: 'POST',
-            data: { accion: 'No iniciada', dni: '' }
+            data: { accion: 'No iniciada', dni: '' },
         },
+
 
         "columns": [
             /* Datos que se va a traer en el procedimiento almacenado */
@@ -74,7 +75,8 @@ function listar_mi_tarea() {
             type: 'POST',
             data: {
                 accion: 'En Progreso', dni: ''
-            }
+            },
+
         },
 
         "columns": [
@@ -121,7 +123,7 @@ function listar_mi_tarea() {
         "ajax": {
             "url": "../controller/tarea/listar_tar.php",
             type: 'POST',
-            data: { accion: 'Lista para Cierre', dni: '' }
+            data: { accion: 'Lista para Cierre', dni: '' },
         },
 
         "columns": [
@@ -170,7 +172,7 @@ function listar_mi_tarea() {
             type: 'POST',
             data: {
                 accion: 'Retrasada', dni: ''
-            }
+            },
         },
 
         "columns": [
@@ -220,7 +222,8 @@ function listar_mi_tarea() {
             type: 'POST',
             data: {
                 accion: 'Cerrada', dni: ''
-            }
+            },
+
         },
 
         "columns": [

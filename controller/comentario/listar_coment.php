@@ -5,7 +5,7 @@ require_once '../../model/model_comentario.php';
 $MC = new mode_comentario;
 $tar_id = htmlspecialchars($_POST['id_tare'], ENT_QUOTES, 'UTF-8');
 $respuesta = $MC->listar_comentario($tar_id);
-$dni=$_SESSION['S_DNI_PT'];
+$dni = $_SESSION['S_DNI_PT'];
 
 $contenido = "";
 if (count($respuesta) > 0) {
@@ -21,7 +21,7 @@ if (count($respuesta) > 0) {
                                 <!-- /.direct-chat-infos -->
                                 <img class="direct-chat-img" src="../../images/avatar4.png" alt="message user image">
                                 <!-- /.direct-chat-img -->
-                                <div class="direct-chat-text">
+                                <div class="direct-chat-text";">
                                 ' . $respuesta[$i]['come_come'] . '
                             </div>
                          <!-- /.direct-chat-text -->
@@ -36,7 +36,12 @@ if (count($respuesta) > 0) {
                         <!-- /.direct-chat-infos -->
                         <img class="direct-chat-img" src="../../images/avatar4.png" alt="message user image">
                         <!-- /.direct-chat-img -->
-                        <div class="direct-chat-text">
+                        <div class="direct-chat-text"  style="background-color: #17a2b8 !important; border-color:#17a2b8 !important;">
+                        <style>
+                        .direct-chat-danger .right>.direct-chat-text::after, .direct-chat-danger .right>.direct-chat-text::before {
+                            border-left-color: #17a2b8 !important;
+                        }
+                       </style> 
                         ' . $respuesta[$i]['come_come'] . '
                         </div>
                         <!-- /.direct-chat-text -->

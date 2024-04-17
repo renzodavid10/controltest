@@ -10,8 +10,9 @@ class generar_excel
     function llamado()
     {
         try {
+            $fechahoy = date('Y-m-d');
             $MT = new model_tarea;
-            $resultado = $MT->listar_tarea('');
+            $resultado = $MT->listar_tarea('',$fechahoy);
 
 
             // Crear un nuevo objeto Spreadsheet
@@ -65,7 +66,7 @@ class generar_excel
             header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
             header('Content-Disposition: attachment;filename="myfile.xlsx"');
             header('Cache-Control: max-age=0');
-            
+
 
             $writer = IOFactory::createWriter($spreadsheet, 'Xlsx');
             $writer->save('php://output');
