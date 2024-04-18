@@ -41,24 +41,38 @@
                             <!-- /.card-body -->
                         </div>
                     </div>
-                    <div class="col-3">
+                    <div class="col-2">
                         <p>Porcentaje de proceso</p>
                         <div class="progress progress-sm" style="border-radius: 10px">
                             <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
                                 <span class="sr-only">40% Complete (success)</span>
                             </div>
                         </div>
-                        <p>40% Complete (success)</p>
+                        <p>40%</p>
                     </div>
-                    <div class="col-3">
+                    <div class="col-2">
                         <p>Porcentaje de conformidad</p>
                         <div class="progress progress-sm mt-3" style="border-radius: 10px">
-                            <div class="progress-bar bg-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
-                                <span class="sr-only">40% Complete (success)</span>
+                            <div class="progress-bar bg-success" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;border-radius: 10px">
+                                <span class="sr-only">25% Complete</span>
+                            </div>
+                            <div class="progress-bar bg-success" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;border-radius: 10px">
+                                <span class="sr-only">25% Complete</span>
+                            </div>
+                            <div class="progress-bar bg-success" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;border-radius: 10px">
+                                <span class="sr-only">25% Complete</span>
+                            </div>
+                            <div class="progress-bar bg-success" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" style="width: 15%; border-radius: 10px">
+                                <span class="sr-only">25% Complete</span>
                             </div>
                         </div>
-                        <p>40% Complete (success)</p>
+                        <p>85%</p>
                     </div>
+                    <div class="col-2">
+
+
+                    </div>
+
                     <div class="col-1">
                         <button type="button" class="btn btn-primary btn-sm ">
                             <i class="fa-solid fa-download"></i>
