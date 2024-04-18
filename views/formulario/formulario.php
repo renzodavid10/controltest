@@ -63,10 +63,27 @@
         <!-- FIN DE LA PARTE IZQUIERDA-->
         <div class="col-6">
             <div class="card ">
-                <div class="card-header">
-                    <h3 class="card-title">Respuestas</h3>
-                </div>
-                <div class="col-12">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="container font-weight-normal">
+                            <p>Respuestas</p>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="container">
+                            <div class="row font-weight-normal">
+                                <p class="col-10 text-center">
+                                    Category
+                                </p>
+                                <p class="col-1"> 87%</p>
+                                <button type="button" class="btn btn-sm mb-2">
+                                    <i class="fa-solid fa-chevron-up"></i>
+                                </button>
+
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
 
@@ -95,7 +112,7 @@
     </div>
 </section>
 <script>
-$(document).ready(function(){
-    document.getElementById('user').innerHTML+=' jojo';
-});
+    $(document).ready(function() {
+        // document.getElementById('user').innerHTML+=' jojo';
+    });
 </script>
