@@ -12,7 +12,7 @@
                 <div class="row font-weight-normal ">
                     <div class="col-4">
                         <div class="container" style="font-size: medium;">
-                            <p id="user" style="margin-bottom: auto;"><span class="font-weight-bold ">Usuario</span> - Renzo</p>
+                            <p id="user" style="margin-bottom: auto;"><span class="font-weight-bold ">Usuario - </span> </p>
                             <p style="margin-bottom: auto;"><span class="font-weight-bold ">Rutina -</span></p>
                             <p style="margin-bottom: auto;"><span class="font-weight-bold ">Formulario-</span></p>
                             <p style="margin-bottom: auto;"><span class="font-weight-bold">Enviado - </span></p>

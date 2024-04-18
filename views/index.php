@@ -52,13 +52,12 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
                 <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
                         <i class="far fa-bell pt-1" style="font-size: 20px;"></i>
-                        <span class="badge badge-warning navbar-badge">15</span>
+                        <span class="badge badge-warning navbar-badge">3</span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
-                        <span class="dropdown-item dropdown-header">15 Notifications</span>
                         <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
-                            <i class="fas fa-envelope mr-2"></i> 4 new messages
+                        <a href="#" class="dropdown-item" onclick="cargar_contenido('contenido_principal','tarea/tareas.php')">
+                            <i class="fas fa-envelope mr-2"></i> 3 acciones sin iniciar
                             <!--<span class="float-right text-muted text-sm">3 mins</span>-->
                         </a>
                     </div>
