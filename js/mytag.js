@@ -446,6 +446,27 @@ function evento_cambio(id) {
     });
 }
 
+function enviarPais(){
+    let nombre= document.getElementById('nombre').value;
+    let dni= document.getElementById('dni').value;
+
+    $.ajax({
+        url: '../controller/paises/crear_paises.php',
+        type: 'POST',
+        data: {
+            dni: dni,
+            nombre: nombre,
+        }
+    }).done(function (e) {
+        
+        //contar_tarea('No iniciada');
+        console.log(e);
+    });
+
+
+}
+
+
 function contar_mi_tarea(tipo) {
     $.ajax({
         url: '../controller/tarea/contar_tarea.php',

@@ -457,6 +457,20 @@
                 </div>
                 <!-- /.card-body -->
             </div>
+            <!--<div class="box box-success">
+                <div class="box-header with-border">
+                    <h3 class="box-title">los datos</h3>
+                </div>
+                <div class="box-body">
+                    <input class="form-control input-lg"  id="nombre" type="text" placeholder="Ingresa pais">
+                    <br>
+                    <input class="form-control" id="dni" type="text" placeholder="Ingresa DNI">
+                    <br>
+                    <button type="submit" onclick="enviarPais()" class="btn btn-primary">Submit</button>
+    
+                </div>
+
+            </div>-->
 
         </div>
         <!-- FIN DE LA PARTE IZQUIERDA-->

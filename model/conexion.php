@@ -3,24 +3,24 @@
 class conexion_nueva
 {
 
-    //private $host = 'localhost';
+    private $host = 'localhost';
     /*private $host='dpg-co5of363e1ms73b99bm0-a.frankfurt-postgres.render.com';
     private $dbname = 'controltest';
     private $usuario = 'renzo';
      private $port='41401';
     private $password = 'gtNNzyOAKxKW4D7tobA8s7TdUkYLdN4R';*/
 
-    //private $dbname = 'db_control';
-    //private $usuario = 'postgres';
-    //private $port='5432';
-    //private $password = 'root';
+    private $dbname = 'db_control';
+    private $usuario = 'postgres';
+    private $port='5432';
+    private $password = 'root';
 
-    private $host = 'monorail.proxy.rlwy.net';
+   /* private $host = 'monorail.proxy.rlwy.net';
     private $dbname = 'railway';
     private $usuario = 'postgres';
     private $port='41401';
     //private $port='5432';
-    private $password = 'hwQdhvxKAwAoopftNPLlJIPLmHsoCogL';
+    private $password = 'hwQdhvxKAwAoopftNPLlJIPLmHsoCogL';*/
    
 
     private $pdo;
@@ -29,7 +29,7 @@ class conexion_nueva
     public function conectarBD()
     {
 
-        /*try {
+        try {
             $this->pdo = new PDO("pgsql:host=$this->host;dbname=$this->dbname", $this->usuario, $this->password);
             $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $this->pdo->exec("SET NAMES 'UTF8'");
@@ -38,7 +38,7 @@ class conexion_nueva
         } catch (PDOException $e) {
 
             echo "Falló la conexión" . $e;
-        }*/
+        }
         try {
             $this->pdo = new PDO("pgsql:host=$this->host;port=$this->port;dbname=$this->dbname", $this->usuario, $this->password);
             $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -55,5 +55,5 @@ class conexion_nueva
         $this->pdo = null;
     }
 }
-//$intento= new conexion_nueva;
-//$intento->conectarBD();
+/*$intento= new conexion_nueva;
+$intento->conectarBD();*/
