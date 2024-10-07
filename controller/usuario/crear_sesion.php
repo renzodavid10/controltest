@@ -5,7 +5,7 @@ $json = file_get_contents('php://input');
 // Decodificamos el JSON a un arreglo de PHP
 $datos = json_decode($json, true);
 // $datos ahora contiene el arreglo enviado desde JavaScript
-print_r($datos);
+//print_r($datos);
 foreach ($datos as $dato) {
 
     $_SESSION['S_IDUSUARIO'] = $dato[0];

@@ -109,7 +109,7 @@ function listar_tarea() {
             /* Datos que se va a traer en el procedimiento almacenado */
             { "defaultContent": "" },
             { "data": "tare_crea" },
-            { "data": "tare_resp" },
+            { "data": "tare_nombre" },
             { "data": "tare_desc" },
             { "data": "tare_tiem" },
             {
@@ -155,7 +155,7 @@ function listar_tarea() {
             /* Datos que se va a traer en el procedimiento almacenado */
             { "defaultContent": "" },
             { "data": "tare_crea" },
-            { "data": "tare_resp" },
+            { "data": "tare_nombre" },
             { "data": "tare_desc" },
             { "data": "tare_tiem" },
             {
@@ -202,7 +202,7 @@ function listar_tarea() {
             /* Datos que se va a traer en el procedimiento almacenado */
             { "defaultContent": "" },
             { "data": "tare_crea" },
-            { "data": "tare_resp" },
+            { "data": "tare_nombre" },
             { "data": "tare_desc" },
             { "data": "tare_tiem" },
             {
@@ -251,7 +251,7 @@ function listar_tarea() {
             /* Datos que se va a traer en el procedimiento almacenado */
             { "defaultContent": "" },
             { "data": "tare_crea" },
-            { "data": "tare_resp" },
+            { "data": "tare_nombre" },
             { "data": "tare_desc" },
             { "data": "tare_tiem" },
             {
@@ -301,7 +301,7 @@ function listar_tarea() {
             /* Datos que se va a traer en el procedimiento almacenado */
             { "defaultContent": "" },
             { "data": "tare_crea" },
-            { "data": "tare_resp" },
+            { "data": "tare_nombre" },
             { "data": "tare_desc" },
             { "data": "tare_tiem" },
             {
@@ -374,7 +374,7 @@ function listar_empresa() {
         console.log(data);
         console.log(data.length+'cadena')
         if (data.length > 0) {
-            llenardata = "<option value='0'>Elemento </option>";
+            llenardata = "<option value='0'>Empresa </option>";
             for (let i = 0; i < data.length; i++) {
                 llenardata += "<option value='" + data[i]['empr_name'] + "'>" + data[i]['empr_name'] + " </option>";
                 // console.log(data[i]['usua_dni']);
@@ -405,7 +405,7 @@ $("#tabla_tarea_si").on('click', 'tr', function () {
         $(this).addClass('selected');
         // Obtener los datos de la fila seleccionada
         var rowData = tbl_primer_miembro.row(this).data();
-
+        document.getElementById('concatenar').innerHTML = 'Accion creada por '+rowData['tare_nombrecre'];
         document.getElementById('descri').value = rowData['tare_desc'];
         document.getElementById('fvenci').value = rowData['tare_tiem'];
         document.getElementById('select_responsable2').value = rowData['tare_desc'];
@@ -457,7 +457,7 @@ $("#tabla_tarea_pr").on('click', 'tr', function () {
         $(this).addClass('selected');
         // Obtener los datos de la fila seleccionada
         var rowData = tbl_tare_progreso.row(this).data();
-
+        document.getElementById('concatenar').innerHTML = 'Accion creada por '+rowData['tare_nombrecre'];
         document.getElementById('descri').value = rowData['tare_desc'];
         document.getElementById('fvenci').value = rowData['tare_tiem'];
         document.getElementById('select_responsable2').value = rowData['tare_desc'];
@@ -490,7 +490,7 @@ $("#tabla_tarea_lc").on('click', 'tr', function () {
         $(this).addClass('selected');
         // Obtener los datos de la fila seleccionada
         var rowData = tbl_tare_lc.row(this).data();
-
+        document.getElementById('concatenar').innerHTML = 'Accion creada por '+rowData['tare_nombrecre'];
         document.getElementById('descri').value = rowData['tare_desc'];
         document.getElementById('fvenci').value = rowData['tare_tiem'];
         document.getElementById('select_responsable2').value = rowData['tare_desc'];
@@ -522,7 +522,7 @@ $("#tabla_tarea_rt").on('click', 'tr', function () {
         $(this).addClass('selected');
         // Obtener los datos de la fila seleccionada
         var rowData = tbl_tare_rt.row(this).data();
-
+        document.getElementById('concatenar').innerHTML = 'Accion creada por '+rowData['tare_nombrecre'];
         document.getElementById('descri').value = rowData['tare_desc'];
         document.getElementById('fvenci').value = rowData['tare_tiem'];
         document.getElementById('select_responsable2').value = rowData['tare_desc'];
@@ -573,7 +573,7 @@ $("#tabla_tarea_cer").on('click', 'tr', function () {
         $(this).addClass('selected');
         // Obtener los datos de la fila seleccionada
         var rowData = tbl_tare_cer.row(this).data();
-
+        document.getElementById('concatenar').innerHTML = 'Accion creada por '+rowData['tare_nombrecre'];
         document.getElementById('descri').value = rowData['tare_desc'];
         document.getElementById('fvenci').value = rowData['tare_tiem'];
         document.getElementById('select_responsable2').value = rowData['tare_desc'];
@@ -621,12 +621,11 @@ function evento_cambio(id) {
                 estado: $(this).text(),
             }
         }).done(function (e) {
-            console.log("HIZO PRIMERO");
+            
             listar_tarea();
             listar_siempre();
             document.getElementById("mostrar_detalle").style.display = "none";
-            //contar_tarea('No iniciada');
-            console.log(e + 'Quee s');
+            
         });
     });
 }
@@ -693,7 +692,6 @@ function listar_comentario(id_tare) {
             id_tare: id_tare,
         }
     }).done(function (resp) {
-        console.log(resp);
         document.getElementById('contenido').innerHTML = resp;
     });
 }

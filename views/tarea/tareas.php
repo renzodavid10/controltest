@@ -495,8 +495,8 @@
                 </div>
                 <div class="card col-12 collapse" id="mostrar_detalle">
                     <div class="card-header">
-                        <h3 class="card-title">
-                            Información
+                        <h3 class="card-title" id="concatenar">
+                           Accion creada por 
                         </h3>
                         <div class="card-tools">
                             <button type="button" class="btn btn-tool " data-card-widget="remove">
@@ -590,7 +590,7 @@
                                     <div id="summernote">
                                     </div>
                                     <div class="col-12 text-right">
-                                        <button type="button" class="envio btn btn-outline-secondary btn-sm" style="font-size: small;" onclick="">Enviar<i class="fa-solid fa-location-arrow ml-1"></i></button>
+                                        <button type="button" class="envio btn btn-outline-secondary btn-sm" style="font-size: small;">Enviar<i class="fa-solid fa-location-arrow ml-1"></i></button>
                                     </div>
 
                                 </div>

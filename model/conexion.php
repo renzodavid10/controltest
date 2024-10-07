@@ -29,7 +29,7 @@ class conexion_nueva
     public function conectarBD()
     {
 
-        try {
+        /*try {
             $this->pdo = new PDO("pgsql:host=$this->host;dbname=$this->dbname", $this->usuario, $this->password);
             $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $this->pdo->exec("SET NAMES 'UTF8'");
@@ -38,11 +38,11 @@ class conexion_nueva
         } catch (PDOException $e) {
 
             echo "Falló la conexión" . $e;
-        }
+        }*/
         try {
             $this->pdo = new PDO("pgsql:host=$this->host;port=$this->port;dbname=$this->dbname", $this->usuario, $this->password);
             $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $this->pdo->exec("SET NAMES 'UTF8'");
+            $this->pdo->exec("SET NAMES 'UTF-8'");
             //return"Conexión Lista";
             return $this->pdo;
         } catch (PDOException $e) {

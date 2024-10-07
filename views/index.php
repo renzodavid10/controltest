@@ -168,10 +168,10 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link" onclick="cargar_contenido('contenido_principal','formulario/formulario.php')">
+                            <a href="#" class="nav-link" onclick="cargar_contenido('contenido_principal','rutina/rutina.php')">
                                 <i class="nav-icon fa-regular fa-newspaper"></i>
                                 <p>
-                                    Formularios
+                                    Rutinas
                                 </p>
                             </a>
                         </li>
@@ -234,7 +234,7 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
                 <div class="row">
                     <!-- Default to the left -->
                     <div class="">
-                        <strong>&copy; <!--Copyright MPCH GTIE - Todos los derechos reservados-->.</strong> All rights reserved.
+                        <strong>&copy; <!--Copyright MPCH GTIE - Todos los derechos reservados-->.</strong> Elaborado: Alfredo Torres.
                     </div>
                 </div>
             </div>
@@ -270,6 +270,7 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
 
 
     <script>
+        
         $(document).ready(function() {
             $('.js-example-basic-single').select2();
             console.log("hola")

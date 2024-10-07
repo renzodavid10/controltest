@@ -49,7 +49,7 @@
         <div class="col-md-8">
             <div class="card mt-2">
                 <div class="card-header">
-                    <h5 class="card-title">PLAN VPO MOTUPE</h5>
+                    <h5 class="card-title">PLAN VPO MOTUPE TERCEROS</h5>
                 </div>
                 <div class="col-12">
 
@@ -143,6 +143,7 @@
 
                             #tabla_tarea_si tr td:nth-child(3) {
                                 text-align: center !important;
+                                font-size: 11px;
 
 
                             }
@@ -375,12 +376,18 @@
                                 text-align: justify !important;
                                 vertical-align: middle;
                             }
-
-                            #tabla_tarea_rt tr td:nth-child(3) {
+                            #tabla_tarea_rt tr td:nth-child(2) {
                                 text-align: center !important;
 
 
                             }
+
+                            #tabla_tarea_rt tr td:nth-child(3) {
+                                text-align: center !important;
+                                font-size: 11px;
+
+                            }
+                            
 
                             #tabla_tarea_rt tr:first-child td:nth-child(4) {
                                 width: 50%;
@@ -519,8 +526,8 @@
                 </div>
                 <div class="card col-12 collapse " id="mostrar_detalle">
                     <div class="card-header">
-                        <h3 class="card-title">
-                            Información
+                        <h3 class="card-title" id="concatenar">
+                            
                         </h3>
                         <div class="card-tools">
                             <button type="button" class="btn btn-tool " data-card-widget="remove">
@@ -583,10 +590,6 @@
                                 </select>
                             </div>
                             <div class="mt-1 col-12">
-                                <label for="oracion" class="form-label">ORIGEN DE LA ACCION</label>
-                                <input type="text" id="oracion" class="form-control">
-                            </div>
-                            <div class="mt-1 col-12">
                                 <label for="craiz" class="form-label">ORIGEN DE LA ACCION</label>
                                 <input type="text" id="craiz" class="form-control">
                             </div>
@@ -640,7 +643,6 @@
     $(document).ready(function() {
         $('.js-example-basic-single').select2();
         //listar_tarea();
-        console.log("hola")
     });
 
 
