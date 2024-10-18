@@ -8,6 +8,7 @@ function crear_cuenta() {
     let pass = document.getElementById('password').value;
     let pass2 = document.getElementById('password2').value;
     let empresa = document.getElementById('select_empresa').value;
+    let rol = document.getElementById('select_rol').value;
 
     //return console.log(estado);
     $.ajax({
@@ -23,6 +24,7 @@ function crear_cuenta() {
             email: email,
             pass: pass,
             empresa: empresa,
+            rol:rol
         }
     }).done(function (e) {
         console.log(e);

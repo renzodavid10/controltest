@@ -3,6 +3,15 @@
 <script src="../js/rutina.js?rev=<?php echo time() ///para recgar el js 
                                     ?>">
 </script>
+<style>
+    .select2-container .select2-selection--single {
+        height: 38px !important;
+    }
+
+    .select2-selection__arrow {
+        height: 38px !important;
+    }
+</style>
 <section class="content">
     <!-- <div class="container-fluid">-->
     <div class="row">
@@ -285,17 +294,35 @@
                                 overflow-x: auto;
                                 font-size: small;
 
+
                             }
 
                             table td {
                                 word-wrap: break-word;
                                 max-width: 400px;
+                                font-size: 11px;
                             }
 
                             #tb_rm td {
                                 white-space: inherit;
                                 text-align: justify !important;
                                 vertical-align: middle;
+                            }
+
+                            #tb_rm tr td:nth-child(1) {
+                                text-align: center !important;
+                                font-size: 11px;
+                                width: 5.5%;
+
+
+                            }
+
+                            #tb_rm tr td:nth-child(2) {
+                                text-align: center !important;
+                                font-size: 11px;
+                                width: 30%;
+
+
                             }
 
                             #tb_rm tr td:nth-child(3) {
@@ -306,7 +333,7 @@
                             }
 
                             #tb_rm tr:first-child td:nth-child(4) {
-                                width: 50%;
+                                width: 10%;
 
                             }
 
@@ -360,291 +387,45 @@
                     </div>
                     <div class="card-body">
                         <div class="row">
-                            <button type="button" class="ed btn btn-secondary   btn-sm mt-1 mr-1" style="font-size: small;">Realizada</button>
+                            <button type="button" class="reali btn btn-secondary   btn-sm mt-1 mr-1" style="font-size: small;">Realizada</button>
                         </div>
                         <div class="row font-weight-normal ">
-                        <div class="mt-3 col-12">
-                                <label for="area" id="area" class="form-label"></label>
-                                <div class="form-group">
-                                    <div class="form-check">
-                                        <input class="form-check-input" value="Si" type="radio" name="pr_1">
-                                        <label class="form-check-label">Si</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" value="No" type="radio" name="pr_1">
-                                        <label class="form-check-label">No</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" value="NA" type="radio" name="pr_1">
-                                        <label class="form-check-label">NA</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mt-3 col-12">
-                                <label for="subarea" id="suba" class="form-label"></label>
-                                
-                            </div>
-                            <div class="mt-3 col-12">
-                                <label for="pregunta1" id="pr_1" class="form-label"></label>
-                                <div class="form-group">
-                                    <div class="form-check">
-                                        <input class="form-check-input" value="Si" type="radio" name="pr_1">
-                                        <label class="form-check-label">Si</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" value="No" type="radio" name="pr_1">
-                                        <label class="form-check-label">No</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" value="NA" type="radio" name="pr_1">
-                                        <label class="form-check-label">NA</label>
-                                    </div>
-                                </div>
+                            <div class="mt-1 col-12">
+                                <label for="select_area" class="form-label">AREA</label>
+                                <select class="js-example-basic-single" id="select_area" style="width: 100%">
+                                    <!-- <option value="0">Responsable</option>
+                                    <option>JYMDA</option>
+                                    <option>DEPROTEC</option>-->
+                                </select>
                             </div>
                             <div class="mt-1 col-12">
-                                <label for="pregunta2" id='pr_2' class="form-label"></label>
-                                <div class="form-group">
-                                    <div class="form-check">
-                                        <input class="form-check-input"value="Si" type="radio" name="pr_2">
-                                        <label class="form-check-label">Si</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input"value="No" type="radio" name="pr_2">
-                                        <label class="form-check-label">No</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" value="NA" type="radio" name="pr_2">
-                                        <label class="form-check-label">NA</label>
-                                    </div>
-                                </div>
+                                <label for="select_subarea" class="form-label">SUBAREA</label>
+                                <select class="js-example-basic-single" id="select_subarea" style="width: 100%">
+                                </select>
                             </div>
-                            <div class="mt-1 col-12">
-                                <label for="pregunta3" id="pr_3" class="form-label"></label>
-                                <div class="form-group">
-                                    <div class="form-check">
-                                        <input class="form-check-input" value="Si" type="radio" name="pr_3">
-                                        <label class="form-check-label">Si</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" value="No" type="radio" name="pr_3">
-                                        <label class="form-check-label">No</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" value="NA" type="radio" name="pr_3">
-                                        <label class="form-check-label">NA</label>
-                                    </div>
-                                </div>
+                            <div class="mt-3 col-12" id="cuestionario">
+
                             </div>
-                            <div class="mt-1 col-12">
-                                <label for="pregunta4" id="pr_4" class="form-label"></label>
-                                <div class="form-group">
-                                    <div class="form-check">
-                                        <input class="form-check-input"value="Si" type="radio" name="pr_4">
-                                        <label class="form-check-label">Si</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" value="No" type="radio" name="pr_4">
-                                        <label class="form-check-label">No</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" value="NA" type="radio" name="pr_5">
-                                        <label class="form-check-label">NA</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mt-3 col-12">
-                                <label for="pregunta5" id="pr_5" class="form-label"></label>
-                                <div class="form-group">
-                                    <div class="form-check">
-                                        <input class="form-check-input" value="Si" type="radio" name="pr_5">
-                                        <label class="form-check-label">Si</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" value="No" type="radio" name="pr_5">
-                                        <label class="form-check-label">No</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input"value="NA" type="radio" name="pr_5">
-                                        <label class="form-check-label">NA</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mt-3 col-12">
-                                <label for="pregunta6" id="pr_6" class="form-label"></label>
-                                <div class="form-group">
-                                    <div class="form-check">
-                                        <input class="form-check-input" value="Si" type="radio" name="pr_6">
-                                        <label class="form-check-label">Si</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" value="No" type="radio" name="pr_6">
-                                        <label class="form-check-label">No</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" value="NA" type="radio" name="pr_6">
-                                        <label class="form-check-label">NA</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mt-3 col-12">
-                                <label for="pregunta7" id="pr_7" class="form-label"></label>
-                                <div class="form-group">
-                                    <div class="form-check">
-                                        <input class="form-check-input" value="Si" type="radio" name="pr_7">
-                                        <label class="form-check-label">Si</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" value="No" type="radio" name="pr_7">
-                                        <label class="form-check-label">No</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" value="NA" type="radio" name="pr_7">
-                                        <label class="form-check-label">NA</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mt-3 col-12">
-                                <label for="pregunta8" id="pr_8" class="form-label"></label>
-                                <div class="form-group">
-                                    <div class="form-check">
-                                        <input class="form-check-input"value="Si" type="radio" name="pr_8">
-                                        <label class="form-check-label">Si</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input"value="No" type="radio" name="pr_8">
-                                        <label class="form-check-label">No</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input"value="NA" type="radio" name="pr_8">
-                                        <label class="form-check-label">NA</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mt-3 col-12">
-                                <label for="pregunta9" id="pr_9" class="form-label"></label>
-                                <div class="form-group">
-                                    <div class="form-check">
-                                        <input class="form-check-input" value="Si" type="radio" name="pr_9">
-                                        <label class="form-check-label">Si</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" value="No" type="radio" name="pr_9">
-                                        <label class="form-check-label">No</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" value="NA" type="radio" name="pr_9">
-                                        <label class="form-check-label">NA</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mt-3 col-12">
-                                <label for="pregunta10" id="pr_10" class="form-label"></label>
-                                <div class="form-group">
-                                    <div class="form-check">
-                                        <input class="form-check-input" value="Si" type="radio" name="pr_10">
-                                        <label class="form-check-label">Si</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" value="No" type="radio" name="pr_10">
-                                        <label class="form-check-label">No</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" value="NA" type="radio" name="pr_10">
-                                        <label class="form-check-label">NA</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mt-3 col-12">
-                                <label for="pregunta11" id="pr_11" class="form-label"></label>
-                                <div class="form-group">
-                                    <div class="form-check">
-                                        <input class="form-check-input"value="Si" type="radio" name="pr_11">
-                                        <label class="form-check-label">Si</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input"value="No" type="radio" name="pr_11">
-                                        <label class="form-check-label">No</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input"value="NA" type="radio" name="pr_11">
-                                        <label class="form-check-label">NA</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mt-3 col-12">
-                                <label for="pregunta12" id="pr_12" class="form-label"></label>
-                                <div class="form-group">
-                                    <div class="form-check">
-                                        <input class="form-check-input" value="Si" type="radio" name="pr_12">
-                                        <label class="form-check-label">Si</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" value="No" type="radio" name="pr_12">
-                                        <label class="form-check-label">No</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input"value="NA" type="radio" name="pr_12">
-                                        <label class="form-check-label">NA</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mt-3 col-12">
-                                <label for="pregunta13" id="pr_13" class="form-label"></label>
-                                <div class="form-group">
-                                    <div class="form-check">
-                                        <input class="form-check-input"value="Si" type="radio" name="pr_13">
-                                        <label class="form-check-label">Si</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" value="No" type="radio" name="pr_13">
-                                        <label class="form-check-label">No</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input"value="NA" type="radio" name="pr_13">
-                                        <label class="form-check-label">NA</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mt-3 col-12">
-                                <label for="pregunta14" id="pr_14" class="form-label"></label>
-                                <div class="form-group">
-                                    <div class="form-check">
-                                        <input class="form-check-input"value="Si" type="radio" name="pr_14">
-                                        <label class="form-check-label">Si</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" value="No" type="radio" name="pr_14">
-                                        <label class="form-check-label">No</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input"value="NA" type="radio" name="pr_14">
-                                        <label class="form-check-label">NA</label>
-                                    </div>
-                                </div>
-                            </div>
+
 
                             <div class="mt-1 col-12">
                                 <label class="form-label">COLUMNA</label>
                                 <div class="container pb-2 pt-1" style="background-color:#f5f5f5;  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);">
                                     <label class="form-label">COMENTARIO</label>
-                                    <!-- Construct the card with style you want. Here we are using card-danger -->
-                                    <!-- Then add the class direct-chat and choose the direct-chat-* contexual class -->
-                                    <!-- The contextual class should match the card, so we are using direct-chat-danger -->
+
                                     <div class="card card-danger direct-chat direct-chat-danger">
-                                        <!-- /.card-header -->
+
                                         <div class="card-body">
-                                            <!-- Conversations are loaded here -->
+
                                             <div class="direct-chat-messages" style="height:500px" id='contenido'>
 
                                             </div>
-                                            <!--/.direct-chat-messages-->
-                                            <!-- Contacts are loaded here -->
 
-                                            <!-- /.direct-chat-pane -->
+
                                         </div>
-                                        <!-- /.card-body -->
+
                                     </div>
-                                    <!--/.direct-chat -->
+
                                     <div id="summernote">
                                     </div>
                                     <div class="col-12 text-right">
@@ -652,6 +433,7 @@
                                     </div>
 
                                 </div>
+
                             </div>
                         </div>
 
@@ -675,8 +457,12 @@
         // listar_tarea();
 
     })
+
     listar_tb_rd();
     listar_tb_rs();
+    listar_tb_rm();
+    listar_area();
+    //listar_subarea(1)
     $('#summernote').summernote({
 
         //TODO: bUSCAR CLOUD PARA SUBIR IMAGENES

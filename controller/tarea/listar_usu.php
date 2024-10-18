@@ -1,8 +1,9 @@
 <?php require_once '../../model/model_usuario.php';
 
 $MU= new model_usuario(); //Instaciamos
+$usu_nombre =  htmlspecialchars($_POST['nombre'], ENT_QUOTES, 'UTF-8');
+$consultar=$MU->listar_usuario($usu_nombre);
 
-$consultar=$MU->listar_usuario();
 
 //echo $consultar;
 

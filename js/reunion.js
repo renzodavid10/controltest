@@ -42,15 +42,36 @@ function limpiar_registro() {
     $('#select_responsable').select2().val("0").trigger('change.select2');
     $('#select_elemento').select2().val("0").trigger('change.select2');
 }
+$('#select_elemento').on('select2:opening', function () { /// si seleccion un analisis me bota el id y los examenes dentro del nalisis
+    let nombre = document.getElementById('select_elemento').value;
+    console.log(nombre)
+    listar_usu(nombre);
 
-function listar_usu() {
+});
+$('#select_elemento').on('select2:closing', function () { /// si seleccion un analisis me bota el id y los examenes dentro del nalisis
+    let nombre = document.getElementById('select_elemento').value;
+    console.log(nombre)
+    listar_usu(nombre);
+
+});
+$('#select_elemento').on('select2:select', function () { /// si seleccion un analisis me bota el id y los examenes dentro del nalisis
+    let nombre = document.getElementById('select_elemento').value;
+    console.log(nombre)
+    listar_usu(nombre);
+
+});
+function listar_usu(nombre) {
+
     $.ajax({
         url: '../controller/tarea/listar_usu.php',
         type: 'POST',
-        async: 'false'
+        async: 'false',
+        data:{
+            nombre:nombre
+        }
 
 
-    }).done(function (resp) {
+    }).done(function (resp) { 
         console.log(resp);
 
         let data = JSON.parse(resp);
@@ -68,7 +89,7 @@ function listar_usu() {
         } else
             llenardata = "<option value='0'>Responsable </option>";
         document.getElementById('select_responsable').innerHTML = llenardata;
-        console.log("N o");
+        //console.log("N o");
     });
 }
 

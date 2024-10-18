@@ -29,6 +29,7 @@
         </div>
     </div>
 </div>-->
+<?php session_start();?>
 <script src="../js/reunion.js?rev=<?php echo time() ///para recgar el js 
                                     ?>">
 
@@ -376,6 +377,7 @@
                                 text-align: justify !important;
                                 vertical-align: middle;
                             }
+
                             #tabla_tarea_rt tr td:nth-child(2) {
                                 text-align: center !important;
 
@@ -387,7 +389,7 @@
                                 font-size: 11px;
 
                             }
-                            
+
 
                             #tabla_tarea_rt tr:first-child td:nth-child(4) {
                                 width: 50%;
@@ -527,7 +529,7 @@
                 <div class="card col-12 collapse " id="mostrar_detalle">
                     <div class="card-header">
                         <h3 class="card-title" id="concatenar">
-                            
+
                         </h3>
                         <div class="card-tools">
                             <button type="button" class="btn btn-tool " data-card-widget="remove">
@@ -541,7 +543,9 @@
                             <button type="button" class="ed btn btn-secondary btn-sm mt-1 mr-1" style="font-size: small;">En Progreso</button>
                             <button type="button" class="ed btn btn-secondary btn-sm mt-1 mr-1" style="font-size: small;" onclick="">Lista para Cierre</button>
                             <button type="button" class="ed btn btn-secondary btn-sm mt-1 mr-1" style="font-size: small;">Cancelada</button>
-                            <button type="button" class="ed btn btn-secondary btn-sm mt-1 mr-1" style="font-size: small;">Cerrada</button>
+                            <?php if ($_SESSION['S_ROL'] == "SUPERVISOR") { ?>
+                                <button type="button" class="ed btn btn-secondary btn-sm mt-1 mr-1" style="font-size: small;">Cerrada</button>
+                            <?php } ?>
                         </div>
                         <div class="row font-weight-normal ">
                             <div class="mt-3 col-12">
@@ -639,7 +643,7 @@
 <script src="../plugins/summernote/summernote-bs4.min.js"></script>
 <script>
     listar_tarea();
-    listar_usu();
+    //listar_usu();
     $(document).ready(function() {
         $('.js-example-basic-single').select2();
         //listar_tarea();

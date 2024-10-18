@@ -97,10 +97,19 @@
                                 <label for="password2" class="form-label">Repetir Contraseña </label>
                                 <input type="password" id="password2" placeholder="" class="form-control">
                             </div>
+                            <div class="col-6 ">
+                                <label for="select_empresa" class="form-label">Empresa:</label>
+                                <select class="js-example-basic-single" id="select_rol" style="width: 100%">
+                                    <option value='0'> Seleccione Cargo </option>
+                                    <option value='EMPLEADO'> EMPLEADO </option>
+                                    <option value='SUPERVISOR'>SUPERVISOR</option>
+
+                                </select>
+                            </div>
                         </div>
 
                     </div>
-                    <div class="card-footer">
+                    <div class=" card-footer">
                         <div class=" col-12 text-end">
                             <button type="button" class="btn btn-secondary " onclick="regresar()">Regresar</button>
                             <button type="button" class="btn btn-primary btn-lg" onclick="crear_cuenta()">Guardar</button>

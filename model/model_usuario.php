@@ -4,11 +4,11 @@ require_once 'conexion.php';
 class model_usuario extends conexion_nueva
 {
 
-    public function create_user($usu_name, $usu_apap, $usu_apam, $usu_dni, $usu_celu, $usu_corr, $usu_pass, $usu_foto, $usu_empr)
+    public function create_user($usu_name, $usu_apap, $usu_apam, $usu_dni, $usu_celu, $usu_corr, $usu_pass, $usu_foto, $usu_empr,$usu_rol)
     {
         $c = conexion_nueva::conectarBD();
 
-        $sql = 'SELECT * from fn_crear_usuario(?,?,?,?,?,?,?,?,?)';
+        $sql = 'SELECT * from fn_crear_usuario(?,?,?,?,?,?,?,?,?,?)';
         $query = $c->prepare($sql);
         $query->bindParam(1, $usu_name);
         $query->bindParam(2, $usu_apap);
@@ -19,6 +19,8 @@ class model_usuario extends conexion_nueva
         $query->bindParam(7, $usu_pass);
         $query->bindParam(8, $usu_foto);
         $query->bindParam(9, $usu_empr);
+        $query->bindParam(10, $usu_rol);
+
         $query->execute();
 
         if ($row = $query->fetchColumn()) {
@@ -28,14 +30,15 @@ class model_usuario extends conexion_nueva
         conexion_nueva::cerrar_conexion();
     }
 
-    function listar_usuario()
+    function listar_usuario($usu_nombre)
     {
         $c = conexion_nueva::conectarBD();
 
-        $sql = "SELECT * FROM  fn_listar_usuario()";
+        $sql = "SELECT * FROM  fn_listar_usuario(?)";
 
         $arreglo = array();
         $query = $c->prepare($sql);
+        $query->bindParam(1, $usu_nombre);
         $query->execute();
 
         $resultado = $query->fetchAll(PDO::FETCH_ASSOC);

@@ -270,7 +270,6 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
 
 
     <script>
-        
         $(document).ready(function() {
             $('.js-example-basic-single').select2();
             console.log("hola")
@@ -364,6 +363,25 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
             } else {
                 return false;
             }
+        }
+        crear_cuestionario(1);
+        crear_cuestionario(2);
+        crear_cuestionario(3)
+
+        function crear_cuestionario( cuesid) {
+            //return console.log(fecha);
+            $.ajax({
+                url: '../controller/cuestionario/crear_cuest.php',
+                //async:'false',
+                type: 'POST',
+                data: {
+                    cues_id: cuesid
+                }
+            }).done(function(e) {
+                console.log(e);
+
+            })
+
         }
     </script>
 </body>

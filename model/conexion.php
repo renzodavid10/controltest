@@ -10,7 +10,7 @@ class conexion_nueva
      private $port='41401';
     private $password = 'gtNNzyOAKxKW4D7tobA8s7TdUkYLdN4R';*/
 
-    private $dbname = 'db_control';
+    private $dbname = 'db_control2';
     private $usuario = 'postgres';
     private $port='5432';
     private $password = 'root';
