@@ -19,7 +19,7 @@ class conexion_nueva
     private $dbname = 'railway';
     private $usuario = 'postgres';
     //private $port='41401';
-    private $port='5432';
+    private $port='13200';
     private $password = 'mFSDSZesLHdGDDzOBZHgiXznAXwUxFBN';
    
 
