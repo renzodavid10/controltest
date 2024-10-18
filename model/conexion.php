@@ -3,24 +3,24 @@
 class conexion_nueva
 {
 
-    private $host = 'localhost';
+    /*private $host = 'localhost';
     /*private $host='dpg-co5of363e1ms73b99bm0-a.frankfurt-postgres.render.com';
     private $dbname = 'controltest';
     private $usuario = 'renzo';
      private $port='41401';
     private $password = 'gtNNzyOAKxKW4D7tobA8s7TdUkYLdN4R';*/
 
-    private $dbname = 'db_control2';
+    /*private $dbname = 'db_control2';
     private $usuario = 'postgres';
     private $port='5432';
-    private $password = 'root';
+    private $password = 'root';*/
 
-   /* private $host = 'monorail.proxy.rlwy.net';
+    private $host = 'monorail.proxy.rlwy.net';
     private $dbname = 'railway';
     private $usuario = 'postgres';
-    private $port='41401';
-    //private $port='5432';
-    private $password = 'hwQdhvxKAwAoopftNPLlJIPLmHsoCogL';*/
+    //private $port='41401';
+    private $port='5432';
+    private $password = 'mFSDSZesLHdGDDzOBZHgiXznAXwUxFBN';
    
 
     private $pdo;
