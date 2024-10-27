@@ -267,7 +267,9 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
     <script src="../template/dist/js/adminlte.min.js"></script>
 
 
-
+<?php 
+ob_start();
+?>
 
     <script>
         $(document).ready(function() {
