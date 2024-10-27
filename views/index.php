@@ -5,6 +5,7 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
     //echo "78787";
     header('Location: ../'); /// si mi inicion esta creada me manda a la pagina
 }
+ob_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -268,7 +269,7 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
 
 
 <?php 
-ob_start();
+
 ?>
 
     <script>
