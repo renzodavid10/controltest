@@ -1,36 +1,7 @@
-<!--<div class="row">
-    <div class="col-lg-8 connectedSortable ui-sortable">
-        <div class="card ml-1 mt-3">
-            <div class="card-header">
-                <h5 class="car-title">PLAN VPO MOTUPE</h5>
-            </div>
-            <!-- Donut chart -->
-<!-- <div class="card card-primary card-outline">
-                <div class="card-header">
-                    <h3 class="card-title">
-                        <i class="far fa-chart-bar"></i>
-                        Donut Chart
-                    </h3>
 
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                            <i class="fas fa-minus"></i>
-                        </button>
-                        <button type="button" class="btn btn-tool" data-card-widget="remove">
-                            <i class="fas fa-times"></i>
-                        </button>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div id="donut-chart" style="height: 200px;"></div>
-                </div>
-                <!-- /.card-body-->
-<!--</div>
-        </div>
-    </div>
-</div>-->
 <?php 
 echo $_SESSION['S_ROL'];
+ob_start();
 session_start();
 echo $_SESSION['S_ROL']
 ?>
