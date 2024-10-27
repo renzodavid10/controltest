@@ -3,7 +3,7 @@
 echo $_SESSION['S_ROL'];
 ob_start();
 session_start();
-echo $_SESSION['S_ROL']
+echo $_SESSION['S_ROL'];
 ?>
 <script src="../js/reunion.js?rev=<?php echo time() ///para recgar el js 
                                     ?>">
