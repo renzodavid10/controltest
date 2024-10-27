@@ -29,7 +29,11 @@
         </div>
     </div>
 </div>-->
-<?php session_start();?>
+<?php 
+echo $_SESSION['S_ROL'];
+session_start();
+echo $_SESSION['S_ROL']
+?>
 <script src="../js/reunion.js?rev=<?php echo time() ///para recgar el js 
                                     ?>">
 

@@ -1,11 +1,13 @@
 <?php
+ob_start();
 session_start();
 
 if (!isset($_SESSION['S_IDUSUARIO'])) {
     //echo "78787";
     header('Location: ../'); /// si mi inicion esta creada me manda a la pagina
+    exit();
 }
-ob_start();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
