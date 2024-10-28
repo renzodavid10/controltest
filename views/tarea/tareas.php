@@ -1,34 +1,6 @@
-<!--<div class="row">
-    <div class="col-lg-8 connectedSortable ui-sortable">
-        <div class="card ml-1 mt-3">
-            <div class="card-header">
-                <h5 class="car-title">PLAN VPO MOTUPE</h5>
-            </div>
-            <!-- Donut chart -->
-<!-- <div class="card card-primary card-outline">
-                <div class="card-header">
-                    <h3 class="card-title">
-                        <i class="far fa-chart-bar"></i>
-                        Donut Chart
-                    </h3>
-
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                            <i class="fas fa-minus"></i>
-                        </button>
-                        <button type="button" class="btn btn-tool" data-card-widget="remove">
-                            <i class="fas fa-times"></i>
-                        </button>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div id="donut-chart" style="height: 200px;"></div>
-                </div>
-                <!-- /.card-body-->
-<!--</div>
-        </div>
-    </div>
-</div>-->
+<?php 
+session_start();
+?>
 <script src="../js/mytag.js?rev=<?php echo time() ///para recgar el js 
                                 ?>">
 
@@ -510,8 +482,9 @@
                             <button type="button" class="ed btn btn-secondary btn-sm mt-1 mr-1" style="font-size: small;">En Progreso</button>
                             <button type="button" class="ed btn btn-secondary btn-sm mt-1 mr-1" style="font-size: small;" onclick="">Lista para Cierre</button>
                             <button type="button" class="ed btn btn-secondary btn-sm mt-1 mr-1" style="font-size: small;">Cancelada</button>
-                            <button type="button" class="ed btn btn-secondary btn-sm mt-1 mr-1" style="font-size: small;">Cerrada</button>
-                        </div>
+                            <?php if ($_SESSION['S_ROL'] == "SUPERVISOR") { ?>
+                                <button type="button" class="ed btn btn-secondary btn-sm mt-1 mr-1" style="font-size: small;">Cerrada</button>
+                            <?php } ?>                        </div>
                         <div class="row font-weight-normal ">
                             <div class="mt-3 col-12">
                                 <label for="descri" class="form-label">DESCRIPCIÓN DE LA ACCIÓN</label>
@@ -561,10 +534,6 @@
                             <div class="mt-1 col-12">
                                 <label for="oracion" class="form-label">ORIGEN DE LA ACCION</label>
                                 <input type="text" id="oracion" class="form-control">
-                            </div>
-                            <div class="mt-1 col-12">
-                                <label for="craiz" class="form-label">ORIGEN DE LA ACCION</label>
-                                <input type="text" id="craiz" class="form-control">
                             </div>
                             <div class="mt-1 col-12">
                                 <label class="form-label">COLUMNA</label>

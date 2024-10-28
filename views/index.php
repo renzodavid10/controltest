@@ -7,8 +7,6 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
     header('Location: ../'); /// si mi inicion esta creada me manda a la pagina
     exit();
 }
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -179,9 +177,6 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
                                 </p>
                             </a>
                         </li>
-                        <?php //if ($_SESSION['S_ROL_PT'] == "ADMIN") {
-
-                        ?>
                         <li class="nav-header">CONFIGURACION</li>
 
                         <li class="nav-item ">
@@ -202,10 +197,6 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
                                 </p>
                             </a>
                         </li>
-
-                        <?php   // } 
-                        ?>
-
                     </ul>
                     <input type="text" value="<?php //echo $_SESSION['S_IDUSUARIO_PT']; 
                                                 ?>" id="txt_idPrincipal" hidden>
@@ -269,12 +260,6 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
     <script type="text/javascript" src="../utils/utilitarios/dataTables.bootstrap5.min.js"></script>
 
     <script src="../template/dist/js/adminlte.min.js"></script>
-
-
-<?php 
-
-?>
-
     <script>
         $(document).ready(function() {
             $('.js-example-basic-single').select2();

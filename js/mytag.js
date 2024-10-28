@@ -276,11 +276,10 @@ $("#tabla_tarea_mi").on('click', 'tr', function () {
         document.getElementById('concatenar').innerHTML = 'Accion creada por '+rowData['tare_nombrecre'];
         document.getElementById('descri').value = rowData['tare_desc'];
         document.getElementById('fvenci').value = rowData['tare_tiem'];
-        document.getElementById('select_responsable2').value = rowData['tare_desc'];
         $('#select_responsable2').select2().val(rowData["tare_resp"]).trigger('change.select2');
         $('#select_departamentos').select2().val(rowData["tare_depa"]).trigger('change.select2');
+        document.getElementById('select_responsable2').value = rowData['tare_nombre'];
         document.getElementById('select_departamentos').value = rowData['tare_depa'];
-        document.getElementById('select_departamentos').value = rowData['tare_desc'];
         console.log(rowData);
         //CAMBIAR ESTADO
         evento_cambio(rowData['tare_id']);
