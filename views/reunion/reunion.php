@@ -1,7 +1,5 @@
-
 <?php 
-require_once '../../controller/usuario/sessiones.php';
-
+session_start();
 ?>
 <script src="../js/reunion.js?rev=<?php echo time() ///para recgar el js 
                                     ?>">
