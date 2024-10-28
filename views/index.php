@@ -8,6 +8,7 @@ if (!isset($_SESSION['S_IDUSUARIO'])) {
     exit();
 }
 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

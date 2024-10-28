@@ -1,9 +1,7 @@
 
 <?php 
-echo $_SESSION['S_ROL'];
-ob_start();
-session_start();
-echo $_SESSION['S_ROL'];
+require_once '../../controller/usuario/sessiones.php';
+
 ?>
 <script src="../js/reunion.js?rev=<?php echo time() ///para recgar el js 
                                     ?>">
