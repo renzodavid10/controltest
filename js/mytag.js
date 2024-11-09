@@ -287,6 +287,37 @@ $("#tabla_tarea_mi").on('click', 'tr', function () {
         listar_comentario(rowData['tare_id'])
     }
 })
+function listar_usu(nombre) {
+
+    $.ajax({
+        url: '../controller/tarea/listar_usu.php',
+        type: 'POST',
+        async: 'false',
+        data:{
+            nombre:nombre
+        }
+
+
+    }).done(function (resp) { 
+        console.log(resp);
+
+        let data = JSON.parse(resp);
+        console.log(data.length);
+        if (data.length > 0) {
+            llenardata = "<option value='0'>Responsable </option>";
+            for (let i = 0; i < data.length; i++) {
+                llenardata += "<option value='" + data[i]['usua_dni'] + "'>" + data[i]['nombre'] + " </option>";
+                // console.log(data[i]['usua_dni']);
+                //break;
+            }
+            document.getElementById('select_responsable2').innerHTML = llenardata;
+            //console.log(data);
+        } else
+            llenardata = "<option value='0'>Responsable </option>";
+        document.getElementById('select_responsable2').innerHTML = llenardata;
+        //console.log("N o");
+    });
+}
 
 
 

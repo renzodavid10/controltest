@@ -425,7 +425,9 @@ $("#tabla_tarea_si").on('click', 'tr', function () {
         // Agregar la clase de selección a la fila clickeada
         $(this).addClass('selected');
         // Obtener los datos de la fila seleccionada
+        //;
         var rowData = tbl_primer_miembro.row(this).data();
+        //listar_usu(rowData["usua_empresa"])
         document.getElementById('concatenar').innerHTML = 'Accion creada por '+rowData['tare_nombrecre'];
         document.getElementById('descri').value = rowData['tare_desc'];
         document.getElementById('fvenci').value = rowData['tare_tiem'];

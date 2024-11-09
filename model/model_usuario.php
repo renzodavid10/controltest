@@ -30,7 +30,7 @@ class model_usuario extends conexion_nueva
         conexion_nueva::cerrar_conexion();
     }
 
-    function listar_usuario($usu_nombre)
+    function listar_usuario($usu_nombre='')
     {
         $c = conexion_nueva::conectarBD();
 

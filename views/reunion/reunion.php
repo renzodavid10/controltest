@@ -614,7 +614,7 @@ session_start();
 <script src="../plugins/summernote/summernote-bs4.min.js"></script>
 <script>
     listar_tarea();
-    //listar_usu();
+    listar_usu('0');
     $(document).ready(function() {
         $('.js-example-basic-single').select2();
         //listar_tarea();

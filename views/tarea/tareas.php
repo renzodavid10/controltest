@@ -585,6 +585,7 @@ session_start();
 <script src="../template/plugins/flot/plugins/jquery.flot.pie.js"></script>
 <script>
     listar_mi_tarea();
+    listar_usu('0');
     listar_mi_siempre();
     $(document).ready(function() {
         $('.js-example-basic-single').select2();
