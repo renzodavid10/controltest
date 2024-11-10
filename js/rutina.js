@@ -656,6 +656,45 @@ $('#select_area').on('select2:select', function () { /// si seleccion un analisi
     listar_subarea(ids);
 
 });
+function GenerarExcel() {
+    let $fecha1 = document.getElementById('fecha_inicio').value;
+    let $fecha2 = document.getElementById('fecha_fin').value;
+
+    // Realizamos la petición fetch
+    fetch('../controller/export/llamar_reportcu.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            fecha1: $fecha1,
+            fecha2: $fecha2,
+        })
+    })
+    
+    .then(response => {
+        // Verificamos si la respuesta es exitosa
+        if (!response.ok) {
+            throw new Error('Error en la solicitud');
+        }
+        // Convertimos la respuesta a blob
+        return response.blob();
+    })
+    .then(blob => {
+        // Creamos un enlace para descargar el archivo
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'CUESTIONARIOS.xlsx'; // Nombre del archivo descargado
+        document.body.appendChild(a);
+        a.click(); // Simulamos el click para descargar
+        window.URL.revokeObjectURL(url); // Liberamos la URL del objeto
+        document.body.removeChild(a); // Limpiamos el DOM
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    })
+};
 function responder_cuest(
     fecha,
     respid,

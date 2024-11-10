@@ -136,6 +136,26 @@ class mode_cuestionario extends conexion_nueva
 
         conexion_nueva::cerrar_conexion();
     }
+    function listar_reporte_cues($fecha1,$fecha2)
+    {
+        //$tarid=5;
+        $c = conexion_nueva::conectarBD();
+        $sql = "SELECT * FROM  fn_reporte_preguntas(?,?)";
+
+        $arreglo = array();
+        $query = $c->prepare($sql);
+        $query->bindParam(1, $fecha1);
+        $query->bindParam(2, $fecha2);
+        $query->execute();
+        $resultado = $query->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($resultado as $resu) {
+            $arreglo["data"][] = $resu;
+        }
+        return $arreglo;
+
+        conexion_nueva::cerrar_conexion();
+    }
 }
 
 /*$Probando = new mode_cuestionario;
