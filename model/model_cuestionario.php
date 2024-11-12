@@ -105,7 +105,7 @@ class mode_cuestionario extends conexion_nueva
     ) {
         //$tarid=5;
         $c = conexion_nueva::conectarBD();
-        $sql = "SELECT * FROM  fn_responder_cuestionario(? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,?,?,?,?) ";
+        $sql = "SELECT * FROM  fn_responder_cuestionario(? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,?,?,?,?,?) ";
 
         $arreglo = array();
         $query = $c->prepare($sql);
@@ -128,6 +128,7 @@ class mode_cuestionario extends conexion_nueva
         $query->bindParam(17, $cue14);
         $query->bindParam(18, $area);
         $query->bindParam(19, $subarea);
+        $query->bindParam(20, $subarea);
         $query->execute();
 
         if ($row = $query->fetchColumn()) {
