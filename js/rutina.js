@@ -26,120 +26,183 @@ $("#tb_rd").on('click', 'tr', function () {
                 '<label for="pregunta1" id="pr_1" class="form-label"> ' + 1 + ' ' + rowData['cues1'] + '</label>' +
                 '<div class="form-group">' +
                 '<div class="form-check">' +
-                '<input class="form-check-input" value="Si" type="radio" name="pr_1">' +
+                '<input class="form-check-input" value="Si" type="radio" name="pr_1" id="ocultarDiv1">' +
                 '<label class="form-check-label">Si</label>' +
                 '</div>' +
                 '<div class="form-check">' +
-                '<input class="form-check-input" value="No" type="radio" name="pr_1">' +
+                '<input class="form-check-input" value="No" type="radio" name="pr_1" id="mostrarDiv1">' +
                 '<label class="form-check-label">No</label>' +
                 '</div>' +
                 '<div class="form-check">' +
-                '<input class="form-check-input" value="NA" type="radio" name="pr_1" checked>' +
+                '<input class="form-check-input" value="NA" type="radio" name="pr_1" checked id="ocultarDiv">' +
                 '<label class="form-check-label">NA</label>' +
                 '</div>' +
+                '</div>' +
+                '<div class="mt-3 col-12" style="display:none" id="div1">' +
+                '<textarea id="descri" class="form-control" rows="4" style="font-size: small;"placeholder="Escribe aquí tu comentario..."></textarea>' +
                 '</div>';
             document.getElementById('cuestionario').innerHTML += '<div class="mt-3 col-12">' +
                 '<label for="pregunta2" id="pr_2" class="form-label"> ' + 2 + ' ' + rowData['cues2'] + '</label>' +
                 '<div class="form-group">' +
                 '<div class="form-check">' +
-                '<input class="form-check-input" value="Si" type="radio" name="pr_2">' +
+                '<input class="form-check-input" value="Si" type="radio" name="pr_2" id="ocultarDiv2">' +
                 '<label class="form-check-label">Si</label>' +
                 '</div>' +
                 '<div class="form-check">' +
-                '<input class="form-check-input" value="No" type="radio" name="pr_2">' +
+                '<input class="form-check-input" value="No" type="radio" name="pr_2" id="mostrarDiv2">' +
                 '<label class="form-check-label">No</label>' +
                 '</div>' +
                 '<div class="form-check">' +
-                '<input class="form-check-input" value="NA" type="radio" name="pr_2" checked>' +
+                '<input class="form-check-input" value="NA" type="radio" name="pr_2" checked id="ocultarDiv2">' +
                 '<label class="form-check-label">NA</label>' +
                 '</div>' +
                 '</div>' +
+                '</div>' +
+                '<div class="mt-3 col-12" style="display:none" id="div2">' +
+                '<textarea id="descri" class="form-control" rows="4" style="font-size: small;"placeholder="Escribe aquí tu comentario..."></textarea>' +
                 '</div>';
             document.getElementById('cuestionario').innerHTML += '<div class="mt-3 col-12">' +
                 '<label for="pregunta3" id="pr_3" class="form-label"> ' + 3 + ' ' + rowData['cues3'] + '</label>' +
                 '<div class="form-group">' +
                 '<div class="form-check">' +
-                '<input class="form-check-input" value="Si" type="radio" name="pr_3">' +
+                '<input class="form-check-input" value="Si" type="radio" name="pr_3" id="ocultarDiv3">' +
                 '<label class="form-check-label">Si</label>' +
                 '</div>' +
                 '<div class="form-check">' +
-                '<input class="form-check-input" value="No" type="radio" name="pr_3">' +
+                '<input class="form-check-input" value="No" type="radio" name="pr_3" id="mostrarDiv3">' +
                 '<label class="form-check-label">No</label>' +
                 '</div>' +
                 '<div class="form-check">' +
-                '<input class="form-check-input" value="NA" type="radio" name="pr_3" checked>' +
+                '<input class="form-check-input" value="NA" type="radio" name="pr_3" checked id="ocultarDiv3">' +
                 '<label class="form-check-label">NA</label>' +
                 '</div>' +
                 '</div>' +
+                '</div>' +
+                '<div class="mt-3 col-12" style="display:none" id="div3">' +
+                '<textarea id="descri" class="form-control" rows="4" style="font-size: small;"placeholder="Escribe aquí tu comentario..."></textarea>' +
                 '</div>';
             document.getElementById('cuestionario').innerHTML += '<div class="mt-3 col-12">' +
                 '<label for="pregunta4" id="pr_4" class="form-label"> ' + 4 + ' ' + rowData['cues4'] + '</label>' +
                 '<div class="form-group">' +
                 '<div class="form-check">' +
-                '<input class="form-check-input" value="Si" type="radio" name="pr_4">' +
+                '<input class="form-check-input" value="Si" type="radio" name="pr_4" id="ocultarDiv4">' +
                 '<label class="form-check-label">Si</label>' +
                 '</div>' +
                 '<div class="form-check">' +
-                '<input class="form-check-input" value="No" type="radio" name="pr_4">' +
+                '<input class="form-check-input" value="No" type="radio" name="pr_4" id="mostrarDiv4">' +
                 '<label class="form-check-label">No</label>' +
                 '</div>' +
                 '<div class="form-check">' +
-                '<input class="form-check-input" value="NA" type="radio" name="pr_4" checked> ' +
+                '<input class="form-check-input" value="NA" type="radio" name="pr_4" checked id="ocultarDiv4"> ' +
                 '<label class="form-check-label">NA</label>' +
                 '</div>' +
                 '</div>' +
+                '</div>' +
+                '<div class="mt-3 col-12" style="display:none" id="div4">' +
+                '<textarea id="descri" class="form-control" rows="4" style="font-size: small;"placeholder="Escribe aquí tu comentario..."></textarea>' +
                 '</div>';
             document.getElementById('cuestionario').innerHTML += '<div class="mt-3 col-12">' +
                 '<label for="pregunta5" id="pr_5" class="form-label"> ' + 5 + ' ' + rowData['cues5'] + '</label>' +
                 '<div class="form-group">' +
                 '<div class="form-check">' +
-                '<input class="form-check-input" value="Si" type="radio" name="pr_5">' +
+                '<input class="form-check-input" value="Si" type="radio" name="pr_5" id="ocultarDiv5">' +
                 '<label class="form-check-label">Si</label>' +
                 '</div>' +
                 '<div class="form-check">' +
-                '<input class="form-check-input" value="No" type="radio" name="pr_5">' +
+                '<input class="form-check-input" value="No" type="radio" name="pr_5" id="mostrarDiv5">' +
                 '<label class="form-check-label">No</label>' +
                 '</div>' +
                 '<div class="form-check">' +
-                '<input class="form-check-input" value="NA" type="radio" name="pr_5" checked>' +
+                '<input class="form-check-input" value="NA" type="radio" name="pr_5" checked id="ocultarDiv5">' +
                 '<label class="form-check-label">NA</label>' +
                 '</div>' +
                 '</div>' +
+                '</div>' +
+                '<div class="mt-3 col-12" style="display:none" id="div5">' +
+                '<textarea id="descri" class="form-control" rows="4" style="font-size: small;"placeholder="Escribe aquí tu comentario..."></textarea>' +
                 '</div>';
             document.getElementById('cuestionario').innerHTML += '<div class="mt-3 col-12">' +
                 '<label for="pregunta6" id="pr_6" class="form-label"> ' + 6 + ' ' + rowData['cues6'] + '</label>' +
                 '<div class="form-group">' +
                 '<div class="form-check">' +
-                '<input class="form-check-input" value="Si" type="radio" name="pr_6"> ' +
+                '<input class="form-check-input" value="Si" type="radio" name="pr_6" id="ocultarDiv6"> ' +
                 '<label class="form-check-label">Si</label>' +
                 '</div>' +
                 '<div class="form-check">' +
-                '<input class="form-check-input" value="No" type="radio" name="pr_6"> ' +
+                '<input class="form-check-input" value="No" type="radio" name="pr_6" id="mostrarDiv6"> ' +
                 '<label class="form-check-label">No</label>' +
                 '</div>' +
                 '<div class="form-check">' +
-                '<input class="form-check-input" value="NA" type="radio" name="pr_6" checked> ' +
+                '<input class="form-check-input" value="NA" type="radio" name="pr_6" checked id="ocultarDiv6"> ' +
                 '<label class="form-check-label">NA</label>' +
                 '</div>' +
                 '</div>' +
+                '</div>' +
+                '<div class="mt-3 col-12" style="display:none" id="div6">' +
+                '<textarea id="descri" class="form-control" rows="4" style="font-size: small;"placeholder="Escribe aquí tu comentario..."></textarea>' +
                 '</div>';
             document.getElementById('cuestionario').innerHTML += '<div class="mt-3 col-12">' +
                 '<label for="pregunta7" id="pr_7" class="form-label"> ' + 7 + ' ' + rowData['cues7'] + '</label>' +
                 '<div class="form-group">' +
                 '<div class="form-check">' +
-                '<input class="form-check-input" value="Si" type="radio" name="pr_7">' +
+                '<input class="form-check-input" value="Si" type="radio" name="pr_7" id="ocultarDiv7">' +
                 '<label class="form-check-label">Si</label>' +
                 '</div>' +
                 '<div class="form-check">' +
-                '<input class="form-check-input" value="No" type="radio" name="pr_7">' +
+                '<input class="form-check-input" value="No" type="radio" name="pr_7" id="mostrarDiv7">' +
                 '<label class="form-check-label">No</label>' +
                 '</div>' +
                 '<div class="form-check">' +
-                '<input class="form-check-input" value="NA" type="radio" name="pr_7" checked> ' +
+                '<input class="form-check-input" value="NA" type="radio" name="pr_7" checked id="ocultarDiv7"> ' +
                 '<label class="form-check-label">NA</label>' +
                 '</div>' +
                 '</div>' +
+                '</div>' +
+                '<div class="mt-3 col-12" style="display:none" id="div7">' +
+                '<textarea id="descri" class="form-control" rows="4" style="font-size: small;"placeholder="Escribe aquí tu comentario..."></textarea>' +
                 '</div>';
+            $('#mostrarDiv1').on('click', function () {
+                $('#div1').show();
+            });
+            $('#mostrarDiv2').on('click', function () {
+                $('#div2').show();
+            });
+            $('#mostrarDiv3').on('click', function () {
+                $('#div3').show();
+            });
+            $('#mostrarDiv4').on('click', function () {
+                $('#div4').show();
+            });
+            $('#mostrarDiv5').on('click', function () {
+                $('#div5').show();
+            });
+            $('#mostrarDiv6').on('click', function () {
+                $('#div6').show();
+            });
+            $('#mostrarDiv7').on('click', function () {
+                $('#div7').show();
+            });
+            $('#ocultarDiv1').on('click', function () {
+                $('#div1').hide();
+            });
+            $('#ocultarDiv2').on('click', function () {
+                $('#div2').hide();
+            });
+            $('#ocultarDiv3').on('click', function () {
+                $('#div3').hide();
+            });
+            $('#ocultarDiv4').on('click', function () {
+                $('#div4').hide();
+            });
+            $('#ocultarDiv5').on('click', function () {
+                $('#div5').hide();
+            });
+            $('#ocultarDiv6').on('click', function () {
+                $('#div6').hide();
+            });
+            $('#ocultarDiv7').on('click', function () {
+                $('#div7').hide();
+            });
             $('.reali').off('click').on('click', function () {
                 let fecha = rowData['resp_fecha'];
                 let respid = rowData['resp_id'];
@@ -185,6 +248,7 @@ $("#tb_rd").on('click', 'tr', function () {
 
     }
 })
+
 $("#tb_rs").on('click', 'tr', function () {
     //Muestro la parte derecha
 
@@ -207,93 +271,120 @@ $("#tb_rs").on('click', 'tr', function () {
                 '<label for="pregunta11" id="pr_11" class="form-label"> ' + 1 + ' ' + rowData['cues11'] + '</label>' +
                 '<div class="form-group">' +
                 '<div class="form-check">' +
-                '<input class="form-check-input" value="Si" type="radio" name="pr_11">' +
+                '<input class="form-check-input" value="Si" type="radio" name="pr_11" id="ocultarDiv11">' +
                 '<label class="form-check-label">Si</label>' +
                 '</div>' +
                 '<div class="form-check">' +
-                '<input class="form-check-input" value="No" type="radio" name="pr_11">' +
+                '<input class="form-check-input" value="No" type="radio" name="pr_11" id="mostrarDiv11">' +
                 '<label class="form-check-label">No</label>' +
                 '</div>' +
                 '<div class="form-check">' +
-                '<input class="form-check-input" value="NA" type="radio" name="pr_11">' +
+                '<input class="form-check-input" value="NA" type="radio" name="pr_11" checked id="ocultarDiv11">' +
                 '<label class="form-check-label">NA</label>' +
                 '</div>' +
+                '</div>' +
+                '<div class="mt-3 col-12" style="display:none" id="div11">' +
+                '<textarea id="descri" class="form-control" rows="4" style="font-size: small;"placeholder="Escribe aquí tu comentario..."></textarea>' +
                 '</div>';
             document.getElementById('cuestionario').innerHTML += '<div class="mt-3 col-12">' +
                 '<label for="pregunta12" id="pr_12" class="form-label"> ' + 2 + ' ' + rowData['cues12'] + '</label>' +
                 '<div class="form-group">' +
                 '<div class="form-check">' +
-                '<input class="form-check-input" value="Si" type="radio" name="pr_12" checked>' +
+                '<input class="form-check-input" value="Si" type="radio" name="pr_12" id="ocultarDiv12">' +
                 '<label class="form-check-label">Si</label>' +
                 '</div>' +
                 '<div class="form-check">' +
-                '<input class="form-check-input" value="No" type="radio" name="pr_12" checked>' +
+                '<input class="form-check-input" value="No" type="radio" name="pr_12" id="mostrarDiv12">' +
                 '<label class="form-check-label">No</label>' +
                 '</div>' +
                 '<div class="form-check">' +
-                '<input class="form-check-input" value="NA" type="radio" name="pr_12" checked>' +
+                '<input class="form-check-input" value="NA" type="radio" name="pr_12" checked id="ocultarDiv12">' +
                 '<label class="form-check-label">NA</label>' +
                 '</div>' +
                 '</div>' +
+                '</div>' +
+                '<div class="mt-3 col-12" style="display:none" id="div12">' +
+                '<textarea id="descri" class="form-control" rows="4" style="font-size: small;"placeholder="Escribe aquí tu comentario..."></textarea>' +
                 '</div>';
             document.getElementById('cuestionario').innerHTML += '<div class="mt-3 col-12">' +
                 '<label for="pregunta13" id="pr_13" class="form-label"> ' + 3 + ' ' + rowData['cues13'] + '</label>' +
                 '<div class="form-group">' +
                 '<div class="form-check">' +
-                '<input class="form-check-input" value="Si" type="radio" name="pr_13" checked>' +
+                '<input class="form-check-input" value="Si" type="radio" name="pr_13" id="ocultarDiv13" >' +
                 '<label class="form-check-label">Si</label>' +
                 '</div>' +
                 '<div class="form-check">' +
-                '<input class="form-check-input" value="No" type="radio" name="pr_13" checked>' +
+                '<input class="form-check-input" value="No" type="radio" name="pr_13" id="mostrarDiv13">' +
                 '<label class="form-check-label">No</label>' +
                 '</div>' +
                 '<div class="form-check">' +
-                '<input class="form-check-input" value="NA" type="radio" name="pr_13" checked>' +
+                '<input class="form-check-input" value="NA" type="radio" name="pr_13" checked id="ocultarDiv13">' +
                 '<label class="form-check-label">NA</label>' +
                 '</div>' +
                 '</div>' +
+                '</div>' +
+                '<div class="mt-3 col-12" style="display:none" id="div13">' +
+                '<textarea id="descri" class="form-control" rows="4" style="font-size: small;"placeholder="Escribe aquí tu comentario..."></textarea>' +
                 '</div>';
-                $('.reali').off('click').on('click', function () {
-                    let fecha = rowData['resp_fecha'];
-                    let respid = rowData['resp_id'];
-                    let area = $('#select_area').select2().val();;
-                    let subarea = $('#select_subarea').select2().val();
-                    let cue1 = '';
-                    let cue2 = '';
-                    let cue3 = '';
-                    let cue4 = '';
-                    let cue5 = '';
-                    let cue6 = '';
-                    let cue7 ='';
-                    let cue8 = '';
-                    let cue9 = '';
-                    let cue10 = '';
-                    let cue11 = $('input[name="pr_11"]:checked').val();
-                    let cue12 = $('input[name="pr_12"]:checked').val();
-                    let cue13 = $('input[name="pr_13"]:checked').val();
-                    let cue14 = '';
-                    responder_cuest(
-                        fecha,
-                        respid,
-                        cue1,
-                        cue2,
-                        cue3,
-                        cue4,
-                        cue5,
-                        cue6,
-                        cue7,
-                        cue8,
-                        cue9,
-                        cue10,
-                        cue11,
-                        cue12,
-                        cue13,
-                        cue14,
-                        area,
-                        subarea)
-                })
+            $('#mostrarDiv11').on('click', function () {
+                $('#div11').show();
+            });
+            $('#mostrarDiv12').on('click', function () {
+                $('#div12').show();
+            });
+            $('#mostrarDiv13').on('click', function () {
+                $('#div13').show();
+            });
+            $('#ocultarDiv11').on('click', function () {
+                $('#div11').hide();
+            });
+            $('#ocultarDiv12').on('click', function () {
+                $('#div12').hide();
+            });
+            $('#ocultarDiv13').on('click', function () {
+                $('#div13').hide();
+            });
+            $('.reali').off('click').on('click', function () {
+                let fecha = rowData['resp_fecha'];
+                let respid = rowData['resp_id'];
+                let area = $('#select_area').select2().val();;
+                let subarea = $('#select_subarea').select2().val();
+                let cue1 = '';
+                let cue2 = '';
+                let cue3 = '';
+                let cue4 = '';
+                let cue5 = '';
+                let cue6 = '';
+                let cue7 = '';
+                let cue8 = '';
+                let cue9 = '';
+                let cue10 = '';
+                let cue11 = $('input[name="pr_11"]:checked').val();
+                let cue12 = $('input[name="pr_12"]:checked').val();
+                let cue13 = $('input[name="pr_13"]:checked').val();
+                let cue14 = '';
+                responder_cuest(
+                    fecha,
+                    respid,
+                    cue1,
+                    cue2,
+                    cue3,
+                    cue4,
+                    cue5,
+                    cue6,
+                    cue7,
+                    cue8,
+                    cue9,
+                    cue10,
+                    cue11,
+                    cue12,
+                    cue13,
+                    cue14,
+                    area,
+                    subarea)
+            })
         }
-        
+
 
     }
 })
@@ -320,108 +411,145 @@ $("#tb_rm").on('click', 'tr', function () {
                 '<label for="pregunta8" id="pr_8" class="form-label"> ' + 1 + ' ' + rowData['cues8'] + '</label>' +
                 '<div class="form-group">' +
                 '<div class="form-check">' +
-                '<input class="form-check-input" value="Si" type="radio" name="pr_8">' +
+                '<input class="form-check-input" value="Si" type="radio" name="pr_8" id="ocultarDiv8">' +
                 '<label class="form-check-label">Si</label>' +
                 '</div>' +
                 '<div class="form-check">' +
-                '<input class="form-check-input" value="No" type="radio" name="pr_8">' +
+                '<input class="form-check-input" value="No" type="radio" name="pr_8"  id="mostrarDiv8">' +
                 '<label class="form-check-label">No</label>' +
                 '</div>' +
                 '<div class="form-check">' +
-                '<input class="form-check-input" value="NA" type="radio" name="pr_8" checked>' +
+                '<input class="form-check-input" value="NA" type="radio" name="pr_8" checked id="ocultarDiv8">' +
                 '<label class="form-check-label">NA</label>' +
                 '</div>' +
+                '</div>'+
+                '<div class="mt-3 col-12" style="display:none" id="div8">' +
+                '<textarea id="descri" class="form-control" rows="4" style="font-size: small;"placeholder="Escribe aquí tu comentario..."></textarea>' +
                 '</div>';
             document.getElementById('cuestionario').innerHTML += '<div class="mt-3 col-12">' +
                 '<label for="pregunta9" id="pr_9" class="form-label"> ' + 2 + ' ' + rowData['cues9'] + '</label>' +
                 '<div class="form-group">' +
                 '<div class="form-check">' +
-                '<input class="form-check-input" value="Si" type="radio" name="pr_9">' +
+                '<input class="form-check-input" value="Si" type="radio" name="pr_9" id="ocultarDiv9">' +
                 '<label class="form-check-label">Si</label>' +
                 '</div>' +
                 '<div class="form-check">' +
-                '<input class="form-check-input" value="No" type="radio" name="pr_9">' +
+                '<input class="form-check-input" value="No" type="radio" name="pr_9" id="mostrarDiv9">' +
                 '<label class="form-check-label">No</label>' +
                 '</div>' +
                 '<div class="form-check">' +
-                '<input class="form-check-input" value="NA" type="radio" name="pr_9" checked>' +
+                '<input class="form-check-input" value="NA" type="radio" name="pr_9" checked id="ocultarDiv9">' +
                 '<label class="form-check-label">NA</label>' +
                 '</div>' +
                 '</div>' +
+                '</div>'+
+                '<div class="mt-3 col-12" style="display:none" id="div9">' +
+                '<textarea id="descri" class="form-control" rows="4" style="font-size: small;"placeholder="Escribe aquí tu comentario..."></textarea>' +
                 '</div>';
             document.getElementById('cuestionario').innerHTML += '<div class="mt-3 col-12">' +
                 '<label for="pregunta10" id="pr_10" class="form-label"> ' + 3 + ' ' + rowData['cues10'] + '</label>' +
                 '<div class="form-group">' +
                 '<div class="form-check">' +
-                '<input class="form-check-input" value="Si" type="radio" name="pr_10">' +
+                '<input class="form-check-input" value="Si" type="radio" name="pr_10" id="ocultarDiv10">' +
                 '<label class="form-check-label">Si</label>' +
                 '</div>' +
                 '<div class="form-check">' +
-                '<input class="form-check-input" value="No" type="radio" name="pr_10">' +
+                '<input class="form-check-input" value="No" type="radio" name="pr_10" id="mostrarDiv10">' +
                 '<label class="form-check-label">No</label>' +
                 '</div>' +
                 '<div class="form-check">' +
-                '<input class="form-check-input" value="NA" type="radio" name="pr_10" checked>' +
+                '<input class="form-check-input" value="NA" type="radio" name="pr_10" checked id="ocultarDiv10">' +
                 '<label class="form-check-label">NA</label>' +
                 '</div>' +
                 '</div>' +
+                '</div>'+
+                '<div class="mt-3 col-12" style="display:none" id="div10">' +
+                '<textarea id="descri" class="form-control" rows="4" style="font-size: small;"placeholder="Escribe aquí tu comentario..."></textarea>' +
                 '</div>';
             document.getElementById('cuestionario').innerHTML += '<div class="mt-3 col-12">' +
                 '<label for="pregunta14" id="pr_14" class="form-label"> ' + 4 + ' ' + rowData['cues14'] + '</label>' +
                 '<div class="form-group">' +
                 '<div class="form-check">' +
-                '<input class="form-check-input" value="Si" type="radio" name="pr_14">' +
+                '<input class="form-check-input" value="Si" type="radio" name="pr_14" id="ocultarDiv14">' +
                 '<label class="form-check-label">Si</label>' +
                 '</div>' +
                 '<div class="form-check">' +
-                '<input class="form-check-input" value="No" type="radio" name="pr_14">' +
+                '<input class="form-check-input" value="No" type="radio" name="pr_14" id="mostrarDiv14">' +
                 '<label class="form-check-label">No</label>' +
                 '</div>' +
                 '<div class="form-check">' +
-                '<input class="form-check-input" value="NA" type="radio" name="pr_14" checked>' +
+                '<input class="form-check-input" value="NA" type="radio" name="pr_14" checked id="ocultarDiv14">' +
                 '<label class="form-check-label">NA</label>' +
                 '</div>' +
                 '</div>' +
+                '</div>'+
+                '<div class="mt-3 col-12" style="display:none" id="div14">' +
+                '<textarea id="descri" placeholder="Escribe aquí tu comentario..." class="form-control" rows="4" style="font-size: small;"></textarea>' +
                 '</div>';
-                $('.reali').off('click').on('click', function () {
-                    let fecha = rowData['resp_fecha'];
-                    let respid = rowData['resp_id'];
-                    let area = $('#select_area').select2().val();;
-                    let subarea = $('#select_subarea').select2().val();
-                    let cue1 = '';
-                    let cue2 = '';
-                    let cue3 = '';
-                    let cue4 = '';
-                    let cue5 = '';
-                    let cue6 = '';
-                    let cue7 ='';
-                    let cue8 = $('input[name="pr_8"]:checked').val();;
-                    let cue9 = $('input[name="pr_9"]:checked').val();;
-                    let cue10 = $('input[name="pr_10"]:checked').val();;
-                    let cue11 =  '';
-                    let cue12 = '';
-                    let cue13 = '';
-                    let cue14 = $('input[name="pr_14"]:checked').val();;
-                    responder_cuest(
-                        fecha,
-                        respid,
-                        cue1,
-                        cue2,
-                        cue3,
-                        cue4,
-                        cue5,
-                        cue6,
-                        cue7,
-                        cue8,
-                        cue9,
-                        cue10,
-                        cue11,
-                        cue12,
-                        cue13,
-                        cue14,
-                        area,
-                        subarea)
-                })
+            $('#mostrarDiv8').on('click', function () {
+                $('#div8').show();
+            });
+            $('#mostrarDiv9').on('click', function () {
+                $('#div9').show();
+            });
+            $('#mostrarDiv10').on('click', function () {
+                $('#div10').show();
+            });
+            $('#mostrarDiv14').on('click', function () {
+                $('#div14').show();
+            });
+            $('#ocultarDiv8').on('click', function () {
+                $('#div8').hide();
+            });
+            $('#ocultarDiv9').on('click', function () {
+                $('#div9').hide();
+            });
+            $('#ocultarDiv10').on('click', function () {
+                $('#div10').hide();
+            });
+            $('#ocultarDiv14').on('click', function () {
+                $('#div14').hide();
+            });
+            
+            $('.reali').off('click').on('click', function () {
+                let fecha = rowData['resp_fecha'];
+                let respid = rowData['resp_id'];
+                let area = $('#select_area').select2().val();;
+                let subarea = $('#select_subarea').select2().val();
+                let cue1 = '';
+                let cue2 = '';
+                let cue3 = '';
+                let cue4 = '';
+                let cue5 = '';
+                let cue6 = '';
+                let cue7 = '';
+                let cue8 = $('input[name="pr_8"]:checked').val();;
+                let cue9 = $('input[name="pr_9"]:checked').val();;
+                let cue10 = $('input[name="pr_10"]:checked').val();;
+                let cue11 = '';
+                let cue12 = '';
+                let cue13 = '';
+                let cue14 = $('input[name="pr_14"]:checked').val();;
+                responder_cuest(
+                    fecha,
+                    respid,
+                    cue1,
+                    cue2,
+                    cue3,
+                    cue4,
+                    cue5,
+                    cue6,
+                    cue7,
+                    cue8,
+                    cue9,
+                    cue10,
+                    cue11,
+                    cue12,
+                    cue13,
+                    cue14,
+                    area,
+                    subarea)
+            })
         }
 
     }
@@ -669,29 +797,29 @@ function GenerarExcel() {
             fecha2: $fecha2,
         })
     })
-    
-    .then(response => {
-        // Verificamos si la respuesta es exitosa
-        if (!response.ok) {
-            throw new Error('Error en la solicitud');
-        }
-        // Convertimos la respuesta a blob
-        return response.blob();
-    })
-    .then(blob => {
-        // Creamos un enlace para descargar el archivo
-        const url = window.URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'CUESTIONARIOS.xlsx'; // Nombre del archivo descargado
-        document.body.appendChild(a);
-        a.click(); // Simulamos el click para descargar
-        window.URL.revokeObjectURL(url); // Liberamos la URL del objeto
-        document.body.removeChild(a); // Limpiamos el DOM
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    })
+
+        .then(response => {
+            // Verificamos si la respuesta es exitosa
+            if (!response.ok) {
+                throw new Error('Error en la solicitud');
+            }
+            // Convertimos la respuesta a blob
+            return response.blob();
+        })
+        .then(blob => {
+            // Creamos un enlace para descargar el archivo
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'CUESTIONARIOS.xlsx'; // Nombre del archivo descargado
+            document.body.appendChild(a);
+            a.click(); // Simulamos el click para descargar
+            window.URL.revokeObjectURL(url); // Liberamos la URL del objeto
+            document.body.removeChild(a); // Limpiamos el DOM
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        })
 };
 function responder_cuest(
     fecha,
