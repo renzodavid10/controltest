@@ -4,16 +4,17 @@ require_once 'conexion.php';
 class mode_cuestionario extends conexion_nueva
 {
 
-    function listar_cuestionario($cues_id, $dni)
+    function listar_cuestionario($cues_id, $dni,$fechahoy)
     {
         //$tarid=5;
         $c = conexion_nueva::conectarBD();
-        $sql = "SELECT * FROM  fn_listar_preguntas(?,?)";
+        $sql = "SELECT * FROM  fn_listar_preguntas(?,?,?)";
 
         $arreglo = array();
         $query = $c->prepare($sql);
         $query->bindParam(1, $cues_id);
         $query->bindParam(2, $dni);
+        $query->bindParam(3, $fechahoy);
 
         $query->execute();
         $resultado = $query->fetchAll(PDO::FETCH_ASSOC);
