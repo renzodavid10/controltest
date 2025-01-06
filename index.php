@@ -36,7 +36,7 @@ if (isset($_SESSION['S_USUARIO'])) {
                     <input type="hidden" name="enviar" class="form-control" value="si">
                     <input type="hidden" name="tab" id="tab" class="form-control" value="1">
 
-                    <h3 class="title"> <img src="images/backus.png" width="150"><br>Sistema de Control</h3>
+                    <h3 class="title"> <img src="images/backus.png" width="150"><br>Monitoreo de terceros</h3>
                     <p class="login-box-msg">Iniciar sesión</p>
 
                     <div class="input-field">
