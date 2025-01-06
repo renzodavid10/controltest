@@ -23,7 +23,7 @@ if ($cuesId == 1) {
     }
 } elseif ($cuesId == 3) {
     $fecha = date('Y-m-d');
-    $consultar = $MT->crear_cuestionario($dni, '2024-11-01', $cuesId);
+    $consultar = $MT->crear_cuestionario($dni, $fecha, $cuesId);
     echo $consultar;
 } else {
     echo 0;
