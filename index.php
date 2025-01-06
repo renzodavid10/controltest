@@ -71,7 +71,7 @@ if (isset($_SESSION['S_USUARIO'])) {
         <div class="panels-containere">
             <div class="panel left-panel">
                 <div class="content">
-                    <h1 style="font-size: xxx-large;">SISTEMA DE CONTROL</h1>
+                    <h1 style="font-size: xxx-large;">SISTEMA DE MONITORERO DE TERCEROS</h1>
                     <p style="font-size:x-large;">
                         Bienvenido a la Plataforma Administrativa de Sistema de Control.
                     </p>
