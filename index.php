@@ -36,7 +36,7 @@ if (isset($_SESSION['S_USUARIO'])) {
                     <input type="hidden" name="enviar" class="form-control" value="si">
                     <input type="hidden" name="tab" id="tab" class="form-control" value="1">
 
-                    <h3 class="title"> <img src="images/backus.png" width="150"><br>Es monitoreo integrado VPO</h3>
+                    <h3 class="title"> <img src="images/backus.png" width="150"><br>Monitoreo integrado VPO</h3>
                     <p class="login-box-msg">Iniciar sesión</p>
 
                     <div class="input-field">
@@ -71,9 +71,9 @@ if (isset($_SESSION['S_USUARIO'])) {
         <div class="panels-containere">
             <div class="panel left-panel">
                 <div class="content">
-                    <h1 style="font-size: xxx-large;">SISTEMA DE MONITORERO DE TERCEROS</h1>
+                    <h1 style="font-size: xxx-large;">MONITOREO INTEGRADO VPO</h1>
                     <p style="font-size:x-large;">
-                        Bienvenido a la Plataforma Administrativa de Sistema de Control.
+                        Bienvenido a la Plataforma Administrativa de Sistema de Monitoreo Integrado VPO.
                     </p>
 
                 </div>
