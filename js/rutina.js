@@ -771,7 +771,7 @@ function listar_tb_rm() {
         "columns": [
             /* Datos que se va a traer en el procedimiento almacenado */
             { "defaultContent": "" },
-            { "defaultContent": "Registre su cuestionario semanal" },
+            { "defaultContent": "Registre su cuestionario Mensual" },
             { "data": "resp_fecha" },
             { "data": "resp_status" },
             {

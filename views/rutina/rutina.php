@@ -395,7 +395,7 @@
                     </div>
                     <div class="card-body">
                         <div class="row">
-                            <button type="button" class="reali btn btn-secondary   btn-sm mt-1 mr-1" style="font-size: small;">Realizada</button>
+                            <button type="button" class="reali btn btn-secondary   btn-sm mt-1 mr-1" style="font-size: small;">GUARDAR</button>
                         </div>
                         <div class="row font-weight-normal ">
                             <div class="mt-1 col-12">
