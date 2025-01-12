@@ -45,11 +45,11 @@ $("#tb_rd").on('click', 'tr', function () {
                 '<label for="pregunta2" id="pr_2" class="form-label"> ' + 2 + ' ' + rowData['cues2'] + '</label>' +
                 '<div class="form-group">' +
                 '<div class="form-check">' +
-                '<input class="form-check-input" value="Si" type="radio" name="pr_2" id="ocultarDiv2">' +
+                '<input class="form-check-input" value="Si" type="radio" name="pr_2" id="mostrarDiv2">' +
                 '<label class="form-check-label">Si</label>' +
                 '</div>' +
                 '<div class="form-check">' +
-                '<input class="form-check-input" value="No" type="radio" name="pr_2" id="mostrarDiv2">' +
+                '<input class="form-check-input" value="No" type="radio" name="pr_2" id="ocultarDiv2">' +
                 '<label class="form-check-label">No</label>' +
                 '</div>' +
                 '<div class="form-check">' +
@@ -318,11 +318,11 @@ $("#tb_rs").on('click', 'tr', function () {
                 '<label for="pregunta12" id="pr_12" class="form-label"> ' + 2 + ' ' + rowData['cues12'] + '</label>' +
                 '<div class="form-group">' +
                 '<div class="form-check">' +
-                '<input class="form-check-input" value="Si" type="radio" name="pr_12" id="ocultarDiv12">' +
+                '<input class="form-check-input" value="Si" type="radio" name="pr_12" id="mostrarDiv12">' +
                 '<label class="form-check-label">Si</label>' +
                 '</div>' +
                 '<div class="form-check">' +
-                '<input class="form-check-input" value="No" type="radio" name="pr_12" id="mostrarDiv12">' +
+                '<input class="form-check-input" value="No" type="radio" name="pr_12" id="ocultarDiv12">' +
                 '<label class="form-check-label">No</label>' +
                 '</div>' +
                 '<div class="form-check">' +
