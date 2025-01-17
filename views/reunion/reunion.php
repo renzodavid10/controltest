@@ -60,6 +60,8 @@ session_start();
                                 <option>ENVASADO</option>
                                 <option>ELABORACION</option>
                                 <option>NABS</option>
+                                <option>LOGISTICA</option>
+                                <option>CALIDAD</option>
                             </select>
                         </div>
                         <div class="col-6 mb-2 font-weight-normal ">
