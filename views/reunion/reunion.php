@@ -401,7 +401,7 @@ session_start();
                 <!-- /.card-body -->
             </div>
             <!-- INICIO DE CERRADA-->
-            <div class="card ">
+            <!--<div class="card ">
                 <div class="card-header ">
                     <div class="row ">
                         <h4 class="col-10 card-title w-100">
@@ -475,8 +475,7 @@ session_start();
 
                     </table>
                 </div>
-                <!-- /.card-body -->
-            </div>
+            </div>-->
         </div>
 
         <!-- FIN DE LA PARTE IZQUIERDA-->

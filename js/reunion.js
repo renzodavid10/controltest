@@ -295,7 +295,7 @@ function listar_tarea() {
         });
     });
 
-    tbl_tare_cer = $("#tabla_tarea_cer").DataTable({
+    /*tbl_tare_cer = $("#tabla_tarea_cer").DataTable({
         columnDefs: [
             { width: '50%', targets: [3] }
         ],
@@ -318,9 +318,9 @@ function listar_tarea() {
             }
         },
 
-        "columns": [
+       /* "columns": [
             /* Datos que se va a traer en el procedimiento almacenado */
-            { "defaultContent": "" },
+          /*  { "defaultContent": "" },
             { "data": "tare_crea" },
             { "data": "tare_nombre" },
             { "data": "tare_desc" },
@@ -343,7 +343,7 @@ function listar_tarea() {
         tbl_tare_cer.column(0, { page: 'current' }).nodes().each(function (cell, i) {
             cell.innerHTML = i + 1 + PageInfo.start;
         });
-    });
+    });*/
 
 
 }
@@ -579,7 +579,7 @@ $("#tabla_tarea_rt").on('click', 'tr', function () {
          });*/
     }
 })
-$("#tabla_tarea_cer").on('click', 'tr', function () {
+/*$("#tabla_tarea_cer").on('click', 'tr', function () {
     //Muestro la parte derecha
     //$("#mostrar_detalle").toggle();
     if (tbl_tare_cer.rows().count() > 0) {
@@ -629,8 +629,8 @@ $("#tabla_tarea_cer").on('click', 'tr', function () {
                 console.log(e);
             });
         });*/
-    }
-})
+    //}
+/*})*/
 
 function evento_cambio(id) {
     $('.ed').off('click').on('click', function () {
@@ -659,7 +659,7 @@ function listar_siempre() {
     contar_tarea('En Progreso');
     contar_tarea('Lista para Cierre');
     contar_tarea('Retrasada');
-    contar_tarea('Cerrada');
+    //contar_tarea('Cerrada');
 }
 function GenerarExcel() {
     fetch('../controller/export/llamar_export.php', {
