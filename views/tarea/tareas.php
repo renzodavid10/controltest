@@ -482,7 +482,7 @@ session_start();
                             <button type="button" class="ed btn btn-secondary btn-sm mt-1 mr-1" style="font-size: small;">En Progreso</button>
                             <button type="button" class="ed btn btn-secondary btn-sm mt-1 mr-1" style="font-size: small;" onclick="">Lista para Cierre</button>
                             <button type="button" class="ed btn btn-secondary btn-sm mt-1 mr-1" style="font-size: small;">Cancelada</button>
-                            <?php if ($_SESSION['S_ROL'] == "SUPERVISOR") { ?>
+                            <?php if ($_SESSION['S_ROL'] == "LIDER") { ?>
                                 <button type="button" class="ed btn btn-secondary btn-sm mt-1 mr-1" style="font-size: small;">Cerrada</button>
                             <?php } ?>                        </div>
                         <div class="row font-weight-normal ">
