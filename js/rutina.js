@@ -837,7 +837,7 @@ function listar_subarea(areaid) {
         if (data.length > 0) {
             llenardata = "<option value='0'>SUBAREA </option>";
             for (let i = 0; i < data.length; i++) {
-                llenardata += "<option value='" + data[i]['area_id'] + "'>" + data[i]['suba_nombre'] + " </option>";
+                llenardata += "<option value='" + data[i]['suba_id'] + "'>" + data[i]['suba_nombre'] + " </option>";
                 // console.log(data[i]['usua_dni']);
                 //break;
             }
