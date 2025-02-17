@@ -61,6 +61,8 @@ session_start();
                                 <option>ENVASADO</option>
                                 <option>ELABORACION</option>
                                 <option>NABS</option>
+                                <option>LOGISTICA</option>
+                                <option>CALIDAD</option>
                                 <option>APT</option>
                                 <option>ALMACEN</option>
                             </select>
@@ -402,7 +404,7 @@ session_start();
                 <!-- /.card-body -->
             </div>
             <!-- INICIO DE CERRADA-->
-            <div class="card ">
+            <!--<div class="card ">
                 <div class="card-header ">
                     <div class="row ">
                         <h4 class="col-10 card-title w-100">
@@ -476,8 +478,7 @@ session_start();
 
                     </table>
                 </div>
-                <!-- /.card-body -->
-            </div>
+            </div>-->
         </div>
 
         <!-- FIN DE LA PARTE IZQUIERDA-->
@@ -517,7 +518,7 @@ session_start();
                             <button type="button" class="ed btn btn-secondary btn-sm mt-1 mr-1" style="font-size: small;">En Progreso</button>
                             <button type="button" class="ed btn btn-secondary btn-sm mt-1 mr-1" style="font-size: small;" onclick="">Lista para Cierre</button>
                             <button type="button" class="ed btn btn-secondary btn-sm mt-1 mr-1" style="font-size: small;">Cancelada</button>
-                            <?php if ($_SESSION['S_ROL'] == "SUPERVISOR") { ?>
+                            <?php if ($_SESSION['S_ROL'] == "LIDER") { ?>
                                 <button type="button" class="ed btn btn-secondary btn-sm mt-1 mr-1" style="font-size: small;">Cerrada</button>
                             <?php } ?>
                         </div>

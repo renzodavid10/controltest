@@ -101,8 +101,8 @@
                                 <label for="select_empresa" class="form-label">Empresa:</label>
                                 <select class="js-example-basic-single" id="select_rol" style="width: 100%">
                                     <option value='0'> Seleccione Cargo </option>
-                                    <option value='EMPLEADO'> EMPLEADO </option>
-                                    <option value='SUPERVISOR'>SUPERVISOR</option>
+                                    <option value='OPERADOR'> OPERADOR </option>
+                                    <option value='LIDER'>LIDER</option>
 
                                 </select>
                             </div>

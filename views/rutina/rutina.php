@@ -395,7 +395,7 @@
                     </div>
                     <div class="card-body">
                         <div class="row">
-                            <button type="button" class="reali btn btn-secondary   btn-sm mt-1 mr-1" style="font-size: small;">Realizada</button>
+                            <button type="button" class="reali btn btn-secondary   btn-sm mt-1 mr-1" style="font-size: small;">GUARDAR</button>
                         </div>
                         <div class="row font-weight-normal ">
                             <div class="mt-1 col-12">
@@ -412,35 +412,6 @@
                                 </select>
                             </div>
                             <div class="mt-3 col-12" id="cuestionario">
-
-                            </div>
-
-
-                            <div class="mt-1 col-12">
-                                <label class="form-label">COLUMNA</label>
-                                <div class="container pb-2 pt-1" style="background-color:#f5f5f5;  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);">
-                                    <label class="form-label">COMENTARIO</label>
-
-                                    <div class="card card-danger direct-chat direct-chat-danger">
-
-                                        <div class="card-body">
-
-                                            <div class="direct-chat-messages" style="height:500px" id='contenido'>
-
-                                            </div>
-
-
-                                        </div>
-
-                                    </div>
-
-                                    <div id="summernote">
-                                    </div>
-                                    <div class="col-12 text-right">
-                                        <button type="button" class="envio btn btn-outline-secondary btn-sm" style="font-size: small;">Enviar<i class="fa-solid fa-location-arrow ml-1"></i></button>
-                                    </div>
-
-                                </div>
 
                             </div>
                         </div>

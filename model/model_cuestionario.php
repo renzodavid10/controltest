@@ -4,16 +4,17 @@ require_once 'conexion.php';
 class mode_cuestionario extends conexion_nueva
 {
 
-    function listar_cuestionario($cues_id, $dni)
+    function listar_cuestionario($cues_id, $dni,$fechahoy)
     {
         //$tarid=5;
         $c = conexion_nueva::conectarBD();
-        $sql = "SELECT * FROM  fn_listar_preguntas(?,?)";
+        $sql = "SELECT * FROM  fn_listar_preguntas(?,?,?)";
 
         $arreglo = array();
         $query = $c->prepare($sql);
         $query->bindParam(1, $cues_id);
         $query->bindParam(2, $dni);
+        $query->bindParam(3, $fechahoy);
 
         $query->execute();
         $resultado = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -81,7 +82,6 @@ class mode_cuestionario extends conexion_nueva
 
         conexion_nueva::cerrar_conexion();
     }
-
     function responder_cuestionario(
         $dni,
         $fecha,
@@ -101,11 +101,25 @@ class mode_cuestionario extends conexion_nueva
         $cue13='',
         $cue14='',
         $area,
-        $subarea
+        $subarea,
+        $come1='',
+        $come2='',
+        $come3='',
+        $come4='',
+        $come5='',
+        $come6='',
+        $come7='',
+        $come8='',
+        $come9='',
+        $come10='',
+        $come11='',
+        $come12='',
+        $come13='',
+        $come14=''
     ) {
         //$tarid=5;
         $c = conexion_nueva::conectarBD();
-        $sql = "SELECT * FROM  fn_responder_cuestionario(? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,? ,?,?,?,?) ";
+        $sql = "SELECT * FROM  fn_responder_cuestionario(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
         $arreglo = array();
         $query = $c->prepare($sql);
@@ -128,6 +142,21 @@ class mode_cuestionario extends conexion_nueva
         $query->bindParam(17, $cue14);
         $query->bindParam(18, $area);
         $query->bindParam(19, $subarea);
+        $query->bindParam(20, $subarea);
+        $query->bindParam(21, $come1);
+        $query->bindParam(22, $come2);
+        $query->bindParam(23, $come3);
+        $query->bindParam(24, $come4);
+        $query->bindParam(25, $come5);
+        $query->bindParam(26, $come6);
+        $query->bindParam(27, $come7);
+        $query->bindParam(28, $come8);
+        $query->bindParam(29, $come9);
+        $query->bindParam(30, $come10);
+        $query->bindParam(31, $come11);
+        $query->bindParam(32, $come12);
+        $query->bindParam(33, $come13);
+        $query->bindParam(34, $come14);
         $query->execute();
 
         if ($row = $query->fetchColumn()) {
