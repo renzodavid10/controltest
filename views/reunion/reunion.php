@@ -560,12 +560,17 @@ session_start();
                                 <label for="select_departamentos" class="form-label">DEPARTAMENTOS</label>
                                 <select class="js-example-basic-single" id="select_departamentos" style="width: 100%">
                                     <option value="0">Departamento</option>
+                                    <option>PEOPLE</option>
                                     <option>SEGURIDAD</option>
                                     <option>MEDIO AMBIENTE</option>
                                     <option>INGENIERIA</option>
                                     <option>ENVASADO</option>
                                     <option>ELABORACION</option>
                                     <option>NABS</option>
+                                    <option>LOGISTICA</option>
+                                    <option>CALIDAD</option>
+                                    <option>APT</option>
+                                    <option>ALMACEN</option>
                                 </select>
                             </div>
                             <div class="mt-1 col-12">
