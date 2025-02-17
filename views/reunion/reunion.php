@@ -54,12 +54,15 @@ session_start();
                         <div class="col-6 mb-2 font-weight-normal ">
                             <select class="js-example-basic-single font-weight-normal " id="select_departamento" style="width: 100%">
                                 <option value="0">Departamento</option>
+                                <option>PEOPLE</option>
                                 <option>SEGURIDAD</option>
                                 <option>MEDIO AMBIENTE</option>
                                 <option>INGENIERIA</option>
                                 <option>ENVASADO</option>
                                 <option>ELABORACION</option>
                                 <option>NABS</option>
+                                <option>APT</option>
+                                <option>ALMACEN</option>
                             </select>
                         </div>
                         <div class="col-6 mb-2 font-weight-normal ">
