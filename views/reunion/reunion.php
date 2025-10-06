@@ -19,14 +19,22 @@ session_start();
     <div class="row">
         <!-- INICIO DE LA PARTE IZQUIERDA-->
         <div class="col-md-8">
-            <div class="card mt-2">
+            <div class="card mt-2"> 
                 <div class="card-header">
                     <h5 class="card-title">PLAN VPO MOTUPE TERCEROS</h5>
                 </div>
-                <div class="col-12">
-
-                    <button class="btn btn-success btn-sm float-right" onclick="GenerarExcel()" style="margin:5px;"><i class="fa-regular fa-file-excel mr-2"></i>Generar Excel</button>
-
+                <div class="card-body">
+                    <div class="row">
+                    <div class="col-4">
+                        <input type="date" id="fecha_inicio" class="form-control">
+                    </div>
+                    <div class="col-4">
+                        <input type="date" id="fecha_fin" class="form-control">
+                    </div>
+                    <div class="col-3">
+                        <button class="btn btn-success btn-sm float-right" onclick="GenerarExcel()" style="margin:5px;"><i class="fa-regular fa-file-excel mr-2"></i>Generar Excel</button>
+                    </div>
+                    </div>
                 </div>
             </div>
             <div class="card mt-2">

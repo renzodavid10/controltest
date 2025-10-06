@@ -659,14 +659,20 @@ function listar_siempre() {
     contar_tarea('En Progreso');
     contar_tarea('Lista para Cierre');
     contar_tarea('Retrasada');
-    //contar_tarea('Cerrada');
+    //contar_tarea('Cerrada'); 
 }
 function GenerarExcel() {
+      let $fecha1 = document.getElementById('fecha_inicio').value;
+    let $fecha2 = document.getElementById('fecha_fin').value;
     fetch('../controller/export/llamar_export.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
-        }
+        },
+        body: JSON.stringify({
+            fecha1: $fecha1,
+            fecha2: $fecha2,
+        })
     })
         .then(response => response.blob())
         .then(blob => {

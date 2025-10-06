@@ -47,6 +47,26 @@ class model_tarea extends conexion_nueva
 
         conexion_nueva::cerrar_conexion();
     }
+     function listar_tarea_reporte($fecha1, $fecha2)
+    {
+        $c = conexion_nueva::conectarBD();
+
+        $sql = "SELECT * FROM  fn_listar_reporte_tareas(?,?)";
+
+        $arreglo = array();
+        $query = $c->prepare($sql);
+        $query->bindParam(1, $fecha1);
+        $query->bindParam(2, $fecha2);
+        $query->execute();
+        $resultado = $query->fetchAll(PDO::FETCH_ASSOC);
+        //var_dump(json_encode($resultado));
+        foreach ($resultado as $resu) {
+            $arreglo["data"][] = $resu;
+        }
+        return $arreglo;
+
+        conexion_nueva::cerrar_conexion();
+    }
     public function contador($accion, $dni = '')
     {
         $c = conexion_nueva::conectarBD();
