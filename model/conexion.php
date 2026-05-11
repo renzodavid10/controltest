@@ -18,7 +18,7 @@ class conexion_nueva
     //private $host = 'monorail.proxy.rlwy.net';
     private $host = 'junction.proxy.rlwy.net';
     private $dbname = 'railway';
-    private $usuario = 'postgres';
+    private $usuario = 'pucallpa2';
     //private $port='41401';
     private $port='13200';
     //private $port='5432';
