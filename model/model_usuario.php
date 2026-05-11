@@ -62,9 +62,9 @@ class model_usuario extends conexion_nueva
 
 
         foreach ($resultado as $resu) {
-            if (password_verify($pass, $resu['usua_clave'])) { // PHP brinda una funcion para poder verificar contraseñas ncriptadas ya que siempre estan cambiando
+            //if (password_verify($pass, $resu['usua_clave'])) { // PHP brinda una funcion para poder verificar contraseñas ncriptadas ya que siempre estan cambiando
                 $arreglo[] = $resu;
-            }
+            //}
         }
         return $arreglo;
         conexion_nueva::cerrar_conexion();
